@@ -14,7 +14,10 @@
 		E973EA02250F96550077E9C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E973EA00250F96550077E9C0 /* LaunchScreen.storyboard */; };
 		E973EA11250F9C0A0077E9C0 /* DetailsMatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973EA10250F9C0A0077E9C0 /* DetailsMatterTests.swift */; };
 		E973EA1F250F9C240077E9C0 /* DetailsMatterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973EA1E250F9C240077E9C0 /* DetailsMatterUITests.swift */; };
+		E9A6D7BA2512356300FFE94F /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6D7B92512356300FFE94F /* ActivityView.swift */; };
+		E9A6D7BE25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6D7BD25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift */; };
 		E9AC198D2510EAE500920DFC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC198C2510EAE500920DFC /* Model.swift */; };
+		E9AC19902510F9AF00920DFC /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC198F2510F9AF00920DFC /* ActivityController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +51,10 @@
 		E973EA1C250F9C240077E9C0 /* DetailsMatterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DetailsMatterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E973EA1E250F9C240077E9C0 /* DetailsMatterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsMatterUITests.swift; sourceTree = "<group>"; };
 		E973EA20250F9C240077E9C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9A6D7B92512356300FFE94F /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		E9A6D7BD25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityView+UITableViewDelegate+DataSource.swift"; sourceTree = "<group>"; };
 		E9AC198C2510EAE500920DFC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		E9AC198F2510F9AF00920DFC /* ActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,7 @@
 		E9AC19882510E8D300920DFC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E9AC198E2510F96300920DFC /* Activity */,
 				E973E9F9250F96540077E9C0 /* ViewController.swift */,
 			);
 			path = Controller;
@@ -146,10 +153,28 @@
 		E9AC19892510E8DA00920DFC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E9AC19912510FC6900920DFC /* Activity */,
 				E973E9FE250F96550077E9C0 /* Assets.xcassets */,
 				E973EA00250F96550077E9C0 /* LaunchScreen.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E9AC198E2510F96300920DFC /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				E9AC198F2510F9AF00920DFC /* ActivityController.swift */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		E9AC19912510FC6900920DFC /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				E9A6D7B92512356300FFE94F /* ActivityView.swift */,
+				E9A6D7BD25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift */,
+			);
+			path = Activity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,9 +329,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E973E9FA250F96540077E9C0 /* ViewController.swift in Sources */,
+				E9A6D7BE25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift in Sources */,
 				E973E9F6250F96540077E9C0 /* AppDelegate.swift in Sources */,
 				E973E9F8250F96540077E9C0 /* SceneDelegate.swift in Sources */,
+				E9AC19902510F9AF00920DFC /* ActivityController.swift in Sources */,
 				E9AC198D2510EAE500920DFC /* Model.swift in Sources */,
+				E9A6D7BA2512356300FFE94F /* ActivityView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
