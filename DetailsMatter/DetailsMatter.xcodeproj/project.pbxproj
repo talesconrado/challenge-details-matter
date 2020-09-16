@@ -24,6 +24,7 @@
 		FEE4BFB32510F5CD000CA883 /* Initial.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE4BFB22510F5CD000CA883 /* Initial.swift */; };
 		FEE4BFBB25110286000CA883 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE4BFBA25110286000CA883 /* InitialViewController.swift */; };
 		FEE4BFBD2511068C000CA883 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE4BFBC2511068C000CA883 /* Config.swift */; };
+		E9AC198D2510EAE500920DFC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC198C2510EAE500920DFC /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		FEE4BFB22510F5CD000CA883 /* Initial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initial.swift; sourceTree = "<group>"; };
 		FEE4BFBA25110286000CA883 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		FEE4BFBC2511068C000CA883 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		E9AC198C2510EAE500920DFC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68AA20E52512339800D19BB3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		E973E9E9250F96540077E9C0 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +126,7 @@
 		E973E9F4250F96540077E9C0 /* DetailsMatter */ = {
 			isa = PBXGroup;
 			children = (
+				68AA20E52512339800D19BB3 /* ViewModel */,
 				E9AC19892510E8DA00920DFC /* View */,
 				E9AC19882510E8D300920DFC /* Controller */,
 				E9AC19872510E8B100920DFC /* Model */,
@@ -150,6 +160,7 @@
 		E9AC19872510E8B100920DFC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E9AC198C2510EAE500920DFC /* Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -423,6 +434,7 @@
 				FEE4BFB32510F5CD000CA883 /* Initial.swift in Sources */,
 				E973E9F8250F96540077E9C0 /* SceneDelegate.swift in Sources */,
 				FE5DDBA825124933005A5040 /* PetCollectionCell.swift in Sources */,
+				E9AC198D2510EAE500920DFC /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
