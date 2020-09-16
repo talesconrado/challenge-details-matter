@@ -26,7 +26,7 @@ class Initial: UIView {
     }()
 
     private let newPetButton: UIButton = {
-        let button = UIButtonWithIcon()
+        let button = UIButton()
         button.backgroundColor = .primary
         button.setTitle("Novo Pet", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .medium)
