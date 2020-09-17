@@ -31,6 +31,7 @@ class RemindersCollection: UICollectionView {
 
         private func setupLayout() {
             self.backgroundColor = .clear
+            self.showsVerticalScrollIndicator = false
         }
 
         private func registerCell() {

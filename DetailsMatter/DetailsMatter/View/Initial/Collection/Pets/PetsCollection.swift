@@ -32,6 +32,7 @@ class PetsCollection: UICollectionView {
 
     private func setupLayout() {
         self.backgroundColor = .clear
+        self.showsHorizontalScrollIndicator = false
     }
 
     private func registerCell() {
