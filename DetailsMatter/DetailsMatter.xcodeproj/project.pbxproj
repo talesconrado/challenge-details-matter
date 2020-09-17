@@ -171,10 +171,18 @@
 		E9AC19912510FC6900920DFC /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				E9DFCAFA2512CF7400F0430D /* DetailsView */,
 				E9A6D7B92512356300FFE94F /* ActivityView.swift */,
 				E9A6D7BD25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift */,
 			);
 			path = Activity;
+			sourceTree = "<group>";
+		};
+		E9DFCAFA2512CF7400F0430D /* DetailsView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
