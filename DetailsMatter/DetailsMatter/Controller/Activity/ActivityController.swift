@@ -9,7 +9,15 @@
 import UIKit
 
 class ActivityController: UIViewController {
-    let contentView = ActivityView()
+
+    var selectedRepeat: Int?
+
+    lazy var contentView: ActivityView = {
+        let view = ActivityView()
+        view.delegate = self
+        view.selectedOptionRepeat = self.selectedRepeat
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +36,23 @@ class ActivityController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
                                                                                   target: self,
                                                                                   action: nil)
-        navigationController?.navigationBar.tintColor = .orange
+        navigationController?.navigationBar.tintColor = .primary
+    }
+}
+
+// MARK: ActivityDetailsDelegate
+
+extension ActivityController: ActivityDetailsDelegate {
+    func showRepeatDetails() {
+        let repeatDetailsController = RepeatDetailsController()
+        repeatDetailsController.selected = selectedRepeat
+        repeatDetailsController.delegate = self
+        navigationController?.pushViewController(repeatDetailsController, animated: true)
     }
 
+    func didChangeSelectedRepeatOption(option: Int) {
+        selectedRepeat = option
+        contentView.selectedOptionRepeat = selectedRepeat
+        contentView.frequencyTableView.reloadData()
+    }
 }

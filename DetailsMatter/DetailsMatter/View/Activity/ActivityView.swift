@@ -10,6 +10,9 @@ import UIKit
 
 class ActivityView: UIView {
 
+    weak var delegate: ActivityDetailsDelegate?
+    var selectedOptionRepeat: Int?
+
     lazy var titleTextField: UITextField = {
         let title = UITextField()
         title.translatesAutoresizingMaskIntoConstraints = false

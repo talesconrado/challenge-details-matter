@@ -9,13 +9,13 @@
 import UIKit
 
 class RepeatDetails: UIView {
-    
+
     let tableView: UITableView = {
         let tbv = UITableView()
         tbv.translatesAutoresizingMaskIntoConstraints = false
         tbv.tableFooterView = UIView()
-        
+
         return tbv
     }()
-    
+
 }

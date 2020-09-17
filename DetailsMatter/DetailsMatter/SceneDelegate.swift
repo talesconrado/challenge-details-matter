@@ -21,7 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
 
-        let navigation = config.mainController()
+        //Change this function to call the controller you are currently testing
+        let navigation = config.mainController(.activityController)
         window?.rootViewController = navigation
 
         window?.makeKeyAndVisible()
