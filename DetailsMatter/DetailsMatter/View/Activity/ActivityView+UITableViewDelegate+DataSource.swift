@@ -17,7 +17,7 @@ extension ActivityView: UITableViewDelegate {
 
         switch indexPath.row {
         case 0:
-            print("selecionou 0")
+            delegate?.showCategoryDetails()
         case 1:
             print("selecionou 1")
         case 2:
@@ -41,7 +41,7 @@ extension ActivityView: UITableViewDataSource {
         switch indexPath.row {
             case 0:
                 cell.textLabel?.text = "Categoria"
-                cell.detailTextLabel?.text = "Alimentação"
+                cell.detailTextLabel?.text = ActivityValues.categories[selectedOptionCategory ?? 0]
                 cell.accessoryType = .disclosureIndicator
             case 1:
                 cell.textLabel?.text = "Início"

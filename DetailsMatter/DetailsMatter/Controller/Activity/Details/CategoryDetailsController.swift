@@ -1,20 +1,19 @@
 //
-//  RepeatDetailsController.swift
+//  CategoryDetailsController.swift
 //  DetailsMatter
 //
-//  Created by Tales Conrado on 17/09/20.
+//  Created by Tales Conrado on 18/09/20.
 //  Copyright © 2020 Tales Conrado. All rights reserved.
 //
-
 import UIKit
 
-class RepeatDetailsController: UIViewController {
+class CategoryDetailsController: UIViewController {
 
     var selected: Int?
     weak var delegate: ActivityDetailsDelegate?
 
     lazy var contentView: DetailsView = {
-        let view = DetailsView(size: ActivityValues.repeatOptions.count, type: .repeatDetails)
+        let view = DetailsView(size: ActivityValues.categories.count, type: .categoryDetails)
         view.selectedOption = self.selected ?? 0
         view.delegate = self.delegate
 
@@ -23,7 +22,7 @@ class RepeatDetailsController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Repetir"
+        title = "Categorias"
     }
 
     override func loadView() {

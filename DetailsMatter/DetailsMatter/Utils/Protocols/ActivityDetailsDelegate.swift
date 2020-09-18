@@ -10,5 +10,7 @@ import Foundation
 
 protocol ActivityDetailsDelegate: class {
     func showRepeatDetails()
+    func showCategoryDetails()
     func didChangeSelectedRepeatOption(option: Int)
+    func didChangeSelectedCategoryOption(option: Int)
 }

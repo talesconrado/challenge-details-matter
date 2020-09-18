@@ -10,8 +10,8 @@ import Foundation
 
 struct ActivityValues {
     static var repeatOptions: [String] {
-            return ["Nunca", "Diariamente", "Semanalmente", "Cada 2 semanas", "Mensalmente", "Anualmente"]
-        }
+        return ["Nunca", "Diariamente", "Semanalmente", "Cada 2 semanas", "Mensalmente", "Anualmente"]
+    }
 
     static var categories: [String] {
         return ["Alimentação", "Passeio", "Remédio"]

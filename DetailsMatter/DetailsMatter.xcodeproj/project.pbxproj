@@ -17,7 +17,8 @@
 		E973EA02250F96550077E9C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E973EA00250F96550077E9C0 /* LaunchScreen.storyboard */; };
 		E973EA11250F9C0A0077E9C0 /* DetailsMatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973EA10250F9C0A0077E9C0 /* DetailsMatterTests.swift */; };
 		E973EA1F250F9C240077E9C0 /* DetailsMatterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973EA1E250F9C240077E9C0 /* DetailsMatterUITests.swift */; };
-		E992F90625138F8700C60BAD /* RepeatDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E992F90525138F8700C60BAD /* RepeatDetails.swift */; };
+		E974DA982514D8E900B5A14E /* CategoryDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974DA972514D8E900B5A14E /* CategoryDetailsController.swift */; };
+		E974DA9D2514D8FD00B5A14E /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974DA9C2514D8FD00B5A14E /* DetailsView.swift */; };
 		E9A6D7BA2512356300FFE94F /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6D7B92512356300FFE94F /* ActivityView.swift */; };
 		E9A6D7BE25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6D7BD25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift */; };
 		E9AC198D2510EAE500920DFC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC198C2510EAE500920DFC /* Model.swift */; };
@@ -68,7 +69,8 @@
 		E973EA1C250F9C240077E9C0 /* DetailsMatterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DetailsMatterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E973EA1E250F9C240077E9C0 /* DetailsMatterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsMatterUITests.swift; sourceTree = "<group>"; };
 		E973EA20250F9C240077E9C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E992F90525138F8700C60BAD /* RepeatDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatDetails.swift; sourceTree = "<group>"; };
+		E974DA972514D8E900B5A14E /* CategoryDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsController.swift; sourceTree = "<group>"; };
+		E974DA9C2514D8FD00B5A14E /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		E9A6D7B92512356300FFE94F /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		E9A6D7BD25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityView+UITableViewDelegate+DataSource.swift"; sourceTree = "<group>"; };
 		E9AC198C2510EAE500920DFC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				E93A64B32513A01E0024DCAA /* RepeatDetailsController.swift */,
+				E974DA972514D8E900B5A14E /* CategoryDetailsController.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -232,7 +235,7 @@
 		E9DFCAFA2512CF7400F0430D /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				E992F90525138F8700C60BAD /* RepeatDetails.swift */,
+				E974DA9C2514D8FD00B5A14E /* DetailsView.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -483,11 +486,12 @@
 				E93807132513B735007C25B3 /* ActivityValues.swift in Sources */,
 				FE5DDBAF25125E32005A5040 /* Colors.swift in Sources */,
 				E973E9FA250F96540077E9C0 /* ViewController.swift in Sources */,
-				E992F90625138F8700C60BAD /* RepeatDetails.swift in Sources */,
 				E9A6D7BE25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift in Sources */,
 				FE5DDBAC2512494C005A5040 /* ReminderCollectionCell.swift in Sources */,
 				FE5DDBB125126B77005A5040 /* RemindersCollection.swift in Sources */,
+				E974DA9D2514D8FD00B5A14E /* DetailsView.swift in Sources */,
 				E973E9F6250F96540077E9C0 /* AppDelegate.swift in Sources */,
+				E974DA982514D8E900B5A14E /* CategoryDetailsController.swift in Sources */,
 				FEE4BFBD2511068C000CA883 /* Config.swift in Sources */,
 				FEE4BFBB25110286000CA883 /* InitialViewController.swift in Sources */,
 				FEE4BFB32510F5CD000CA883 /* Initial.swift in Sources */,

@@ -1,20 +1,34 @@
 //
-//  RepeatDetails.swift
+//  DetailsView.swift
 //  DetailsMatter
 //
-//  Created by Tales Conrado on 17/09/20.
+//  Created by Tales Conrado on 18/09/20.
 //  Copyright © 2020 Tales Conrado. All rights reserved.
 //
 
 import UIKit
 
-class RepeatDetails: UIView {
+enum DetailType {
+    case categoryDetails
+    case repeatDetails
+}
 
+class DetailsView: UIView {
+
+    var size: Int?
+    var type: DetailType?
     weak var delegate: ActivityDetailsDelegate?
 
     var selectedOption: Int = 0 {
         didSet {
-            delegate?.didChangeSelectedRepeatOption(option: selectedOption)
+            switch type {
+            case .categoryDetails:
+                delegate?.didChangeSelectedCategoryOption(option: selectedOption)
+            case .repeatDetails:
+                delegate?.didChangeSelectedRepeatOption(option: selectedOption)
+            default:
+                print("Type not set")
+            }
         }
     }
 
@@ -29,15 +43,22 @@ class RepeatDetails: UIView {
         return tbv
     }()
 
-    let cellNames: [String] = ActivityValues.repeatOptions
+    lazy var cellNames: [String] = {
+        switch type {
+        case .categoryDetails:
+            return ActivityValues.categories
+        case .repeatDetails:
+            return ActivityValues.repeatOptions
+        default:
+            return []
+        }
+    }()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    convenience init(size: Int, type: DetailType) {
+        self.init()
+        self.size = size
+        self.type = type
         setTableViewConstraints()
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("Error at init of RepeatDetails view.")
     }
 
     func setTableViewConstraints() {
@@ -50,9 +71,12 @@ class RepeatDetails: UIView {
 
 // MARK: TableView DataSource
 
-extension RepeatDetails: UITableViewDataSource {
+extension DetailsView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        guard let size = size else {
+            return 0
+        }
+        return size
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,7 +95,7 @@ extension RepeatDetails: UITableViewDataSource {
 
 // MARK: TableView Delegate
 
-extension RepeatDetails: UITableViewDelegate {
+extension DetailsView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .checkmark
@@ -94,3 +118,4 @@ extension RepeatDetails: UITableViewDelegate {
         cell?.backgroundColor = .white
     }
 }
+

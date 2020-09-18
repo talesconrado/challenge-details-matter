@@ -11,6 +11,7 @@ import UIKit
 class ActivityController: UIViewController {
 
     var selectedRepeat: Int?
+    var selectedCategory: Int?
 
     lazy var contentView: ActivityView = {
         let view = ActivityView()
@@ -53,6 +54,19 @@ extension ActivityController: ActivityDetailsDelegate {
     func didChangeSelectedRepeatOption(option: Int) {
         selectedRepeat = option
         contentView.selectedOptionRepeat = selectedRepeat
+        contentView.frequencyTableView.reloadData()
+    }
+
+    func showCategoryDetails() {
+        let categoryDetailsController = CategoryDetailsController()
+        categoryDetailsController.selected = selectedCategory
+        categoryDetailsController.delegate = self
+        navigationController?.pushViewController(categoryDetailsController, animated: true)
+    }
+
+    func didChangeSelectedCategoryOption(option: Int) {
+        selectedCategory = option
+        contentView.selectedOptionCategory = selectedCategory
         contentView.frequencyTableView.reloadData()
     }
 }

@@ -12,6 +12,7 @@ class ActivityView: UIView {
 
     weak var delegate: ActivityDetailsDelegate?
     var selectedOptionRepeat: Int?
+    var selectedOptionCategory: Int?
 
     lazy var titleTextField: UITextField = {
         let title = UITextField()
