@@ -25,7 +25,7 @@ class Initial: UIView {
         return view
     }()
 
-    private let newPetButton: UIButton = {
+    public let newPetButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .primary
         button.setTitle("Novo Pet", for: .normal)
