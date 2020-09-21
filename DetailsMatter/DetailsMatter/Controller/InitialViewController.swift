@@ -23,6 +23,7 @@ class InitialViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupActions()
     }
 
     override func loadView() {
@@ -39,6 +40,17 @@ class InitialViewController: UIViewController {
     private func setupNavBar() {
         self.title = "Mioi Humano!"
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+
+    private func setupActions() {
+        self.initial.newPetButton.addTarget(self, action: #selector(newVaccine), for: .touchUpInside)
+    }
+
+    @objc private func newVaccine() {
+        let newVaccine = UIStoryboard(name: "NewVaccine", bundle: nil)
+        let newVaccineController = newVaccine.instantiateViewController(withIdentifier: "NewVaccineStoryboard")
+        let nav = UINavigationController(rootViewController: newVaccineController)
+        self.present(nav, animated: true, completion: nil)
     }
 }
 
