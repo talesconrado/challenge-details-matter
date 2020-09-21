@@ -13,6 +13,8 @@ class ActivityView: UIView {
     weak var delegate: ActivityDetailsDelegate?
     var selectedOptionRepeat: Int?
     var selectedOptionCategory: Int?
+    var selectedDate: Date?
+    var dateString: String?
 
     lazy var titleTextField: UITextField = {
         let title = UITextField()
@@ -51,6 +53,7 @@ class ActivityView: UIView {
         super.init(frame: frame)
         backgroundColor = .white
         setConstraints()
+        frequencyTableView.register(DatePickerCell.self, forCellReuseIdentifier: "datePicker")
     }
 
     required init?(coder: NSCoder) {

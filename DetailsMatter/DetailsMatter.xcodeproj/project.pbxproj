@@ -19,6 +19,7 @@
 		E973EA1F250F9C240077E9C0 /* DetailsMatterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973EA1E250F9C240077E9C0 /* DetailsMatterUITests.swift */; };
 		E974DA982514D8E900B5A14E /* CategoryDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974DA972514D8E900B5A14E /* CategoryDetailsController.swift */; };
 		E974DA9D2514D8FD00B5A14E /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974DA9C2514D8FD00B5A14E /* DetailsView.swift */; };
+		E974DAA82514E62F00B5A14E /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974DAA72514E62F00B5A14E /* DatePickerCell.swift */; };
 		E9A6D7BA2512356300FFE94F /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6D7B92512356300FFE94F /* ActivityView.swift */; };
 		E9A6D7BE25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6D7BD25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift */; };
 		E9AC198D2510EAE500920DFC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC198C2510EAE500920DFC /* Model.swift */; };
@@ -71,6 +72,7 @@
 		E973EA20250F9C240077E9C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E974DA972514D8E900B5A14E /* CategoryDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsController.swift; sourceTree = "<group>"; };
 		E974DA9C2514D8FD00B5A14E /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		E974DAA72514E62F00B5A14E /* DatePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerCell.swift; sourceTree = "<group>"; };
 		E9A6D7B92512356300FFE94F /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		E9A6D7BD25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityView+UITableViewDelegate+DataSource.swift"; sourceTree = "<group>"; };
 		E9AC198C2510EAE500920DFC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				E9DFCAFA2512CF7400F0430D /* Details */,
 				E9A6D7B92512356300FFE94F /* ActivityView.swift */,
 				E9A6D7BD25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift */,
+				E974DAA72514E62F00B5A14E /* DatePickerCell.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				E93A64B42513A01E0024DCAA /* RepeatDetailsController.swift in Sources */,
 				E9AC198D2510EAE500920DFC /* Model.swift in Sources */,
 				E9A6D7BA2512356300FFE94F /* ActivityView.swift in Sources */,
+				E974DAA82514E62F00B5A14E /* DatePickerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,6 +672,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BABNQ3LD22;
 				INFOPLIST_FILE = DetailsMatter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -686,6 +691,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BABNQ3LD22;
 				INFOPLIST_FILE = DetailsMatter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

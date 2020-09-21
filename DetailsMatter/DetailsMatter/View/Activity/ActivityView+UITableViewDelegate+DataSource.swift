@@ -13,13 +13,12 @@ import UIKit
 extension ActivityView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
-        cell?.isSelected = false
-
         switch indexPath.row {
         case 0:
             delegate?.showCategoryDetails()
         case 1:
-            print("selecionou 1")
+            cell?.becomeFirstResponder()
+            print("data")
         case 2:
             delegate?.showRepeatDetails()
         case 3:
@@ -31,6 +30,7 @@ extension ActivityView: UITableViewDelegate {
 }
 
 extension ActivityView: UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
@@ -44,8 +44,8 @@ extension ActivityView: UITableViewDataSource {
                 cell.detailTextLabel?.text = ActivityValues.categories[selectedOptionCategory ?? 0]
                 cell.accessoryType = .disclosureIndicator
             case 1:
-                cell.textLabel?.text = "Início"
-                cell.detailTextLabel?.text = "9 Sep 2020 10:00"
+                let dateCell = DatePickerCell()
+                return dateCell
             case 2:
                 cell.textLabel?.text = "Repetir"
                 cell.detailTextLabel?.text = ActivityValues.repeatOptions[selectedOptionRepeat ?? 0]
