@@ -11,6 +11,8 @@ import Foundation
 protocol ActivityDetailsDelegate: class {
     func showRepeatDetails()
     func showCategoryDetails()
+    func showStopRepeatDetails()
     func didChangeSelectedRepeatOption(option: Int)
     func didChangeSelectedCategoryOption(option: Int)
+    func didChangeSelectedStopRepeatOption(option: Int, date: Date?)
 }

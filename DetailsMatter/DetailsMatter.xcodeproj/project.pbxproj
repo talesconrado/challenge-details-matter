@@ -24,6 +24,9 @@
 		E9A6D7BE25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6D7BD25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift */; };
 		E9AC198D2510EAE500920DFC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC198C2510EAE500920DFC /* Model.swift */; };
 		E9AC19902510F9AF00920DFC /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC198F2510F9AF00920DFC /* ActivityController.swift */; };
+		E9F73CFC2518D47E00B00C39 /* StopRepeatDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F73CFB2518D47E00B00C39 /* StopRepeatDetailsController.swift */; };
+		E9F73D042518D6ED00B00C39 /* StopRepeatDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F73D032518D6ED00B00C39 /* StopRepeatDetails.swift */; };
+		E9F73D162518EF2800B00C39 /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F73D152518EF2800B00C39 /* PickerCell.swift */; };
 		FE5DDBA525123CA3005A5040 /* PetsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5DDBA425123CA3005A5040 /* PetsCollection.swift */; };
 		FE5DDBA825124933005A5040 /* PetCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5DDBA625124933005A5040 /* PetCollectionCell.swift */; };
 		FE5DDBA925124933005A5040 /* PetCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE5DDBA725124933005A5040 /* PetCollectionCell.xib */; };
@@ -77,6 +80,9 @@
 		E9A6D7BD25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityView+UITableViewDelegate+DataSource.swift"; sourceTree = "<group>"; };
 		E9AC198C2510EAE500920DFC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		E9AC198F2510F9AF00920DFC /* ActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
+		E9F73CFB2518D47E00B00C39 /* StopRepeatDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopRepeatDetailsController.swift; sourceTree = "<group>"; };
+		E9F73D032518D6ED00B00C39 /* StopRepeatDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopRepeatDetails.swift; sourceTree = "<group>"; };
+		E9F73D152518EF2800B00C39 /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
 		FE5DDBA425123CA3005A5040 /* PetsCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsCollection.swift; sourceTree = "<group>"; };
 		FE5DDBA625124933005A5040 /* PetCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCollectionCell.swift; sourceTree = "<group>"; };
 		FE5DDBA725124933005A5040 /* PetCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetCollectionCell.xib; sourceTree = "<group>"; };
@@ -127,6 +133,7 @@
 			children = (
 				E93A64B32513A01E0024DCAA /* RepeatDetailsController.swift */,
 				E974DA972514D8E900B5A14E /* CategoryDetailsController.swift */,
+				E9F73CFB2518D47E00B00C39 /* StopRepeatDetailsController.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -238,9 +245,19 @@
 		E9DFCAFA2512CF7400F0430D /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				E9F73D142518EF1500B00C39 /* StopRepeat */,
 				E974DA9C2514D8FD00B5A14E /* DetailsView.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		E9F73D142518EF1500B00C39 /* StopRepeat */ = {
+			isa = PBXGroup;
+			children = (
+				E9F73D032518D6ED00B00C39 /* StopRepeatDetails.swift */,
+				E9F73D152518EF2800B00C39 /* PickerCell.swift */,
+			);
+			path = StopRepeat;
 			sourceTree = "<group>";
 		};
 		FE5DDBA325123C3B005A5040 /* Collection */ = {
@@ -486,6 +503,7 @@
 			files = (
 				E93A64BC2513A26F0024DCAA /* ActivityDetailsDelegate.swift in Sources */,
 				FE5DDBA525123CA3005A5040 /* PetsCollection.swift in Sources */,
+				E9F73CFC2518D47E00B00C39 /* StopRepeatDetailsController.swift in Sources */,
 				E93807132513B735007C25B3 /* ActivityValues.swift in Sources */,
 				FE5DDBAF25125E32005A5040 /* Colors.swift in Sources */,
 				E973E9FA250F96540077E9C0 /* ViewController.swift in Sources */,
@@ -500,8 +518,10 @@
 				FEE4BFB32510F5CD000CA883 /* Initial.swift in Sources */,
 				E973E9F8250F96540077E9C0 /* SceneDelegate.swift in Sources */,
 				E9AC19902510F9AF00920DFC /* ActivityController.swift in Sources */,
+				E9F73D162518EF2800B00C39 /* PickerCell.swift in Sources */,
 				FE5DDBA825124933005A5040 /* PetCollectionCell.swift in Sources */,
 				E93A64B42513A01E0024DCAA /* RepeatDetailsController.swift in Sources */,
+				E9F73D042518D6ED00B00C39 /* StopRepeatDetails.swift in Sources */,
 				E9AC198D2510EAE500920DFC /* Model.swift in Sources */,
 				E9A6D7BA2512356300FFE94F /* ActivityView.swift in Sources */,
 				E974DAA82514E62F00B5A14E /* DatePickerCell.swift in Sources */,

@@ -11,6 +11,7 @@ import UIKit
 enum DetailType {
     case categoryDetails
     case repeatDetails
+    case stopRepeatDetails
 }
 
 class DetailsView: UIView {
@@ -26,6 +27,8 @@ class DetailsView: UIView {
                 delegate?.didChangeSelectedCategoryOption(option: selectedOption)
             case .repeatDetails:
                 delegate?.didChangeSelectedRepeatOption(option: selectedOption)
+            case .stopRepeatDetails:
+                break
             default:
                 print("Type not set")
             }
@@ -49,6 +52,8 @@ class DetailsView: UIView {
             return ActivityValues.categories
         case .repeatDetails:
             return ActivityValues.repeatOptions
+        case .stopRepeatDetails:
+            return ActivityValues.stopRepeat
         default:
             return []
         }

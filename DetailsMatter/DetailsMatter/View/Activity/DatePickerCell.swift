@@ -9,27 +9,33 @@
 import UIKit
 
 class DatePickerCell: UITableViewCell {
-    
+
     lazy var dateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Início"
-        self.addSubview(label)
-        
+        self.contentView.addSubview(label)
+
         return label
     }()
 
     lazy var date: UITextField = {
         let date = UITextField()
         date.translatesAutoresizingMaskIntoConstraints = false
-        date.tintColor = .clear
+        date.textColor = .gray
+
         let picker = UIDatePicker()
-        picker.datePickerMode = .date
+        picker.preferredDatePickerStyle = .wheels
+        picker.datePickerMode = .dateAndTime
+
         date.inputView = picker
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
-        self.detailTextLabel?.text = dateFormatter.string(from: picker.date)
-        self.addSubview(date)
+        dateFormatter.timeStyle = .short
+        date.delegate = self
+        date.text = dateFormatter.string(from: picker.date)
+        picker.addTarget(self, action: #selector(pickerDone), for: .valueChanged)
+        self.contentView.addSubview(date)
 
         return date
     }()
@@ -47,10 +53,20 @@ class DatePickerCell: UITableViewCell {
         NSLayoutConstraint.activate([
             dateLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
             dateLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            
-            date.rightAnchor.constraint(equalTo: leftAnchor, constant: -30),
+
+            date.rightAnchor.constraint(equalTo: rightAnchor, constant: -30),
             date.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
+}
 
+extension DatePickerCell: UITextFieldDelegate {
+    @objc func pickerDone() {
+        if let datePicker = self.date.inputView as? UIDatePicker {
+            let dateformatter = DateFormatter()
+            dateformatter.dateStyle = .medium
+            dateformatter.timeStyle = .short
+            self.date.text = dateformatter.string(from: datePicker.date)
+        }
+    }
 }

@@ -12,20 +12,20 @@ import UIKit
 
 extension ActivityView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
         switch indexPath.row {
         case 0:
             delegate?.showCategoryDetails()
         case 1:
-            cell?.becomeFirstResponder()
-            print("data")
+            break
         case 2:
             delegate?.showRepeatDetails()
         case 3:
-            print("selecionou 3")
+            delegate?.showStopRepeatDetails()
         default:
             print("selecionou ?")
         }
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.isSelected = false
     }
 }
 
@@ -52,7 +52,7 @@ extension ActivityView: UITableViewDataSource {
                 cell.accessoryType = .disclosureIndicator
             case 3:
                 cell.textLabel?.text = "Parar de repetir"
-                cell.detailTextLabel?.text = "Nunca"
+                cell.detailTextLabel?.text = ActivityValues.stopRepeat[selectedOptionStopRepeat ?? 0]
                 cell.accessoryType = .disclosureIndicator
             default:
                 break

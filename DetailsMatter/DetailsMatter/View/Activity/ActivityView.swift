@@ -13,6 +13,7 @@ class ActivityView: UIView {
     weak var delegate: ActivityDetailsDelegate?
     var selectedOptionRepeat: Int?
     var selectedOptionCategory: Int?
+    var selectedOptionStopRepeat: Int?
     var selectedDate: Date?
     var dateString: String?
 

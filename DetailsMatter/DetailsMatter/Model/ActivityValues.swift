@@ -16,4 +16,8 @@ struct ActivityValues {
     static var categories: [String] {
         return ["Alimentação", "Passeio", "Remédio"]
     }
+
+    static var stopRepeat: [String] {
+        return ["Nunca", "Em uma data específica"]
+    }
 }
