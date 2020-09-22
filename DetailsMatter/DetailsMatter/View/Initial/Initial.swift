@@ -49,8 +49,8 @@ class Initial: UIView {
         return label
     }()
 
-    public let remindersCollection: RemindersCollection = {
-        let collection = RemindersCollection()
+    public let activitiesCollection: ActivitiesCollection = {
+        let collection = ActivitiesCollection()
         return collection
     }()
 
@@ -103,12 +103,12 @@ class Initial: UIView {
         reminderLabel.leadingAnchor.constraint(equalTo: contentGroup.leadingAnchor,
                                                constant: 16).isActive = true
 
-        contentGroup.addSubview(remindersCollection)
-        remindersCollection.translatesAutoresizingMaskIntoConstraints = false
-        remindersCollection.topAnchor.constraint(equalTo: reminderLabel.bottomAnchor,
+        contentGroup.addSubview(activitiesCollection)
+        activitiesCollection.translatesAutoresizingMaskIntoConstraints = false
+        activitiesCollection.topAnchor.constraint(equalTo: reminderLabel.bottomAnchor,
                                                  constant: 16).isActive = true
-        remindersCollection.leadingAnchor.constraint(equalTo: contentGroup.leadingAnchor).isActive = true
-        remindersCollection.trailingAnchor.constraint(equalTo: contentGroup.trailingAnchor).isActive = true
-        remindersCollection.bottomAnchor.constraint(equalTo: contentGroup.bottomAnchor).isActive = true
+        activitiesCollection.leadingAnchor.constraint(equalTo: contentGroup.leadingAnchor).isActive = true
+        activitiesCollection.trailingAnchor.constraint(equalTo: contentGroup.trailingAnchor).isActive = true
+        activitiesCollection.bottomAnchor.constraint(equalTo: contentGroup.bottomAnchor).isActive = true
     }
 }

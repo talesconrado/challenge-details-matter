@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAs-8I-r1M">
-                                <rect key="frame" x="20" y="108" width="80" height="24"/>
+                                <rect key="frame" x="20" y="64" width="80" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="iur-nI-xtJ"/>
                                 </constraints>
@@ -27,12 +27,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Vacina V8" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xkq-vU-LBo">
-                                <rect key="frame" x="100" y="107.5" width="294" height="25.5"/>
+                                <rect key="frame" x="100" y="63.5" width="294" height="25.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Rw-0q-jMW">
-                                <rect key="frame" x="20" y="148" width="80" height="24"/>
+                                <rect key="frame" x="20" y="104" width="80" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="cRg-aR-vor"/>
                                 </constraints>
@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="15/10/2017" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Za-Ja-abX">
-                                <rect key="frame" x="100" y="147.5" width="294" height="25.5"/>
+                                <rect key="frame" x="100" y="103.5" width="294" height="25.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -70,24 +70,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qT-IH-DOw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3126.0869565217395" y="-7.3660714285714279"/>
-        </scene>
-        <!--Nova Vacina-->
-        <scene sceneID="nKW-M5-Yuq">
-            <objects>
-                <navigationController title="Nova Vacina" automaticallyAdjustsScrollViewInsets="NO" id="7j7-h9-zJn" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kbf-ZC-AV0">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="9G0-Af-ZCc" kind="relationship" relationship="rootViewController" id="kvd-Aw-LwP"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h7R-wU-hUQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2215.9420289855075" y="-7.3660714285714279"/>
         </scene>
     </scenes>
     <resources>

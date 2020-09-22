@@ -25,18 +25,11 @@ class PetCollectionCell: UICollectionViewCell {
         self.imageView.layer.cornerRadius = 10
     }
 
-//    private func loadvViewFromNib() -> UIView? {
-//        let bundle = Bundle(for: type(of: self))
-//        let nib = UINib(nibName: PetCollectionCell.identifier, bundle: bundle)
-//        return nib.instantiate(withOwner: self, options: nil).first as? UIView
-//    }
-//
-//    private func setupXib() {
-//        guard let view = loadvViewFromNib() else { fatalError("Wrong xib name") }
-//        view.frame = self.bounds
-//    }
-
-//    public func configure(imageName: String) {
-//        self.imageView.image = UIImage(named: imageName)
-//    }
+    public func configure(imageString: String) {
+        if let data = Data(base64Encoded: imageString) {
+            self.imageView.image = UIImage(data: data)
+        } else {
+            self.imageView.image = UIImage(named: "petDefault")
+        }
+    }
 }

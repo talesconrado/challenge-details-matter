@@ -33,8 +33,8 @@ class InitialViewController: UIViewController {
         self.initial.petsCollection.dataSource = self
         self.initial.petsCollection.delegate = self
 
-        self.initial.remindersCollection.dataSource = self
-        self.initial.remindersCollection.delegate = self
+        self.initial.activitiesCollection.dataSource = self
+        self.initial.activitiesCollection.delegate = self
     }
 
     private func setupNavBar() {
@@ -78,8 +78,9 @@ extension InitialViewController: UICollectionViewDelegate, UICollectionViewDataS
             // cell.configure()
             return cell
         } else {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReminderCollectionCell.identifier,
-                                                                for: indexPath) as? ReminderCollectionCell
+            guard let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: ActivitiesCollectionCell.identifier,
+                    for: indexPath) as? ActivitiesCollectionCell
             else {
                 fatalError("Unable to cast cell ActivityCell to UICollectionCell")
             }
