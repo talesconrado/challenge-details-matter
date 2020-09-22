@@ -9,5 +9,5 @@
 import Foundation
 
 struct VaccineModel: Codable {
-    let id, name, date: String
+    let identifier, name, date: String
 }

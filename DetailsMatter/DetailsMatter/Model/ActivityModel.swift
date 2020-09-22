@@ -9,6 +9,6 @@
 import Foundation
 
 struct ActivityModel: Codable {
-    let id, title, description: String
+    let identifier, title, description: String
     let startDate, repeating, stopRepeating: String
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 struct PetModel: Codable {
-    let id, name, age, weight: String
+    let identifier, name, age, weight: String
     let photo: String
     let activitieIDs, vaccinesIDs: [String]
 }
