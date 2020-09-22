@@ -346,9 +346,8 @@
 				E93A64BB2513A26F0024DCAA /* ActivityDetailsDelegate.swift */,
 				FE6A96132513A711006D94C1 /* VaccinceDelegate.swift */,
 			);
-			name = Protocols;
-			path = /Users/talesconrado/Developer/DetailsMatter/DetailsMatter/DetailsMatter/Utils/Protocols;
-			sourceTree = "<absolute>";
+			path = Protocols;
+			sourceTree = "<group>";
 		};
 		FEE4BFB62510FECF000CA883 /* Extensions */ = {
 			isa = PBXGroup;
