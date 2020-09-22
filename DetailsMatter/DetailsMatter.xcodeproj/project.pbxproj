@@ -126,14 +126,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		68AA20E52512339800D19BB3 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = ViewModel;
-			path = /Users/talesconrado/Developer/DetailsMatter/DetailsMatter/DetailsMatter/ViewModel;
-			sourceTree = "<absolute>";
-		};
 		E93A64B22513A00B0024DCAA /* Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,7 +159,6 @@
 		E973E9F4250F96540077E9C0 /* DetailsMatter */ = {
 			isa = PBXGroup;
 			children = (
-				68AA20E52512339800D19BB3 /* ViewModel */,
 				E9AC19892510E8DA00920DFC /* View */,
 				E9AC19882510E8D300920DFC /* Controller */,
 				E9AC19872510E8B100920DFC /* Model */,
