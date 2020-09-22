@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RemindersCollection: UICollectionView {
+class ActivitiesCollection: UICollectionView {
 
     private let layout: UICollectionViewFlowLayout = {
         let flow = UICollectionViewFlowLayout()
@@ -35,7 +35,7 @@ class RemindersCollection: UICollectionView {
         }
 
         private func registerCell() {
-            let remindersNib = UINib(nibName: ReminderCollectionCell.identifier, bundle: nil)
-            self.register(remindersNib, forCellWithReuseIdentifier: ReminderCollectionCell.identifier)
+            let remindersNib = UINib(nibName: ActivitiesCollectionCell.identifier, bundle: nil)
+            self.register(remindersNib, forCellWithReuseIdentifier: ActivitiesCollectionCell.identifier)
         }
 }
