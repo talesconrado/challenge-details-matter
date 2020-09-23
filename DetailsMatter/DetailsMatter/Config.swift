@@ -13,6 +13,7 @@ import UIKit
 enum CurrentlyTesting {
     case activityController
     case initialController
+    case detailsController
 }
 
 class Config {
@@ -28,6 +29,9 @@ class Config {
             viewController = testingActivityModal
         case .initialController:
             viewController = initialController
+        case .detailsController:
+            let petDetails = UIStoryboard(name: "PetDetailsView", bundle: nil)
+            viewController = petDetails.instantiateViewController(withIdentifier: "PetDetailsStoryboard")
         }
 
         let nav = UINavigationController(rootViewController: viewController)

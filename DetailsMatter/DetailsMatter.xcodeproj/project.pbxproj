@@ -39,6 +39,10 @@
 		FE6A960A25139F29006D94C1 /* NewVaccine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6A960925139F29006D94C1 /* NewVaccine.storyboard */; };
 		FE6A960F2513A288006D94C1 /* NewVaccineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6A960E2513A288006D94C1 /* NewVaccineViewController.swift */; };
 		FE6A96142513A711006D94C1 /* VaccinceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6A96132513A711006D94C1 /* VaccinceDelegate.swift */; };
+		FEB5957A251B77A10011B23A /* PetDetailsActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB59578251B77A10011B23A /* PetDetailsActivityCell.swift */; };
+		FEB5957B251B77A10011B23A /* PetDetailsActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEB59579251B77A10011B23A /* PetDetailsActivityCell.xib */; };
+		FEB59586251B77D30011B23A /* PetDetailsVaccineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB59584251B77D30011B23A /* PetDetailsVaccineCell.swift */; };
+		FEB59587251B77D30011B23A /* PetDetailsVaccineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEB59585251B77D30011B23A /* PetDetailsVaccineCell.xib */; };
 		FEE4BFB32510F5CD000CA883 /* Initial.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE4BFB22510F5CD000CA883 /* Initial.swift */; };
 		FEE4BFBB25110286000CA883 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE4BFBA25110286000CA883 /* InitialViewController.swift */; };
 		FEE4BFBD2511068C000CA883 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE4BFBC2511068C000CA883 /* Config.swift */; };
@@ -100,6 +104,10 @@
 		FE6A960925139F29006D94C1 /* NewVaccine.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewVaccine.storyboard; sourceTree = "<group>"; };
 		FE6A960E2513A288006D94C1 /* NewVaccineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVaccineViewController.swift; sourceTree = "<group>"; };
 		FE6A96132513A711006D94C1 /* VaccinceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinceDelegate.swift; sourceTree = "<group>"; };
+		FEB59578251B77A10011B23A /* PetDetailsActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsActivityCell.swift; sourceTree = "<group>"; };
+		FEB59579251B77A10011B23A /* PetDetailsActivityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetDetailsActivityCell.xib; sourceTree = "<group>"; };
+		FEB59584251B77D30011B23A /* PetDetailsVaccineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsVaccineCell.swift; sourceTree = "<group>"; };
+		FEB59585251B77D30011B23A /* PetDetailsVaccineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetDetailsVaccineCell.xib; sourceTree = "<group>"; };
 		FEE4BFB22510F5CD000CA883 /* Initial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initial.swift; sourceTree = "<group>"; };
 		FEE4BFBA25110286000CA883 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		FEE4BFBC2511068C000CA883 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -141,6 +149,7 @@
 		68F13FE6251A20D30034CE32 /* PetDetails */ = {
 			isa = PBXGroup;
 			children = (
+				FEB5956B251B76B80011B23A /* Collection */,
 				68F13FE9251A33250034CE32 /* PetDetailsView.storyboard */,
 			);
 			path = PetDetails;
@@ -222,11 +231,11 @@
 		E9AC19882510E8D300920DFC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				68F13FEC251B70020034CE32 /* PetDetailsContoller.swift */,
 				E9AC198E2510F96300920DFC /* Activity */,
 				E973E9F9250F96540077E9C0 /* ViewController.swift */,
 				FEE4BFBA25110286000CA883 /* InitialViewController.swift */,
 				FE6A960E2513A288006D94C1 /* NewVaccineViewController.swift */,
+				68F13FEC251B70020034CE32 /* PetDetailsContoller.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -324,6 +333,49 @@
 				FE6A960925139F29006D94C1 /* NewVaccine.storyboard */,
 			);
 			path = NewVaccine;
+			sourceTree = "<group>";
+		};
+		FEB5956B251B76B80011B23A /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				FEB5956E251B76E90011B23A /* Activities */,
+				FEB5956C251B76BF0011B23A /* Vaccines */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		FEB5956C251B76BF0011B23A /* Vaccines */ = {
+			isa = PBXGroup;
+			children = (
+				FEB5956D251B76E40011B23A /* Xib */,
+			);
+			path = Vaccines;
+			sourceTree = "<group>";
+		};
+		FEB5956D251B76E40011B23A /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				FEB59584251B77D30011B23A /* PetDetailsVaccineCell.swift */,
+				FEB59585251B77D30011B23A /* PetDetailsVaccineCell.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		FEB5956E251B76E90011B23A /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				FEB5956F251B76F10011B23A /* Xib */,
+			);
+			path = Activities;
+			sourceTree = "<group>";
+		};
+		FEB5956F251B76F10011B23A /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				FEB59578251B77A10011B23A /* PetDetailsActivityCell.swift */,
+				FEB59579251B77A10011B23A /* PetDetailsActivityCell.xib */,
+			);
+			path = Xib;
 			sourceTree = "<group>";
 		};
 		FEE4BFB02510F590000CA883 /* Initial */ = {
@@ -485,7 +537,9 @@
 			files = (
 				68F13FEA251A33250034CE32 /* PetDetailsView.storyboard in Resources */,
 				FE5DDBA925124933005A5040 /* PetCollectionCell.xib in Resources */,
+				FEB59587251B77D30011B23A /* PetDetailsVaccineCell.xib in Resources */,
 				FE5DDBAD2512494C005A5040 /* ReminderCollectionCell.xib in Resources */,
+				FEB5957B251B77A10011B23A /* PetDetailsActivityCell.xib in Resources */,
 				E973EA02250F96550077E9C0 /* LaunchScreen.storyboard in Resources */,
 				E973E9FF250F96550077E9C0 /* Assets.xcassets in Resources */,
 				FE6A960A25139F29006D94C1 /* NewVaccine.storyboard in Resources */,
@@ -546,11 +600,13 @@
 				E974DA9D2514D8FD00B5A14E /* DetailsView.swift in Sources */,
 				E973E9F6250F96540077E9C0 /* AppDelegate.swift in Sources */,
 				E974DA982514D8E900B5A14E /* CategoryDetailsController.swift in Sources */,
+				FEB5957A251B77A10011B23A /* PetDetailsActivityCell.swift in Sources */,
 				FE6A960F2513A288006D94C1 /* NewVaccineViewController.swift in Sources */,
 				FEE4BFBD2511068C000CA883 /* Config.swift in Sources */,
 				FEE4BFBB25110286000CA883 /* InitialViewController.swift in Sources */,
 				FEE4BFB32510F5CD000CA883 /* Initial.swift in Sources */,
 				E973E9F8250F96540077E9C0 /* SceneDelegate.swift in Sources */,
+				FEB59586251B77D30011B23A /* PetDetailsVaccineCell.swift in Sources */,
 				E9AC19902510F9AF00920DFC /* ActivityController.swift in Sources */,
 				E9F73D162518EF2800B00C39 /* PickerCell.swift in Sources */,
 				FE6A96142513A711006D94C1 /* VaccinceDelegate.swift in Sources */,
