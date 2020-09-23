@@ -36,6 +36,19 @@ class ViewController: UIViewController {
     @objc func showActivityModal() {
         let activityVC = ActivityController()
         let navigation = UINavigationController(rootViewController: activityVC)
+        
+        let repo = Database.activity
+        let created = repo.createNewItem()
+        print(created?.identifier)
+        var readed = (repo.readItem(identifier: created!.identifier))
+        print(readed?.description)
+        print(readed?.identifier)
+        readed?.description = "Testando repository"
+        repo.update(item: readed!)
+        readed = (repo.readItem(identifier: created!.identifier))
+        print(readed?.description)
+        print(readed?.identifier)
+        print(repo.readAllItems())
         present(navigation, animated: true, completion: nil)
     }
 

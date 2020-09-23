@@ -8,8 +8,18 @@
 
 import Foundation
 
-struct PetModel: Codable {
+class PetModel: RepositoryItem {
     let identifier, name, age, weight: String
     let photo: String
     let activitieIDs, vaccinesIDs: [String]
+    
+    required init() {
+        name = ""
+        age = ""
+        weight = ""
+        photo = ""
+        activitieIDs = []
+        vaccinesIDs = []
+        identifier = UUID().uuidString
+    }
 }

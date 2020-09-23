@@ -41,7 +41,7 @@ class ActivitiesCollectionCell: UICollectionViewCell {
             self.timeLabel.text = "00:00"
         }
 
-        self.activityTitle.text = activity.title
+        self.activityTitle.text = activity.name
         self.activityDescription.text = activity.description
     }
 }

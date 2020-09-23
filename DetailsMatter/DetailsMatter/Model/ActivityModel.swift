@@ -8,7 +8,16 @@
 
 import Foundation
 
-struct ActivityModel: Codable {
-    let identifier, title, description: String
-    let startDate, repeating, stopRepeating: String
+class ActivityModel: RepositoryItem {
+    var identifier, name, description: String
+    var startDate, repeating, stopRepeating: String
+
+    required init() {
+        self.name = ""
+        self.description = ""
+        self.startDate = ""
+        self.repeating = ""
+        self.stopRepeating = ""
+        identifier = UUID().uuidString
+    }
 }
