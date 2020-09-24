@@ -10,6 +10,9 @@
 		E93807132513B735007C25B3 /* ActivityValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93807122513B735007C25B3 /* ActivityValues.swift */; };
 		E93A64B42513A01E0024DCAA /* RepeatDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93A64B32513A01E0024DCAA /* RepeatDetailsController.swift */; };
 		E93A64BC2513A26F0024DCAA /* ActivityDetailsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93A64BB2513A26F0024DCAA /* ActivityDetailsDelegate.swift */; };
+		E9484BC0251A389A0006256D /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9484BBF251A389A0006256D /* FileHelper.swift */; };
+		E9484BC5251A45710006256D /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9484BC4251A45710006256D /* Repository.swift */; };
+		E9484BCA251A457B0006256D /* RepositoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9484BC9251A457B0006256D /* RepositoryItem.swift */; };
 		E973E9F6250F96540077E9C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973E9F5250F96540077E9C0 /* AppDelegate.swift */; };
 		E973E9F8250F96540077E9C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973E9F7250F96540077E9C0 /* SceneDelegate.swift */; };
 		E973E9FA250F96540077E9C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973E9F9250F96540077E9C0 /* ViewController.swift */; };
@@ -23,6 +26,7 @@
 		E9A6D7BA2512356300FFE94F /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6D7B92512356300FFE94F /* ActivityView.swift */; };
 		E9A6D7BE25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6D7BD25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift */; };
 		E9AC19902510F9AF00920DFC /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC198F2510F9AF00920DFC /* ActivityController.swift */; };
+		E9C3C0A1251B979E0071AF92 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C3C0A0251B979E0071AF92 /* DataManager.swift */; };
 		E9F73CFC2518D47E00B00C39 /* StopRepeatDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F73CFB2518D47E00B00C39 /* StopRepeatDetailsController.swift */; };
 		E9F73D042518D6ED00B00C39 /* StopRepeatDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F73D032518D6ED00B00C39 /* StopRepeatDetails.swift */; };
 		E9F73D162518EF2800B00C39 /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F73D152518EF2800B00C39 /* PickerCell.swift */; };
@@ -65,6 +69,9 @@
 		E93807122513B735007C25B3 /* ActivityValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityValues.swift; sourceTree = "<group>"; };
 		E93A64B32513A01E0024DCAA /* RepeatDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatDetailsController.swift; sourceTree = "<group>"; };
 		E93A64BB2513A26F0024DCAA /* ActivityDetailsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsDelegate.swift; sourceTree = "<group>"; };
+		E9484BBF251A389A0006256D /* FileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
+		E9484BC4251A45710006256D /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		E9484BC9251A457B0006256D /* RepositoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryItem.swift; sourceTree = "<group>"; };
 		E973E9F2250F96540077E9C0 /* DetailsMatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DetailsMatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E973E9F5250F96540077E9C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E973E9F7250F96540077E9C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +91,7 @@
 		E9A6D7B92512356300FFE94F /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		E9A6D7BD25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityView+UITableViewDelegate+DataSource.swift"; sourceTree = "<group>"; };
 		E9AC198F2510F9AF00920DFC /* ActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
+		E9C3C0A0251B979E0071AF92 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		E9F73CFB2518D47E00B00C39 /* StopRepeatDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopRepeatDetailsController.swift; sourceTree = "<group>"; };
 		E9F73D032518D6ED00B00C39 /* StopRepeatDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopRepeatDetails.swift; sourceTree = "<group>"; };
 		E9F73D152518EF2800B00C39 /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
@@ -138,6 +146,15 @@
 				E9F73CFB2518D47E00B00C39 /* StopRepeatDetailsController.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		E9484BCE251A45830006256D /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				E9484BC4251A45710006256D /* Repository.swift */,
+				E9484BC9251A457B0006256D /* RepositoryItem.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		E973E9E9250F96540077E9C0 = {
@@ -200,6 +217,7 @@
 				FEF0B1432518DE55002775CF /* VaccineModel.swift */,
 				FEF0B1482518DE6B002775CF /* ActivityModel.swift */,
 				E93807122513B735007C25B3 /* ActivityValues.swift */,
+				E9C3C0A0251B979E0071AF92 /* DataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -333,6 +351,7 @@
 				FEE4BFB72510FEF2000CA883 /* Components */,
 				FEE4BFB62510FECF000CA883 /* Extensions */,
 				FEE4BFB52510FEC8000CA883 /* Protocols */,
+				E9484BBF251A389A0006256D /* FileHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -340,6 +359,7 @@
 		FEE4BFB52510FEC8000CA883 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				E9484BCE251A45830006256D /* Repository */,
 				E93A64BB2513A26F0024DCAA /* ActivityDetailsDelegate.swift */,
 				FE6A96132513A711006D94C1 /* VaccinceDelegate.swift */,
 			);
@@ -525,12 +545,14 @@
 				FE5DDBAF25125E32005A5040 /* Colors.swift in Sources */,
 				E973E9FA250F96540077E9C0 /* ViewController.swift in Sources */,
 				FE5DDBAC2512494C005A5040 /* ActivitiesCollectionCell.swift in Sources */,
+				E9484BC0251A389A0006256D /* FileHelper.swift in Sources */,
 				FE5DDBB125126B77005A5040 /* ActivitiesCollection.swift in Sources */,
 				E9A6D7BE25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift in Sources */,
 				E974DA9D2514D8FD00B5A14E /* DetailsView.swift in Sources */,
 				E973E9F6250F96540077E9C0 /* AppDelegate.swift in Sources */,
 				E974DA982514D8E900B5A14E /* CategoryDetailsController.swift in Sources */,
 				FE6A960F2513A288006D94C1 /* NewVaccineViewController.swift in Sources */,
+				E9484BC5251A45710006256D /* Repository.swift in Sources */,
 				FEE4BFBD2511068C000CA883 /* Config.swift in Sources */,
 				FEE4BFBB25110286000CA883 /* InitialViewController.swift in Sources */,
 				FEE4BFB32510F5CD000CA883 /* Initial.swift in Sources */,
@@ -539,9 +561,11 @@
 				E9F73D162518EF2800B00C39 /* PickerCell.swift in Sources */,
 				FE6A96142513A711006D94C1 /* VaccinceDelegate.swift in Sources */,
 				FE5DDBA825124933005A5040 /* PetCollectionCell.swift in Sources */,
+				E9484BCA251A457B0006256D /* RepositoryItem.swift in Sources */,
 				E93A64B42513A01E0024DCAA /* RepeatDetailsController.swift in Sources */,
 				E9F73D042518D6ED00B00C39 /* StopRepeatDetails.swift in Sources */,
 				E9A6D7BA2512356300FFE94F /* ActivityView.swift in Sources */,
+				E9C3C0A1251B979E0071AF92 /* DataManager.swift in Sources */,
 				E974DAA82514E62F00B5A14E /* DatePickerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
