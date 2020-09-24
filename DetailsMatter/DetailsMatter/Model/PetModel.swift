@@ -12,7 +12,7 @@ class PetModel: RepositoryItem {
     var identifier, name, age, weight: String
     var photo: String
     var activitieIDs, vaccinesIDs: [String]
-    
+
     required init() {
         name = ""
         age = ""

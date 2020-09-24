@@ -49,11 +49,24 @@ class ActivityController: UIViewController {
                                                                                  action: #selector(dismissModal))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
                                                                                   target: self,
-                                                                                  action: #selector(dismissModal))
+                                                                                  action: #selector(saveActivity))
         navigationController?.navigationBar.tintColor = .primary
     }
 
     @objc func dismissModal() {
+        self.dismiss(animated: true, completion: nil)
+    }
+
+    @objc func saveActivity() {
+        if let newActivity = DataManager.activity.createNewItem() {
+            newActivity.name = contentView.titleTextField.text ?? ""
+            newActivity.description = contentView.descriptionTextField.text ?? ""
+            newActivity.startDate = contentView.selectedDate
+            newActivity.repeating = self.selectedRepeat ?? 0
+            newActivity.stopRepeating = self.selectedStopRepeatDate
+            newActivity.category = self.selectedCategory ?? 0
+            DataManager.activity.update(item: newActivity)
+        }
         self.dismiss(animated: true, completion: nil)
     }
 }

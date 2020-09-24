@@ -31,9 +31,9 @@ class ActivitiesCollectionCell: UICollectionViewCell {
 
     public func configure(activity: ActivityModel) {
         let calendar = Calendar.current
-        let formatter = DateFormatter()
+        //let formatter = DateFormatter()
 
-        if let date = formatter.date(from: activity.startDate) {
+        if let date = activity.startDate {
             let hour = calendar.component(.hour, from: date)
             let minutes = calendar.component(.minute, from: date)
             self.timeLabel.text = "\(hour):\(minutes)"
