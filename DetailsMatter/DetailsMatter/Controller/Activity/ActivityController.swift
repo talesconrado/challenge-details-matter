@@ -61,7 +61,7 @@ class ActivityController: UIViewController {
         if let newActivity = DataManager.activity.createNewItem() {
             newActivity.name = contentView.titleTextField.text ?? ""
             newActivity.description = contentView.descriptionTextField.text ?? ""
-            newActivity.startDate = contentView.selectedDate
+            newActivity.startDate = contentView.selectedDate ?? Date()
             newActivity.repeating = self.selectedRepeat ?? 0
             newActivity.stopRepeating = self.selectedStopRepeatDate
             newActivity.category = self.selectedCategory ?? 0
