@@ -6,6 +6,8 @@
 //  Copyright © 2020 Tales Conrado. All rights reserved.
 //
 
+//swiftlint: disable : trailing_whitespace
+
 import UIKit
 
 class PetDetailsController: UIViewController {
@@ -24,6 +26,21 @@ class PetDetailsController: UIViewController {
         self.activitiesCollection.delegate = self
     }
 
+    func navigationBarButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem:
+            .edit, target: self,
+                   action:
+            #selector(editPet))
+        navigationItem.rightBarButtonItem?.tintColor = .secondary
+        navigationController?.navigationBar.backgroundColor = .clear
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.isTranslucent = true
+    }
+    @objc func editPet() {
+//        self.present(UIViewController, animated: Bool) {
+//
+//        }
+    }
     @IBAction func vaccineButton(_ sender: Any) {
         let newVaccine = UIStoryboard(name: "NewVaccine", bundle: nil)
         let newVaccineController = newVaccine.instantiateViewController(withIdentifier: "NewVaccineStoryboard")

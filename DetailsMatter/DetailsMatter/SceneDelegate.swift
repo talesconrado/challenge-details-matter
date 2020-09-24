@@ -20,7 +20,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
-        
         //Change this function to call the controller you are currently testing
         let navigation = config.mainController(.detailsController)
         window?.rootViewController = navigation

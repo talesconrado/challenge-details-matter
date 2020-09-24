@@ -13,7 +13,8 @@ class PetDetailsVaccineCell: UICollectionViewCell {
     public static let identifier: String = "PetDetailsVaccineCell"
 
     // Create Outlets from Xib
-
+    @IBOutlet weak var petPic: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
