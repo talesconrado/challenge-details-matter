@@ -26,6 +26,9 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="ZTb-bW-Hpw">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="saveNewPet:" destination="GsB-88-QvO" id="Ikp-qP-23F"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -104,6 +107,9 @@
                                         <integer key="value" value="18"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addNewVacine:" destination="GsB-88-QvO" eventType="touchUpInside" id="xJe-H5-Cnl"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TAY-Py-F3l">
                                 <rect key="frame" x="16" y="417" width="383" height="97.5"/>
@@ -165,6 +171,9 @@
                                         <integer key="value" value="18"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addNewActivity:" destination="GsB-88-QvO" eventType="touchUpInside" id="AcU-HC-Gb7"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="juo-Mc-WON">
                                 <rect key="frame" x="20" y="572" width="383" height="290"/>
@@ -236,7 +245,11 @@
                     </view>
                     <connections>
                         <outlet property="activityCollectionView" destination="juo-Mc-WON" id="lYH-Ql-RsY"/>
+                        <outlet property="ageTextField" destination="6f6-KG-05F" id="X1T-nk-W2O"/>
+                        <outlet property="nameTextField" destination="Lg1-0w-ejd" id="4Vg-98-VH1"/>
+                        <outlet property="saveButton" destination="ZTb-bW-Hpw" id="rQQ-fR-ypE"/>
                         <outlet property="vacineCollectionView" destination="TAY-Py-F3l" id="H5I-vj-Mch"/>
+                        <outlet property="weightTextField" destination="6tx-M9-Szw" id="fXH-FQ-z0k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSe-Ko-mCb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

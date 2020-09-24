@@ -14,6 +14,11 @@ class NewPetViewController: UIViewController {
     
     @IBOutlet var vacineCollectionView: UICollectionView!
     @IBOutlet var activityCollectionView: UICollectionView!
+    @IBOutlet var ageTextField: UITextField!
+    @IBOutlet var weightTextField: UITextField!
+    @IBOutlet var saveButton: UIBarButtonItem!
+    @IBOutlet var nameTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.vacineCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellIdentifier")
@@ -24,10 +29,24 @@ class NewPetViewController: UIViewController {
         activityCollectionView.delegate = self
         activityCollectionView.dataSource = self
     }
+    
+    @IBAction func saveNewPet(_ sender: Any) {
+    
+    }
+    
+    @IBAction func addNewVacine(_ sender: Any) {
+        
+    }
+    
+    @IBAction func addNewActivity(_ sender: Any) {
+        
+    }
+    
 }
 
 
 extension NewPetViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var number = 0
         if collectionView == self.vacineCollectionView {
@@ -40,7 +59,6 @@ extension NewPetViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         var cell: UICollectionViewCell? = nil
         if collectionView == self.vacineCollectionView {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "vacineCollectionViewCell", for: indexPath) as UICollectionViewCell?
