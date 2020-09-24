@@ -13,6 +13,7 @@
 		E9484BC0251A389A0006256D /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9484BBF251A389A0006256D /* FileHelper.swift */; };
 		E9484BC5251A45710006256D /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9484BC4251A45710006256D /* Repository.swift */; };
 		E9484BCA251A457B0006256D /* RepositoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9484BC9251A457B0006256D /* RepositoryItem.swift */; };
+		E94BD0ED251CE745009DD22C /* ActivityControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94BD0EC251CE745009DD22C /* ActivityControllerTests.swift */; };
 		E973E9F6250F96540077E9C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973E9F5250F96540077E9C0 /* AppDelegate.swift */; };
 		E973E9F8250F96540077E9C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973E9F7250F96540077E9C0 /* SceneDelegate.swift */; };
 		E973E9FA250F96540077E9C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973E9F9250F96540077E9C0 /* ViewController.swift */; };
@@ -72,6 +73,7 @@
 		E9484BBF251A389A0006256D /* FileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
 		E9484BC4251A45710006256D /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		E9484BC9251A457B0006256D /* RepositoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryItem.swift; sourceTree = "<group>"; };
+		E94BD0EC251CE745009DD22C /* ActivityControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityControllerTests.swift; sourceTree = "<group>"; };
 		E973E9F2250F96540077E9C0 /* DetailsMatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DetailsMatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E973E9F5250F96540077E9C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E973E9F7250F96540077E9C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +159,14 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		E94BD0EB251CE727009DD22C /* ActivityTests */ = {
+			isa = PBXGroup;
+			children = (
+				E94BD0EC251CE745009DD22C /* ActivityControllerTests.swift */,
+			);
+			path = ActivityTests;
+			sourceTree = "<group>";
+		};
 		E973E9E9250F96540077E9C0 = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +205,7 @@
 		E973EA0F250F9C0A0077E9C0 /* DetailsMatterTests */ = {
 			isa = PBXGroup;
 			children = (
+				E94BD0EB251CE727009DD22C /* ActivityTests */,
 				E973EA10250F9C0A0077E9C0 /* DetailsMatterTests.swift */,
 				E973EA12250F9C0A0077E9C0 /* Info.plist */,
 			);
@@ -574,6 +585,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E94BD0ED251CE745009DD22C /* ActivityControllerTests.swift in Sources */,
 				E973EA11250F9C0A0077E9C0 /* DetailsMatterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
