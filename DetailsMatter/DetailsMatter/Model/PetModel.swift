@@ -9,9 +9,9 @@
 import Foundation
 
 class PetModel: RepositoryItem {
-    let identifier, name, age, weight: String
-    let photo: String
-    let activitieIDs, vaccinesIDs: [String]
+    var identifier, name, age, weight: String
+    var photo: String
+    var activitieIDs, vaccinesIDs: [String]
     
     required init() {
         name = ""

@@ -10,13 +10,11 @@ import Foundation
 
 class VaccineModel: RepositoryItem {
     var identifier: String
-    let name, date: String
+    var name, date: String
 
     required init() {
         identifier = UUID().uuidString
         name = ""
         date = ""
     }
-    
-
 }
