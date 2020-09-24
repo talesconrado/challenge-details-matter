@@ -26,4 +26,3 @@ struct DataManager {
     static let vaccine = VaccineRepository()
     static let pet = PetRepository()
 }
-

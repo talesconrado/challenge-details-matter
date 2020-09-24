@@ -45,6 +45,7 @@ extension ActivityView: UITableViewDataSource {
                 cell.accessoryType = .disclosureIndicator
             case 1:
                 let dateCell = DatePickerCell()
+                dateCell.presenter = self
                 return dateCell
             case 2:
                 cell.textLabel?.text = "Repetir"

@@ -10,14 +10,16 @@ import Foundation
 
 class ActivityModel: RepositoryItem {
     var identifier, name, description: String
-    var startDate, repeating, stopRepeating: String
+    var startDate, stopRepeating: Date?
+    var repeating, category: Int
 
     required init() {
         self.name = ""
         self.description = ""
-        self.startDate = ""
-        self.repeating = ""
-        self.stopRepeating = ""
+        self.startDate = Date()
+        self.repeating = 0
+        self.category = 0
+        self.stopRepeating = nil
         identifier = UUID().uuidString
     }
 }
