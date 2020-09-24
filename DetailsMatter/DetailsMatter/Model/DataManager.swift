@@ -1,5 +1,5 @@
 //
-//  Database.swift
+//  DataManager.swift
 //  DetailsMatter
 //
 //  Created by Tales Conrado on 23/09/20.
@@ -19,10 +19,9 @@ class VaccineRepository: Repository {
 class PetRepository: Repository {
     typealias Item = PetModel
     var category: Category = .pet
-    
 }
 
-struct Database {
+struct DataManager {
     static let activity = ActivityRepository()
     static let vaccine = VaccineRepository()
     static let pet = PetRepository()

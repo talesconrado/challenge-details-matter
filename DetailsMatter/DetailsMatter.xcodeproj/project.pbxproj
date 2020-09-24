@@ -26,7 +26,7 @@
 		E9A6D7BA2512356300FFE94F /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6D7B92512356300FFE94F /* ActivityView.swift */; };
 		E9A6D7BE25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6D7BD25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift */; };
 		E9AC19902510F9AF00920DFC /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC198F2510F9AF00920DFC /* ActivityController.swift */; };
-		E9C3C0A1251B979E0071AF92 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C3C0A0251B979E0071AF92 /* Database.swift */; };
+		E9C3C0A1251B979E0071AF92 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C3C0A0251B979E0071AF92 /* DataManager.swift */; };
 		E9F73CFC2518D47E00B00C39 /* StopRepeatDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F73CFB2518D47E00B00C39 /* StopRepeatDetailsController.swift */; };
 		E9F73D042518D6ED00B00C39 /* StopRepeatDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F73D032518D6ED00B00C39 /* StopRepeatDetails.swift */; };
 		E9F73D162518EF2800B00C39 /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F73D152518EF2800B00C39 /* PickerCell.swift */; };
@@ -91,7 +91,7 @@
 		E9A6D7B92512356300FFE94F /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		E9A6D7BD25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityView+UITableViewDelegate+DataSource.swift"; sourceTree = "<group>"; };
 		E9AC198F2510F9AF00920DFC /* ActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
-		E9C3C0A0251B979E0071AF92 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		E9C3C0A0251B979E0071AF92 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		E9F73CFB2518D47E00B00C39 /* StopRepeatDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopRepeatDetailsController.swift; sourceTree = "<group>"; };
 		E9F73D032518D6ED00B00C39 /* StopRepeatDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopRepeatDetails.swift; sourceTree = "<group>"; };
 		E9F73D152518EF2800B00C39 /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 				FEF0B1432518DE55002775CF /* VaccineModel.swift */,
 				FEF0B1482518DE6B002775CF /* ActivityModel.swift */,
 				E93807122513B735007C25B3 /* ActivityValues.swift */,
-				E9C3C0A0251B979E0071AF92 /* Database.swift */,
+				E9C3C0A0251B979E0071AF92 /* DataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -565,7 +565,7 @@
 				E93A64B42513A01E0024DCAA /* RepeatDetailsController.swift in Sources */,
 				E9F73D042518D6ED00B00C39 /* StopRepeatDetails.swift in Sources */,
 				E9A6D7BA2512356300FFE94F /* ActivityView.swift in Sources */,
-				E9C3C0A1251B979E0071AF92 /* Database.swift in Sources */,
+				E9C3C0A1251B979E0071AF92 /* DataManager.swift in Sources */,
 				E974DAA82514E62F00B5A14E /* DatePickerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
