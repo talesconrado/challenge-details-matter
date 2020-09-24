@@ -17,8 +17,6 @@ class NewPetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.vacineCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellIdentifier")
-//        self.activityCollectionView.register(ActivityCellView.self, forCellWithReuseIdentifier: "cellIdentifier")
-        
         let nib = UINib(nibName: ActivityCellView.identifier, bundle: nil)
         activityCollectionView.register(nib, forCellWithReuseIdentifier: ActivityCellView.identifier)
         vacineCollectionView.delegate = self
