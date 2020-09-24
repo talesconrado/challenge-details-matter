@@ -16,7 +16,7 @@ class ActivityModel: RepositoryItem {
     required init() {
         self.name = ""
         self.description = ""
-        self.startDate = nil
+        self.startDate = Date()
         self.repeating = 0
         self.category = 0
         self.stopRepeating = nil
