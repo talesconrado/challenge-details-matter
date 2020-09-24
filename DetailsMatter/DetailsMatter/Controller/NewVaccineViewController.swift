@@ -12,6 +12,8 @@ class NewVaccineViewController: UIViewController {
 
     public weak var delegate: VaccineDelegate?
 
+    private let repo = DataManager.vaccine
+
     @IBOutlet weak var vaccineName: UITextField!
     @IBOutlet weak var vaccineDate: UITextField!
 
@@ -59,18 +61,14 @@ class NewVaccineViewController: UIViewController {
     }
 
     @objc private func save() {
-        guard let vaccineNameString = self.vaccineName.text else {
-            self.dismiss(animated: true, completion: nil)
-            return
-        }
+        if let vaccineNameString = self.vaccineName.text,
+           let vaccineDateString = self.vaccineDate.text,
+           let item = repo.createNewItem() {
 
-        guard let vaccineDateString = self.vaccineDate.text else {
-            self.dismiss(animated: true, completion: nil)
-            return
+            item.name = vaccineNameString
+            item.date = vaccineDateString
+            repo.update(item: item)
         }
-
-        print("Nome: \(vaccineNameString)\nData: \(vaccineDateString)")
-        // dataManager.saveVaccine(name: vaccineNameString, date: vaccineDateString)
         self.dismiss(animated: true, completion: nil)
     }
 

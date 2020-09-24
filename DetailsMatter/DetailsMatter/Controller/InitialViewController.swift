@@ -12,6 +12,12 @@ class InitialViewController: UIViewController {
 
     private let initial = Initial()
 
+    private let petRepository = DataManager.pet
+    private let activityRepository = DataManager.activity
+
+    private var petsDataSource: [PetModel] = []
+    private var activitiesDataSource: [ActivityModel] = []
+
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
@@ -19,6 +25,7 @@ class InitialViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavBar()
+        setupDS()
     }
 
     override func viewDidLoad() {
@@ -52,6 +59,19 @@ class InitialViewController: UIViewController {
         let nav = UINavigationController(rootViewController: newVaccineController)
         self.present(nav, animated: true, completion: nil)
     }
+
+    private func setupDS() {
+        self.petsDataSource = petRepository.readAllItems()
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        let today = formatter.string(from: Date())
+        
+        let allActivities = activityRepository.readAllItems()
+//        let todaysActivities = allActivities.filter { $0.startDate == today }
+//        self.activitiesDataSource = todaysActivities
+        self.activitiesDataSource = allActivities
+    }
 }
 
 extension InitialViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -61,9 +81,9 @@ extension InitialViewController: UICollectionViewDelegate, UICollectionViewDataS
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.initial.petsCollection {
-            return 5
+            return petsDataSource.count
         } else {
-            return 10
+            return activitiesDataSource.count
         }
     }
 
@@ -75,7 +95,8 @@ extension InitialViewController: UICollectionViewDelegate, UICollectionViewDataS
             else {
                 fatalError("Unable to cast cell ActivityCell to UICollectionCell")
             }
-            // cell.configure()
+            let plainImage = petsDataSource[indexPath.row].photo
+            cell.configure(imageString: plainImage)
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(
@@ -84,7 +105,7 @@ extension InitialViewController: UICollectionViewDelegate, UICollectionViewDataS
             else {
                 fatalError("Unable to cast cell ActivityCell to UICollectionCell")
             }
-            // cell.configure()
+            cell.configure(activity: activitiesDataSource[indexPath.row])
             return cell
         }
     }

@@ -31,9 +31,15 @@ class Initial: UIView {
         button.setTitle("Novo Pet", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .medium)
         button.setTitleColor(.black, for: .normal)
+        let mediumConfiguration = UIImage.SymbolConfiguration(scale: .medium)
+        let imageSymbol = UIImage(systemName: "plus", withConfiguration: mediumConfiguration)
+        let imageSymbolNew = imageSymbol?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        button.setImage(imageSymbolNew, for: .normal)
         button.contentHorizontalAlignment = .left
         button.layer.cornerRadius = 17
         button.contentHorizontalAlignment = .center
+        button.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 33).isActive = true
         return button
     }()
 
@@ -86,7 +92,6 @@ class Initial: UIView {
                                           constant: 40).isActive = true
         newPetButton.rightAnchor.constraint(equalTo: contentGroup.rightAnchor,
                                             constant: -16).isActive = true
-        newPetButton.widthAnchor.constraint(equalToConstant: 120).isActive = true
 
         contentGroup.addSubview(petsCollection)
         petsCollection.translatesAutoresizingMaskIntoConstraints = false
