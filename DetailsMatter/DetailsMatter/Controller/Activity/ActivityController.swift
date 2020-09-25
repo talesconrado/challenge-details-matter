@@ -58,15 +58,17 @@ class ActivityController: UIViewController {
     }
 
     @objc func saveActivity() {
-        if let newActivity = DataManager.activity.createNewItem() {
-            newActivity.name = contentView.titleTextField.text ?? ""
-            newActivity.description = contentView.descriptionTextField.text ?? ""
-            newActivity.startDate = contentView.selectedDate ?? Date()
-            newActivity.repeating = self.selectedRepeat ?? 0
-            newActivity.stopRepeating = self.selectedStopRepeatDate
-            newActivity.category = self.selectedCategory ?? 0
-            DataManager.activity.update(item: newActivity)
+        guard let newActivity = DataManager.activity.createNewItem() else {
+            return
         }
+        newActivity.name = contentView.titleTextField.text ?? ""
+        newActivity.description = contentView.descriptionTextField.text ?? ""
+        newActivity.startDate = contentView.selectedDate ?? Date()
+        newActivity.repeating = self.selectedRepeat ?? 0
+        newActivity.stopRepeating = self.selectedStopRepeatDate
+        newActivity.category = self.selectedCategory ?? 0
+        DataManager.activity.update(item: newActivity)
+        
         self.dismiss(animated: true, completion: nil)
     }
 }

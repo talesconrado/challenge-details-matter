@@ -46,6 +46,11 @@ class ActivityControllerTests: XCTestCase {
         //then
         XCTAssertEqual(detailsView.selectedOption, selectedOnController)
     }
+    
+    func test_saveActivity_OnTitleChange_isEqual() {
+        
+        sut.saveActivity()
+    }
 
     override func tearDown() {
         sut = nil
