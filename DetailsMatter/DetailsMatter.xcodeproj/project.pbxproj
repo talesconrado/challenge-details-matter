@@ -170,6 +170,8 @@
 				7C631B3A2518E7D2008EFB1E /* ActivityCell.xib */,
 			);
 			path = Xib;
+			sourceTree = "<group>";
+		};
 		E93A64B22513A00B0024DCAA /* Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -595,7 +597,6 @@
 				E973E9F8250F96540077E9C0 /* SceneDelegate.swift in Sources */,
 				7C631B3D2518EA9B008EFB1E /* ActivityCellView.swift in Sources */,
 				7C14D7192510FDF0003F9069 /* NewPetViewController.swift in Sources */,
-				E9AC198D2510EAE500920DFC /* Model.swift in Sources */,
 				E9AC19902510F9AF00920DFC /* ActivityController.swift in Sources */,
 				E9F73D162518EF2800B00C39 /* PickerCell.swift in Sources */,
 				FE6A96142513A711006D94C1 /* VaccinceDelegate.swift in Sources */,
