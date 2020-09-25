@@ -175,32 +175,20 @@
                                     <action selector="addNewActivity:" destination="GsB-88-QvO" eventType="touchUpInside" id="AcU-HC-Gb7"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="juo-Mc-WON">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="juo-Mc-WON">
                                 <rect key="frame" x="20" y="572" width="383" height="290"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="383" id="60c-G9-fiO"/>
+                                    <constraint firstAttribute="width" priority="250" constant="383" id="60c-G9-fiO"/>
                                     <constraint firstAttribute="height" constant="200" id="sbS-7x-xAM"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aNj-pS-WxI">
-                                    <size key="itemSize" width="382" height="200"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="aNj-pS-WxI">
+                                    <size key="itemSize" width="383" height="90"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="activityCollectionViewCell" id="mEP-MC-MmG">
-                                        <rect key="frame" x="0.5" y="0.0" width="382" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="382" height="90"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                        <color key="backgroundColor" red="0.078431372549019607" green="0.12941176470588234" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
-                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                                        <size key="customSize" width="382" height="90"/>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -208,8 +196,8 @@
                             <constraint firstItem="kgJ-d5-1LI" firstAttribute="trailing" secondItem="1a0-l3-Mdv" secondAttribute="trailing" constant="11" id="1F9-BT-Bml"/>
                             <constraint firstItem="x76-g9-WQL" firstAttribute="top" relation="lessThanOrEqual" secondItem="NBa-8P-AMv" secondAttribute="bottom" constant="28" id="4nS-tV-4L0"/>
                             <constraint firstItem="kgJ-d5-1LI" firstAttribute="trailing" secondItem="k5V-yh-arh" secondAttribute="trailing" constant="11" id="5oI-ZA-rAs"/>
-                            <constraint firstItem="kgJ-d5-1LI" firstAttribute="trailing" secondItem="juo-Mc-WON" secondAttribute="trailing" constant="11" id="60x-v0-snQ"/>
                             <constraint firstItem="6tx-M9-Szw" firstAttribute="top" relation="lessThanOrEqual" secondItem="6f6-KG-05F" secondAttribute="bottom" constant="15" id="8fE-uD-ydq"/>
+                            <constraint firstItem="kgJ-d5-1LI" firstAttribute="trailing" secondItem="juo-Mc-WON" secondAttribute="trailing" priority="750" constant="5" id="GPw-H2-Xms"/>
                             <constraint firstItem="6tx-M9-Szw" firstAttribute="leading" secondItem="Lg1-0w-ejd" secondAttribute="leading" id="GTE-pY-Wlf"/>
                             <constraint firstItem="3Gz-BB-utV" firstAttribute="leading" secondItem="kgJ-d5-1LI" secondAttribute="leading" constant="20" id="Idf-zk-C6H"/>
                             <constraint firstItem="TAY-Py-F3l" firstAttribute="top" relation="lessThanOrEqual" secondItem="k5V-yh-arh" secondAttribute="bottom" constant="8" id="MC6-2j-ahd"/>
@@ -222,19 +210,19 @@
                             <constraint firstItem="ECb-gr-kDj" firstAttribute="top" relation="lessThanOrEqual" secondItem="x76-g9-WQL" secondAttribute="bottom" constant="28" id="Z8E-R7-svi"/>
                             <constraint firstItem="rwt-um-Q4x" firstAttribute="leading" secondItem="kgJ-d5-1LI" secondAttribute="leading" id="aL3-hK-Tre"/>
                             <constraint firstItem="k5V-yh-arh" firstAttribute="centerY" secondItem="3Gz-BB-utV" secondAttribute="centerY" id="aVq-ZQ-sJr"/>
-                            <constraint firstItem="NBa-8P-AMv" firstAttribute="top" relation="lessThanOrEqual" secondItem="rwt-um-Q4x" secondAttribute="bottom" constant="36" id="f6I-nJ-WKl"/>
+                            <constraint firstItem="NBa-8P-AMv" firstAttribute="top" relation="lessThanOrEqual" secondItem="rwt-um-Q4x" secondAttribute="bottom" constant="20" id="f6I-nJ-WKl"/>
                             <constraint firstItem="Lg1-0w-ejd" firstAttribute="leading" secondItem="NBa-8P-AMv" secondAttribute="trailing" constant="30" id="fGK-F1-FMt"/>
                             <constraint firstItem="6tx-M9-Szw" firstAttribute="trailing" secondItem="Lg1-0w-ejd" secondAttribute="trailing" id="gPi-BL-g46"/>
                             <constraint firstItem="NBa-8P-AMv" firstAttribute="leading" secondItem="kgJ-d5-1LI" secondAttribute="leading" constant="20" id="gaW-k7-814"/>
                             <constraint firstItem="kgJ-d5-1LI" firstAttribute="trailing" secondItem="Lg1-0w-ejd" secondAttribute="trailing" constant="40" id="h1n-Ir-Ei2"/>
-                            <constraint firstItem="k5V-yh-arh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6tx-M9-Szw" secondAttribute="bottom" constant="32" id="k3t-PZ-4F0"/>
+                            <constraint firstItem="k5V-yh-arh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6tx-M9-Szw" secondAttribute="bottom" constant="20" id="k3t-PZ-4F0"/>
                             <constraint firstItem="6f6-KG-05F" firstAttribute="top" relation="lessThanOrEqual" secondItem="Lg1-0w-ejd" secondAttribute="bottom" constant="15" id="l08-wK-DJN"/>
                             <constraint firstItem="juo-Mc-WON" firstAttribute="top" secondItem="1a0-l3-Mdv" secondAttribute="bottom" constant="8" id="l1J-IF-fUZ"/>
                             <constraint firstItem="u6b-fI-2VL" firstAttribute="leading" secondItem="kgJ-d5-1LI" secondAttribute="leading" id="lNF-pq-FcL"/>
                             <constraint firstItem="2PT-4J-ErX" firstAttribute="leading" secondItem="kgJ-d5-1LI" secondAttribute="leading" constant="20" id="lmK-Ro-HSj"/>
                             <constraint firstItem="6f6-KG-05F" firstAttribute="trailing" secondItem="Lg1-0w-ejd" secondAttribute="trailing" id="o28-qc-oM4"/>
                             <constraint firstItem="u6b-fI-2VL" firstAttribute="top" secondItem="kgJ-d5-1LI" secondAttribute="top" id="pet-a9-YWK"/>
-                            <constraint firstItem="Lg1-0w-ejd" firstAttribute="top" relation="lessThanOrEqual" secondItem="rwt-um-Q4x" secondAttribute="bottom" constant="30" id="qH0-xV-awn"/>
+                            <constraint firstItem="Lg1-0w-ejd" firstAttribute="top" relation="lessThanOrEqual" secondItem="rwt-um-Q4x" secondAttribute="bottom" constant="24" id="qH0-xV-awn"/>
                             <constraint firstItem="TAY-Py-F3l" firstAttribute="leading" secondItem="kgJ-d5-1LI" secondAttribute="leading" constant="20" id="sdZ-8S-Nnv"/>
                             <constraint firstItem="6f6-KG-05F" firstAttribute="leading" secondItem="Lg1-0w-ejd" secondAttribute="leading" id="udh-Sf-SHy"/>
                             <constraint firstItem="1a0-l3-Mdv" firstAttribute="centerY" secondItem="2PT-4J-ErX" secondAttribute="centerY" id="uj1-ZX-E3w"/>
