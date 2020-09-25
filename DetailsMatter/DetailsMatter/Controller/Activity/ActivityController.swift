@@ -59,10 +59,15 @@ class ActivityController: UIViewController {
     }
 
     @objc func saveActivity() {
-        guard let newActivity = DataManager.activity.createNewItem() else {
-            return
-        }
+        guard let newActivity = DataManager.activity.createNewItem() else { return }
+        setViewFieldsToActivityModel(activity: newActivity)
+        owner?.activitieIDs.append(newActivity.identifier)
 
+        self.dismiss(animated: true, completion: nil)
+    }
+
+    func setViewFieldsToActivityModel(activity: ActivityModel) {
+        let newActivity = activity
         newActivity.name = contentView.titleTextField.text ?? ""
         newActivity.description = contentView.descriptionTextField.text ?? ""
         newActivity.startDate = contentView.selectedDate ?? Date()
@@ -70,9 +75,6 @@ class ActivityController: UIViewController {
         newActivity.stopRepeating = self.selectedStopRepeatDate
         newActivity.category = self.selectedCategory ?? 0
         DataManager.activity.update(item: newActivity)
-        owner?.activitieIDs.append(newActivity.identifier)
-
-        self.dismiss(animated: true, completion: nil)
     }
 }
 
