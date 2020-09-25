@@ -152,17 +152,19 @@ class Initial: UIView {
         let size = UIScreen.main.bounds.width * 0.8
         noTasks.widthAnchor.constraint(equalToConstant: size).isActive = true
         noTasks.heightAnchor.constraint(equalToConstant: size - 60).isActive = true
-    }
-
-    public func setupActivitiesCollection() {
-        noTasks.removeFromSuperview()
 
         contentGroup.addSubview(activitiesCollection)
+        activitiesCollection.isHidden = true
         activitiesCollection.translatesAutoresizingMaskIntoConstraints = false
         activitiesCollection.topAnchor.constraint(equalTo: reminderLabel.bottomAnchor,
                                                  constant: 16).isActive = true
         activitiesCollection.leadingAnchor.constraint(equalTo: contentGroup.leadingAnchor).isActive = true
         activitiesCollection.trailingAnchor.constraint(equalTo: contentGroup.trailingAnchor).isActive = true
         activitiesCollection.bottomAnchor.constraint(equalTo: contentGroup.bottomAnchor).isActive = true
+    }
+
+    public func showActivitiesCollection() {
+        noTasks.removeFromSuperview()
+        activitiesCollection.isHidden = false
     }
 }

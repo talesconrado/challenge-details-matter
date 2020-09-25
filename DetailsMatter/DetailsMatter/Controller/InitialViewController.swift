@@ -63,7 +63,7 @@ class InitialViewController: UIViewController {
     private func reloadDS() {
         self.petsDataSource = petRepository.readAllItems()
 
-        if !self.petsDataSource.isEmpty {
+        if self.petsDataSource.isEmpty {
             self.initial.setupPetsCollection()
         }
 
@@ -73,7 +73,8 @@ class InitialViewController: UIViewController {
         self.activitiesDataSource = todaysActivities
 
         if !self.activitiesDataSource.isEmpty {
-            self.initial.setupActivitiesCollection()
+            print(activitiesDataSource)
+            self.initial.showActivitiesCollection()
         }
     }
 }
