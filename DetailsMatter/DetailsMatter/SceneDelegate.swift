@@ -15,12 +15,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        let config = Config()
 
-        let storyboard = UIStoryboard(name: "NewPet", bundle: nil)
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "NewPet")
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.windowScene = windowScene
 
-        window = UIWindow(windowScene: windowScene)
-        window.rootViewController = initialViewController
-        window.makeKeyAndVisible()
+        //Change this function to call the controller you are currently testing
+        let navigation = config.mainController(.initialController)
+        window?.rootViewController = navigation
+
+        window?.makeKeyAndVisible()
     }
 }
