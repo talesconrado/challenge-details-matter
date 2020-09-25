@@ -10,6 +10,7 @@ import UIKit
 
 class ActivityController: UIViewController {
 
+    var owner: PetModel?
     var selectedRepeat: Int?
     var selectedCategory: Int?
     var selectedStopRepeat: Int?
@@ -47,7 +48,7 @@ class ActivityController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel,
                                                                                  target: self,
                                                                                  action: #selector(dismissModal))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
                                                                                   target: self,
                                                                                   action: #selector(saveActivity))
         navigationController?.navigationBar.tintColor = .primary
@@ -68,6 +69,7 @@ class ActivityController: UIViewController {
         newActivity.stopRepeating = self.selectedStopRepeatDate
         newActivity.category = self.selectedCategory ?? 0
         DataManager.activity.update(item: newActivity)
+        owner?.activitieIDs.append(newActivity.identifier)
         
         self.dismiss(animated: true, completion: nil)
     }
