@@ -72,7 +72,7 @@ class ActivityController: UIViewController {
         newActivity.description = contentView.descriptionTextField.text ?? "Descrição"
         newActivity.startDate = contentView.selectedDate ?? Date()
         newActivity.repeating = self.selectedRepeat ?? 0
-        newActivity.stopRepeating = self.selectedStopRepeatDate
+        newActivity.stopRepeating = self.selectedStopRepeatDate ?? Date.distantFuture
         newActivity.category = self.selectedCategory ?? 0
         DataManager.activity.update(item: newActivity)
     }
