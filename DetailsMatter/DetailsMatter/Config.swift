@@ -13,14 +13,17 @@ import UIKit
 enum CurrentlyTesting {
     case activityController
     case initialController
+    case newPetController
 }
 
 class Config {
     private let initialController = InitialViewController()
     private let testingActivityModal = ViewController()
+    
 
     public func mainController(_ controller: CurrentlyTesting) -> UIViewController {
-
+        let storyboard = UIStoryboard(name: "NewPet", bundle: nil)
+        let newPetScreen = storyboard.instantiateViewController(withIdentifier: "NewPet")
         var viewController: UIViewController
 
         switch controller {
@@ -28,6 +31,8 @@ class Config {
             viewController = testingActivityModal
         case .initialController:
             viewController = initialController
+        case .newPetController:
+            viewController = newPetScreen
         }
 
         let nav = UINavigationController(rootViewController: viewController)

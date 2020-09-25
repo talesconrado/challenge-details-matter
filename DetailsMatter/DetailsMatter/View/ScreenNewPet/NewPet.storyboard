@@ -16,23 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u6b-fI-2VL">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <color key="barTintColor" red="1" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
-                                <items>
-                                    <navigationItem title="Novo Pet" id="Vad-U5-lpi">
-                                        <barButtonItem key="leftBarButtonItem" title="Voltar" image="chevron.left" catalog="system" id="Fpe-0O-2Hm">
-                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="ZTb-bW-Hpw">
-                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <connections>
-                                                <action selector="saveNewPet:" destination="GsB-88-QvO" id="Ikp-qP-23F"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="rwt-um-Q4x">
                                 <rect key="frame" x="0.0" y="44" width="414" height="140"/>
                                 <constraints>
@@ -197,14 +180,13 @@
                             <constraint firstItem="x76-g9-WQL" firstAttribute="top" relation="lessThanOrEqual" secondItem="NBa-8P-AMv" secondAttribute="bottom" constant="28" id="4nS-tV-4L0"/>
                             <constraint firstItem="kgJ-d5-1LI" firstAttribute="trailing" secondItem="k5V-yh-arh" secondAttribute="trailing" constant="11" id="5oI-ZA-rAs"/>
                             <constraint firstItem="6tx-M9-Szw" firstAttribute="top" relation="lessThanOrEqual" secondItem="6f6-KG-05F" secondAttribute="bottom" constant="15" id="8fE-uD-ydq"/>
+                            <constraint firstItem="rwt-um-Q4x" firstAttribute="top" secondItem="kgJ-d5-1LI" secondAttribute="top" id="9Xh-yt-Qv8"/>
                             <constraint firstItem="kgJ-d5-1LI" firstAttribute="trailing" secondItem="juo-Mc-WON" secondAttribute="trailing" priority="750" constant="5" id="GPw-H2-Xms"/>
                             <constraint firstItem="6tx-M9-Szw" firstAttribute="leading" secondItem="Lg1-0w-ejd" secondAttribute="leading" id="GTE-pY-Wlf"/>
                             <constraint firstItem="3Gz-BB-utV" firstAttribute="leading" secondItem="kgJ-d5-1LI" secondAttribute="leading" constant="20" id="Idf-zk-C6H"/>
                             <constraint firstItem="TAY-Py-F3l" firstAttribute="top" relation="lessThanOrEqual" secondItem="k5V-yh-arh" secondAttribute="bottom" constant="8" id="MC6-2j-ahd"/>
                             <constraint firstItem="rwt-um-Q4x" firstAttribute="trailing" secondItem="kgJ-d5-1LI" secondAttribute="trailing" id="NMP-v8-BKA"/>
-                            <constraint firstItem="rwt-um-Q4x" firstAttribute="top" secondItem="u6b-fI-2VL" secondAttribute="bottom" id="ONc-YU-ogA"/>
                             <constraint firstItem="2PT-4J-ErX" firstAttribute="top" relation="lessThanOrEqual" secondItem="TAY-Py-F3l" secondAttribute="bottom" constant="22" id="SKF-ax-vnt"/>
-                            <constraint firstItem="u6b-fI-2VL" firstAttribute="trailing" secondItem="kgJ-d5-1LI" secondAttribute="trailing" id="V4s-em-mxC"/>
                             <constraint firstItem="x76-g9-WQL" firstAttribute="leading" secondItem="NBa-8P-AMv" secondAttribute="leading" id="Wmn-2N-TcW"/>
                             <constraint firstItem="Lg1-0w-ejd" firstAttribute="centerY" secondItem="NBa-8P-AMv" secondAttribute="centerY" id="YHq-8W-uWY"/>
                             <constraint firstItem="ECb-gr-kDj" firstAttribute="top" relation="lessThanOrEqual" secondItem="x76-g9-WQL" secondAttribute="bottom" constant="28" id="Z8E-R7-svi"/>
@@ -218,10 +200,8 @@
                             <constraint firstItem="k5V-yh-arh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6tx-M9-Szw" secondAttribute="bottom" constant="20" id="k3t-PZ-4F0"/>
                             <constraint firstItem="6f6-KG-05F" firstAttribute="top" relation="lessThanOrEqual" secondItem="Lg1-0w-ejd" secondAttribute="bottom" constant="15" id="l08-wK-DJN"/>
                             <constraint firstItem="juo-Mc-WON" firstAttribute="top" secondItem="1a0-l3-Mdv" secondAttribute="bottom" constant="8" id="l1J-IF-fUZ"/>
-                            <constraint firstItem="u6b-fI-2VL" firstAttribute="leading" secondItem="kgJ-d5-1LI" secondAttribute="leading" id="lNF-pq-FcL"/>
                             <constraint firstItem="2PT-4J-ErX" firstAttribute="leading" secondItem="kgJ-d5-1LI" secondAttribute="leading" constant="20" id="lmK-Ro-HSj"/>
                             <constraint firstItem="6f6-KG-05F" firstAttribute="trailing" secondItem="Lg1-0w-ejd" secondAttribute="trailing" id="o28-qc-oM4"/>
-                            <constraint firstItem="u6b-fI-2VL" firstAttribute="top" secondItem="kgJ-d5-1LI" secondAttribute="top" id="pet-a9-YWK"/>
                             <constraint firstItem="Lg1-0w-ejd" firstAttribute="top" relation="lessThanOrEqual" secondItem="rwt-um-Q4x" secondAttribute="bottom" constant="24" id="qH0-xV-awn"/>
                             <constraint firstItem="TAY-Py-F3l" firstAttribute="leading" secondItem="kgJ-d5-1LI" secondAttribute="leading" constant="20" id="sdZ-8S-Nnv"/>
                             <constraint firstItem="6f6-KG-05F" firstAttribute="leading" secondItem="Lg1-0w-ejd" secondAttribute="leading" id="udh-Sf-SHy"/>
@@ -235,7 +215,6 @@
                         <outlet property="activityCollectionView" destination="juo-Mc-WON" id="lYH-Ql-RsY"/>
                         <outlet property="ageTextField" destination="6f6-KG-05F" id="X1T-nk-W2O"/>
                         <outlet property="nameTextField" destination="Lg1-0w-ejd" id="4Vg-98-VH1"/>
-                        <outlet property="saveButton" destination="ZTb-bW-Hpw" id="rQQ-fR-ypE"/>
                         <outlet property="vacineCollectionView" destination="TAY-Py-F3l" id="H5I-vj-Mch"/>
                         <outlet property="weightTextField" destination="6tx-M9-Szw" id="fXH-FQ-z0k"/>
                     </connections>
@@ -247,6 +226,5 @@
     </scenes>
     <resources>
         <image name="Image" width="512" height="512"/>
-        <image name="chevron.left" catalog="system" width="96" height="128"/>
     </resources>
 </document>

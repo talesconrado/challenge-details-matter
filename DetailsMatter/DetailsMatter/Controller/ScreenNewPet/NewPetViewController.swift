@@ -21,8 +21,9 @@ class NewPetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.vacineCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellIdentifier")
+        vacineCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellIdentifier")
         let nib = UINib(nibName: ActivityCellView.identifier, bundle: nil)
+        setupNavBar()
         activityCollectionView.register(nib, forCellWithReuseIdentifier: ActivityCellView.identifier)
         vacineCollectionView.delegate = self
         vacineCollectionView.dataSource = self
@@ -41,6 +42,24 @@ class NewPetViewController: UIViewController {
     @IBAction func addNewActivity(_ sender: Any) {
         
     }
+    
+    @IBAction func back(_ sender: Any) {
+        
+    }
+    
+    private func setupNavBar() {
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.backgroundColor = .clear
+        navigationController?.navigationBar.topItem?.title = "Novo Pet"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain,
+                                                                   target: self, action: #selector(back))
+        navigationItem.leftBarButtonItem?.tintColor = .primary
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Salvar", style: .plain,
+                                                            target: self, action: #selector(saveNewPet))
+        navigationItem.rightBarButtonItem?.tintColor = .primary
+    }
+
     
 }
 
