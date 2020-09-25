@@ -10,15 +10,17 @@ import Foundation
 
 class ActivityRepository: Repository {
     typealias Item = ActivityModel
-    var category: Category = .activity
+    var category: String = Category.activity.rawValue
 }
+
 class VaccineRepository: Repository {
     typealias Item = VaccineModel
-    var category: Category = .vaccine
+    var category: String = Category.vaccine.rawValue
 }
+
 class PetRepository: Repository {
     typealias Item = PetModel
-    var category: Category = .pet
+    var category: String = Category.pet.rawValue
 }
 
 struct DataManager {
