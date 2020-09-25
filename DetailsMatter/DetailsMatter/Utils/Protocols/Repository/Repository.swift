@@ -17,7 +17,7 @@ enum Category: String {
 // MARK: - Repository
 protocol Repository {
     associatedtype Item: RepositoryItem
-    var category: Category { get }
+    var category: String { get }
 }
 
 extension Repository {
@@ -25,10 +25,10 @@ extension Repository {
     func createNewItem() -> Item? {
 
         let newItem = Item()
-        FileHelper().createDirectory(with: category.rawValue)
+        FileHelper().createDirectory(with: category)
         //persist file
         if let data = try? JSONEncoder().encode(newItem) {
-            FileHelper().createFile(with: data, name: newItem.identifier, path: category.rawValue)
+            FileHelper().createFile(with: data, name: newItem.identifier, path: category)
             return newItem
         }
 
@@ -38,11 +38,11 @@ extension Repository {
     func readAllItems() -> [Item] {
 
         //read the content of the documents path
-        let fileNames: [String] = FileHelper().contentsForDirectory(atPath: category.rawValue)
+        let fileNames: [String] = FileHelper().contentsForDirectory(atPath: category)
         var items: [Item] = []
         //retrieve items from fileNames and updating items array
         items = fileNames.compactMap { fileName in
-            let path = category.rawValue + "/" + fileName
+            let path = category + "/" + fileName
             if let data = FileHelper().retrieveFile(at: path) {
                 //decode from Data type to Item type
                 let item = try? JSONDecoder().decode(Item.self, from: data)
@@ -56,7 +56,7 @@ extension Repository {
 
     func readItem(identifier: String) -> Item? {
 
-        let path = category.rawValue + "/" + identifier
+        let path = category + "/" + identifier
 
         if let data = FileHelper().retrieveFile(at: path) {
             //decode from Data type to Item type
@@ -67,7 +67,7 @@ extension Repository {
     }
 
     func update(item: Item) {
-        let path = category.rawValue + "/" + item.identifier
+        let path = category + "/" + item.identifier
         //encode to Data format
         if let data = try? JSONEncoder().encode(item) {
             //overrite persisted file
@@ -77,7 +77,7 @@ extension Repository {
 
     func delete(identifier: String) {
         //remove file
-        let path = category.rawValue + "/" + identifier
+        let path = category + "/" + identifier
         FileHelper().removeFile(at: path)
     }
 }

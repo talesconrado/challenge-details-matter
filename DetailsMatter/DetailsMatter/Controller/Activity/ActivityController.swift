@@ -62,6 +62,7 @@ class ActivityController: UIViewController {
         guard let newActivity = DataManager.activity.createNewItem() else {
             return
         }
+
         newActivity.name = contentView.titleTextField.text ?? ""
         newActivity.description = contentView.descriptionTextField.text ?? ""
         newActivity.startDate = contentView.selectedDate ?? Date()
@@ -70,7 +71,7 @@ class ActivityController: UIViewController {
         newActivity.category = self.selectedCategory ?? 0
         DataManager.activity.update(item: newActivity)
         owner?.activitieIDs.append(newActivity.identifier)
-        
+
         self.dismiss(animated: true, completion: nil)
     }
 }
