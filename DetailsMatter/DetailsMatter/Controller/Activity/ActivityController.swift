@@ -68,8 +68,8 @@ class ActivityController: UIViewController {
 
     func setViewFieldsToActivityModel(activity: ActivityModel) {
         let newActivity = activity
-        newActivity.name = contentView.titleTextField.text ?? ""
-        newActivity.description = contentView.descriptionTextField.text ?? ""
+        newActivity.name = contentView.titleTextField.text ?? "Título"
+        newActivity.description = contentView.descriptionTextField.text ?? "Descrição"
         newActivity.startDate = contentView.selectedDate ?? Date()
         newActivity.repeating = self.selectedRepeat ?? 0
         newActivity.stopRepeating = self.selectedStopRepeatDate
