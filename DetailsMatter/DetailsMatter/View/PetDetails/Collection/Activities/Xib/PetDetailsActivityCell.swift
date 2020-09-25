@@ -18,9 +18,17 @@ class PetDetailsActivityCell: UICollectionViewCell {
     @IBOutlet weak var daysOfActivity: UILabel!
     @IBOutlet weak var activityDescription: UILabel!
     @IBOutlet weak var activityTitle: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+
+    override func draw(_ rect: CGRect) {
+        self.layer.cornerRadius = 10
+
+        self.iconActivity.layer.cornerRadius = 10
+        self.iconActivity.backgroundColor = .white
     }
 
     // Create configure function

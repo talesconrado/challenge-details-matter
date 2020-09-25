@@ -43,6 +43,9 @@
 		FEB5957B251B77A10011B23A /* PetDetailsActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEB59579251B77A10011B23A /* PetDetailsActivityCell.xib */; };
 		FEB59586251B77D30011B23A /* PetDetailsVaccineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB59584251B77D30011B23A /* PetDetailsVaccineCell.swift */; };
 		FEB59587251B77D30011B23A /* PetDetailsVaccineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEB59585251B77D30011B23A /* PetDetailsVaccineCell.xib */; };
+		FED22D08251E400B004CDCF9 /* PetDetailsActivitiesCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED22D07251E400B004CDCF9 /* PetDetailsActivitiesCollection.swift */; };
+		FED22D0D251E401A004CDCF9 /* PetDetailsVaccineCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED22D0C251E401A004CDCF9 /* PetDetailsVaccineCollection.swift */; };
+		FED22D12251E4A3D004CDCF9 /* PetDeatilsProfileContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED22D11251E4A3D004CDCF9 /* PetDeatilsProfileContainer.swift */; };
 		FEE4BFB32510F5CD000CA883 /* Initial.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE4BFB22510F5CD000CA883 /* Initial.swift */; };
 		FEE4BFBB25110286000CA883 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE4BFBA25110286000CA883 /* InitialViewController.swift */; };
 		FEE4BFBD2511068C000CA883 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE4BFBC2511068C000CA883 /* Config.swift */; };
@@ -108,6 +111,9 @@
 		FEB59579251B77A10011B23A /* PetDetailsActivityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetDetailsActivityCell.xib; sourceTree = "<group>"; };
 		FEB59584251B77D30011B23A /* PetDetailsVaccineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsVaccineCell.swift; sourceTree = "<group>"; };
 		FEB59585251B77D30011B23A /* PetDetailsVaccineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetDetailsVaccineCell.xib; sourceTree = "<group>"; };
+		FED22D07251E400B004CDCF9 /* PetDetailsActivitiesCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsActivitiesCollection.swift; sourceTree = "<group>"; };
+		FED22D0C251E401A004CDCF9 /* PetDetailsVaccineCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsVaccineCollection.swift; sourceTree = "<group>"; };
+		FED22D11251E4A3D004CDCF9 /* PetDeatilsProfileContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDeatilsProfileContainer.swift; sourceTree = "<group>"; };
 		FEE4BFB22510F5CD000CA883 /* Initial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initial.swift; sourceTree = "<group>"; };
 		FEE4BFBA25110286000CA883 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		FEE4BFBC2511068C000CA883 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -348,6 +354,8 @@
 			isa = PBXGroup;
 			children = (
 				FEB5956D251B76E40011B23A /* Xib */,
+				FED22D0C251E401A004CDCF9 /* PetDetailsVaccineCollection.swift */,
+				FED22D11251E4A3D004CDCF9 /* PetDeatilsProfileContainer.swift */,
 			);
 			path = Vaccines;
 			sourceTree = "<group>";
@@ -365,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				FEB5956F251B76F10011B23A /* Xib */,
+				FED22D07251E400B004CDCF9 /* PetDetailsActivitiesCollection.swift */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
@@ -608,11 +617,14 @@
 				E973E9F8250F96540077E9C0 /* SceneDelegate.swift in Sources */,
 				FEB59586251B77D30011B23A /* PetDetailsVaccineCell.swift in Sources */,
 				E9AC19902510F9AF00920DFC /* ActivityController.swift in Sources */,
+				FED22D0D251E401A004CDCF9 /* PetDetailsVaccineCollection.swift in Sources */,
 				E9F73D162518EF2800B00C39 /* PickerCell.swift in Sources */,
 				FE6A96142513A711006D94C1 /* VaccinceDelegate.swift in Sources */,
+				FED22D08251E400B004CDCF9 /* PetDetailsActivitiesCollection.swift in Sources */,
 				FE5DDBA825124933005A5040 /* PetCollectionCell.swift in Sources */,
 				E93A64B42513A01E0024DCAA /* RepeatDetailsController.swift in Sources */,
 				E9F73D042518D6ED00B00C39 /* StopRepeatDetails.swift in Sources */,
+				FED22D12251E4A3D004CDCF9 /* PetDeatilsProfileContainer.swift in Sources */,
 				E9AC198D2510EAE500920DFC /* Model.swift in Sources */,
 				E9A6D7BA2512356300FFE94F /* ActivityView.swift in Sources */,
 				E974DAA82514E62F00B5A14E /* DatePickerCell.swift in Sources */,

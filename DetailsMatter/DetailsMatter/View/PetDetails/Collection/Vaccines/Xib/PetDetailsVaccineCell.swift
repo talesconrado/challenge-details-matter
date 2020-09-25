@@ -14,10 +14,14 @@ class PetDetailsVaccineCell: UICollectionViewCell {
 
     // Create Outlets from Xib
     @IBOutlet weak var petPic: UIImageView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+
+    override func draw(_ rect: CGRect) {
+        self.layer.cornerRadius = 10
     }
 
     // Create configure function

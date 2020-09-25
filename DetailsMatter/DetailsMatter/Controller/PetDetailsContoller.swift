@@ -15,9 +15,12 @@ class PetDetailsController: UIViewController {
     @IBOutlet weak var vaccinesCollection: UICollectionView!
     @IBOutlet weak var activitiesCollection: UICollectionView!
 
+    override func viewWillAppear(_ animated: Bool) {
+        setupNavBar()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerCells()
 
         self.vaccinesCollection.dataSource = self
         self.vaccinesCollection.delegate = self
@@ -26,21 +29,22 @@ class PetDetailsController: UIViewController {
         self.activitiesCollection.delegate = self
     }
 
-    func navigationBarButton() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem:
-            .edit, target: self,
-                   action:
-            #selector(editPet))
-        navigationItem.rightBarButtonItem?.tintColor = .secondary
-        navigationController?.navigationBar.backgroundColor = .clear
-        navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.isTranslucent = true
+    private func setupNavBar() {
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.barTintColor = .primaryLight
+        navigationController?.navigationBar.tintColor = .black
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit,
+                                                            target: self, action: #selector(editPet))
+        navigationItem.rightBarButtonItem?.tintColor = .black
     }
+
     @objc func editPet() {
-//        self.present(UIViewController, animated: Bool) {
-//
-//        }
+        print("Edit Tapped")
     }
+
     @IBAction func vaccineButton(_ sender: Any) {
         let newVaccine = UIStoryboard(name: "NewVaccine", bundle: nil)
         let newVaccineController = newVaccine.instantiateViewController(withIdentifier: "NewVaccineStoryboard")
@@ -50,14 +54,7 @@ class PetDetailsController: UIViewController {
 
     @IBAction func activityButton(_ sender: Any) {
         // Code to call "Create Activity" screen
-    }
-
-    private func registerCells() {
-        let vaccineNib = UINib(nibName: PetDetailsVaccineCell.identifier, bundle: nil)
-        self.vaccinesCollection.register(vaccineNib, forCellWithReuseIdentifier: PetDetailsVaccineCell.identifier)
-
-        let activityNib = UINib(nibName: PetDetailsActivityCell.identifier, bundle: nil)
-        self.activitiesCollection.register(activityNib, forCellWithReuseIdentifier: PetDetailsActivityCell.identifier)
+        print("+ Atividade tapped")
     }
 }
 
