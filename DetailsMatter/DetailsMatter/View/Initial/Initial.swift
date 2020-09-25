@@ -13,7 +13,7 @@ class Initial: UIView {
     private let mascot: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 160, height: 130))
         imageView.image = UIImage(named: "cat")
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 
@@ -41,6 +41,22 @@ class Initial: UIView {
         button.widthAnchor.constraint(equalToConstant: 120).isActive = true
         button.heightAnchor.constraint(equalToConstant: 33).isActive = true
         return button
+    }()
+
+    private let nothingToshow: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = UIImage(named: "nothingToShow")
+        return imageView
+    }()
+
+    private let noTasks: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.image = UIImage(named: "noTasksForToday")
+        return imageView
     }()
 
     public let petsCollection: PetsCollection = {
@@ -85,9 +101,26 @@ class Initial: UIView {
         mascot.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         mascot.bottomAnchor.constraint(equalTo: contentGroup.topAnchor,
                                        constant: 40).isActive = true
+        let frameWidth = UIScreen.main.bounds.width * 0.35
+        mascot.widthAnchor.constraint(equalToConstant: frameWidth).isActive = true
+
+        contentGroup.addSubview(nothingToshow)
+        nothingToshow.translatesAutoresizingMaskIntoConstraints = false
+        nothingToshow.centerYAnchor.constraint(equalTo: contentGroup.centerYAnchor, constant: -50).isActive = true
+        nothingToshow.centerXAnchor.constraint(equalTo: contentGroup.centerXAnchor).isActive = true
+        let imageSize = UIScreen.main.bounds.width * 0.9
+        nothingToshow.widthAnchor.constraint(equalToConstant: imageSize).isActive = true
+        nothingToshow.heightAnchor.constraint(equalToConstant: imageSize).isActive = true
 
         contentGroup.addSubview(newPetButton)
         newPetButton.translatesAutoresizingMaskIntoConstraints = false
+        newPetButton.topAnchor.constraint(equalTo: nothingToshow.bottomAnchor).isActive = true
+        newPetButton.centerXAnchor.constraint(equalTo: nothingToshow.centerXAnchor).isActive = true
+    }
+
+    public func setupPetsCollection() {
+        nothingToshow.removeFromSuperview()
+
         newPetButton.topAnchor.constraint(equalTo: contentGroup.topAnchor,
                                           constant: 40).isActive = true
         newPetButton.rightAnchor.constraint(equalTo: contentGroup.rightAnchor,
@@ -96,7 +129,7 @@ class Initial: UIView {
         contentGroup.addSubview(petsCollection)
         petsCollection.translatesAutoresizingMaskIntoConstraints = false
         petsCollection.topAnchor.constraint(equalTo: newPetButton.bottomAnchor,
-                                            constant: 25).isActive = true
+                                            constant: 8).isActive = true
         petsCollection.leadingAnchor.constraint(equalTo: contentGroup.leadingAnchor).isActive = true
         petsCollection.trailingAnchor.constraint(equalTo: contentGroup.trailingAnchor).isActive = true
         petsCollection.heightAnchor.constraint(equalToConstant: 155).isActive = true
@@ -104,9 +137,25 @@ class Initial: UIView {
         contentGroup.addSubview(reminderLabel)
         reminderLabel.translatesAutoresizingMaskIntoConstraints = false
         reminderLabel.topAnchor.constraint(equalTo: petsCollection.bottomAnchor,
-                                           constant: 30).isActive = true
+                                           constant: 16).isActive = true
         reminderLabel.leadingAnchor.constraint(equalTo: contentGroup.leadingAnchor,
                                                constant: 16).isActive = true
+
+        contentGroup.addSubview(noTasks)
+        noTasks.translatesAutoresizingMaskIntoConstraints = false
+        if UIScreen.main.bounds.width > 400 {
+            noTasks.topAnchor.constraint(equalTo: reminderLabel.bottomAnchor, constant: 60).isActive = true
+        } else {
+            noTasks.topAnchor.constraint(equalTo: reminderLabel.bottomAnchor).isActive = true
+        }
+        noTasks.centerXAnchor.constraint(equalTo: contentGroup.centerXAnchor).isActive = true
+        let size = UIScreen.main.bounds.width * 0.8
+        noTasks.widthAnchor.constraint(equalToConstant: size).isActive = true
+        noTasks.heightAnchor.constraint(equalToConstant: size - 60).isActive = true
+    }
+
+    public func setupActivitiesCollection() {
+        noTasks.removeFromSuperview()
 
         contentGroup.addSubview(activitiesCollection)
         activitiesCollection.translatesAutoresizingMaskIntoConstraints = false

@@ -25,7 +25,7 @@ class InitialViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavBar()
-        setupDS()
+        reloadDS()
     }
 
     override func viewDidLoad() {
@@ -60,17 +60,21 @@ class InitialViewController: UIViewController {
         self.present(nav, animated: true, completion: nil)
     }
 
-    private func setupDS() {
+    private func reloadDS() {
         self.petsDataSource = petRepository.readAllItems()
 
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        let today = formatter.string(from: Date())
-        
+        if !self.petsDataSource.isEmpty {
+            self.initial.setupPetsCollection()
+        }
+
+        let today = Date()
         let allActivities = activityRepository.readAllItems()
-//        let todaysActivities = allActivities.filter { $0.startDate == today }
-//        self.activitiesDataSource = todaysActivities
-        self.activitiesDataSource = allActivities
+        let todaysActivities = allActivities.filter { ($0.startDate! ... $0.stopRepeating!).contains(today) }
+        self.activitiesDataSource = todaysActivities
+
+        if !self.activitiesDataSource.isEmpty {
+            self.initial.setupActivitiesCollection()
+        }
     }
 }
 

@@ -19,10 +19,12 @@ class PetCollectionCell: UICollectionViewCell {
     }
 
     override func draw(_ rect: CGRect) {
+        self.layer.cornerRadius = 10
         self.imageView.backgroundColor = .secondary
         self.imageView.clipsToBounds = true
         self.imageView.contentMode = .scaleAspectFill
         self.imageView.layer.cornerRadius = 10
+        self.imageView.image = UIImage(named: "petDefault")
     }
 
     public func configure(imageString: String) {
