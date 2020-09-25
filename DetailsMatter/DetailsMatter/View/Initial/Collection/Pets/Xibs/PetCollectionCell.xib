@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,11 +21,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="QtU-yE-jAQ" secondAttribute="height" multiplier="1:1" id="2Av-wa-Veu"/>
-                            <constraint firstAttribute="width" constant="155" id="ot6-ZZ-gDe"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="155" id="ot6-ZZ-gDe"/>
                         </constraints>
                     </imageView>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="QtU-yE-jAQ" secondAttribute="trailing" id="3wN-xc-hE1"/>
@@ -32,7 +34,6 @@
                 <constraint firstAttribute="bottom" secondItem="QtU-yE-jAQ" secondAttribute="bottom" id="uzh-4b-bjB"/>
                 <constraint firstItem="QtU-yE-jAQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xb4-xu-Bj8"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="imageView" destination="QtU-yE-jAQ" id="1Xe-Uo-JpS"/>
             </connections>
