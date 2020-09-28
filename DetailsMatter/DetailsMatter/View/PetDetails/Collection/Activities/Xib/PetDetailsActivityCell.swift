@@ -32,5 +32,18 @@ class PetDetailsActivityCell: UICollectionViewCell {
     }
 
     // Create configure function
-    // public func configure(pet: PetActivity) {}
+    
+     public func configure(activity: ActivityModel) {
+        activityDescription.text = activity.description
+        activityTitle.text = activity.name
+        let calendar = Calendar.current
+        if let date = activity.startDate {
+            let hour = calendar.component(.hour, from: date)
+            let minutes = calendar.component(.minute, from: date)
+            self.timeForActivity.text = "\(hour):\(minutes)"
+        } else {
+            self.timeForActivity.text = "00:00"
+        }
+     }
+    
 }

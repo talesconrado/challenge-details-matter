@@ -9,5 +9,5 @@
 import Foundation
 
 protocol VaccineDelegate: AnyObject {
-    func saveVaccine()
+    func reloadData()
 }

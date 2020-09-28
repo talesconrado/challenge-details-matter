@@ -13,8 +13,9 @@ class PetDetailsVaccineCell: UICollectionViewCell {
     public static let identifier: String = "PetDetailsVaccineCell"
 
     // Create Outlets from Xib
-    @IBOutlet weak var petPic: UIImageView!
-
+    @IBOutlet weak var vaccineTitle: UILabel!
+    @IBOutlet weak var vaccineDate: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,6 +26,9 @@ class PetDetailsVaccineCell: UICollectionViewCell {
     }
 
     // Create configure function
-    // public func configure(vaccine: VaccineModel) {}
+     public func configure(vaccine: VaccineModel) {
+        vaccineTitle.text = vaccine.name
+        vaccineDate.text = vaccine.date
+     }
 
 }

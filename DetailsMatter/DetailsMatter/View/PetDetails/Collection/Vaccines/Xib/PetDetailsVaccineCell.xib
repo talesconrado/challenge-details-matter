@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,22 +16,32 @@
                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6xk-IY-afD">
-                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oz7-Ro-3uK">
+                        <rect key="frame" x="29" y="29.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNm-M5-Sjg">
+                        <rect key="frame" x="29" y="50.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" red="0.078431372550000003" green="0.12941176469999999" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="6xk-IY-afD" secondAttribute="trailing" id="TWU-hz-A09"/>
-                <constraint firstItem="6xk-IY-afD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="krc-KJ-eEi"/>
-                <constraint firstAttribute="bottom" secondItem="6xk-IY-afD" secondAttribute="bottom" id="mhi-rI-Kd6"/>
-                <constraint firstItem="6xk-IY-afD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="tlj-9V-OMS"/>
+                <constraint firstItem="oz7-Ro-3uK" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-10" id="7N8-Mg-gq9"/>
+                <constraint firstItem="oz7-Ro-3uK" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="9hU-N6-bsx"/>
+                <constraint firstItem="cNm-M5-Sjg" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Hg8-54-CfB"/>
+                <constraint firstItem="cNm-M5-Sjg" firstAttribute="top" secondItem="oz7-Ro-3uK" secondAttribute="bottom" id="MX1-Ui-8or"/>
+                <constraint firstItem="oz7-Ro-3uK" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="NJ5-OU-Pwy"/>
             </constraints>
             <size key="customSize" width="79" height="60"/>
             <connections>
-                <outlet property="PetPic" destination="6xk-IY-afD" id="O0e-TY-BZF"/>
+                <outlet property="vaccineDate" destination="cNm-M5-Sjg" id="U6m-UE-4LC"/>
+                <outlet property="vaccineTitle" destination="oz7-Ro-3uK" id="5Mc-fd-0qU"/>
             </connections>
             <point key="canvasLocation" x="10.144927536231885" y="99.107142857142847"/>
         </collectionViewCell>
