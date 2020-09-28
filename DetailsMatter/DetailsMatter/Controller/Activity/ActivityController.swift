@@ -10,6 +10,7 @@ import UIKit
 
 class ActivityController: UIViewController {
 
+    var owner: PetModel?
     var selectedRepeat: Int?
     var selectedCategory: Int?
     var selectedStopRepeat: Int?
@@ -47,7 +48,7 @@ class ActivityController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel,
                                                                                  target: self,
                                                                                  action: #selector(dismissModal))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
                                                                                   target: self,
                                                                                   action: #selector(saveActivity))
         navigationController?.navigationBar.tintColor = .primary
@@ -58,16 +59,22 @@ class ActivityController: UIViewController {
     }
 
     @objc func saveActivity() {
-        if let newActivity = DataManager.activity.createNewItem() {
-            newActivity.name = contentView.titleTextField.text ?? ""
-            newActivity.description = contentView.descriptionTextField.text ?? ""
-            newActivity.startDate = contentView.selectedDate ?? Date()
-            newActivity.repeating = self.selectedRepeat ?? 0
-            newActivity.stopRepeating = self.selectedStopRepeatDate
-            newActivity.category = self.selectedCategory ?? 0
-            DataManager.activity.update(item: newActivity)
-        }
+        guard let newActivity = DataManager.activity.createNewItem() else { return }
+        setViewFieldsToActivityModel(activity: newActivity)
+        owner?.activitieIDs.append(newActivity.identifier)
+
         self.dismiss(animated: true, completion: nil)
+    }
+
+    func setViewFieldsToActivityModel(activity: ActivityModel) {
+        let newActivity = activity
+        newActivity.name = contentView.titleTextField.text ?? "Título"
+        newActivity.description = contentView.descriptionTextField.text ?? "Descrição"
+        newActivity.startDate = contentView.selectedDate ?? Date()
+        newActivity.repeating = self.selectedRepeat ?? 0
+        newActivity.stopRepeating = self.selectedStopRepeatDate ?? Date.distantFuture
+        newActivity.category = self.selectedCategory ?? 0
+        DataManager.activity.update(item: newActivity)
     }
 }
 
