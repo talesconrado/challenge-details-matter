@@ -17,20 +17,10 @@ enum CurrentlyTesting {
 
 class Config {
     private let initialController = InitialViewController()
-    private let testingActivityModal = ViewController()
 
     public func mainController(_ controller: CurrentlyTesting) -> UIViewController {
 
-        var viewController: UIViewController
-
-        switch controller {
-        case .activityController:
-            viewController = testingActivityModal
-        case .initialController:
-            viewController = initialController
-        }
-
-        let nav = UINavigationController(rootViewController: viewController)
+        let nav = UINavigationController(rootViewController: initialController)
         nav.navigationBar.prefersLargeTitles = true
         nav.navigationBar.isTranslucent = true
         nav.navigationBar.shadowImage = UIImage()
