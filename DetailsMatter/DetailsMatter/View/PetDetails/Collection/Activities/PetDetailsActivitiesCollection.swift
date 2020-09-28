@@ -18,7 +18,7 @@ class PetDetailsActivitiesCollection: UICollectionView {
         flow.minimumLineSpacing = CGFloat(8)
         return flow
     }()
-    
+
     init() {
         super.init(frame: .zero, collectionViewLayout: layout)
         sharedInit()

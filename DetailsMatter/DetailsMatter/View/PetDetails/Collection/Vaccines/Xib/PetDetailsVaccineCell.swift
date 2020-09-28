@@ -15,7 +15,7 @@ class PetDetailsVaccineCell: UICollectionViewCell {
     // Create Outlets from Xib
     @IBOutlet weak var vaccineTitle: UILabel!
     @IBOutlet weak var vaccineDate: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

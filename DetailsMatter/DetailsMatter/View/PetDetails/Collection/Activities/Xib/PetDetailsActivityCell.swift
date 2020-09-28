@@ -32,7 +32,7 @@ class PetDetailsActivityCell: UICollectionViewCell {
     }
 
     // Create configure function
-    
+
      public func configure(activity: ActivityModel) {
         activityDescription.text = activity.description
         activityTitle.text = activity.name
@@ -45,5 +45,5 @@ class PetDetailsActivityCell: UICollectionViewCell {
             self.timeForActivity.text = "00:00"
         }
      }
-    
+
 }

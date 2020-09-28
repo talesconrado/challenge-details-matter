@@ -22,7 +22,6 @@ class PetDetailsController: UIViewController {
     @IBOutlet weak var ageIndicator: UILabel!
     @IBOutlet weak var weightIndicator: UILabel!
     @IBOutlet weak var petImage: UIImageView!
-    
     override func viewWillAppear(_ animated: Bool) {
         setupNavBar()
     }
@@ -39,9 +38,6 @@ class PetDetailsController: UIViewController {
 
     private func setupNavBar() {
         navigationController?.navigationBar.prefersLargeTitles = false
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.barTintColor = .primaryLight
         navigationController?.navigationBar.tintColor = .black
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit,
@@ -59,7 +55,7 @@ class PetDetailsController: UIViewController {
             petNameLabel.text = petModel.name
             ageIndicator.text = petModel.age
             weightIndicator.text = petModel.weight
-            if let imageData = Data(base64Encoded: petModel.photo){
+            if let imageData = Data(base64Encoded: petModel.photo) {
                 petImage.image = UIImage(data: imageData)
             } else {
                 print("aqui nao tem nada")
@@ -71,7 +67,6 @@ class PetDetailsController: UIViewController {
     @objc func editPet() {
         print("Edit Tapped")
     }
-    
 
     @IBAction func vaccineButton(_ sender: Any) {
         let newVaccine = UIStoryboard(name: "NewVaccine", bundle: nil)
@@ -117,16 +112,15 @@ extension PetDetailsController: UICollectionViewDelegate, UICollectionViewDataSo
     }
 }
 
-extension PetDetailsController : PetDelegate {
+extension PetDetailsController: PetDelegate {
     func reloadActivityData() {
         activityData = activityRepo.readAllItems()
         activitiesCollection.reloadData()
     }
-    
+
     func reloadVaccineData() {
         vaccineData = vaccineRepo.readAllItems()
         vaccinesCollection.reloadData()
     }
-    
-    
+
 }
