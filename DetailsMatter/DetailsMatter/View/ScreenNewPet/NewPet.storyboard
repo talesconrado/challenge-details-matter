@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="rwt-um-Q4x">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="rwt-um-Q4x">
                                 <rect key="frame" x="0.0" y="44" width="414" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" priority="750" constant="140" id="mvn-hh-YBF"/>
@@ -215,6 +215,7 @@
                         <outlet property="activityCollectionView" destination="juo-Mc-WON" id="lYH-Ql-RsY"/>
                         <outlet property="ageTextField" destination="6f6-KG-05F" id="X1T-nk-W2O"/>
                         <outlet property="nameTextField" destination="Lg1-0w-ejd" id="4Vg-98-VH1"/>
+                        <outlet property="petImage" destination="rwt-um-Q4x" id="2lb-Lq-pxm"/>
                         <outlet property="vacineCollectionView" destination="TAY-Py-F3l" id="H5I-vj-Mch"/>
                         <outlet property="weightTextField" destination="6tx-M9-Szw" id="fXH-FQ-z0k"/>
                     </connections>
@@ -225,6 +226,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="512" height="512"/>
+        <image name="dog" width="160" height="150"/>
     </resources>
 </document>

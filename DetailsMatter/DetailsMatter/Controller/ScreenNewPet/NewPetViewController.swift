@@ -18,12 +18,14 @@ class NewPetViewController: UIViewController {
     @IBOutlet var weightTextField: UITextField!
     @IBOutlet var saveButton: UIBarButtonItem!
     @IBOutlet var nameTextField: UITextField!
+    @IBOutlet var petImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         vacineCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellIdentifier")
         let nib = UINib(nibName: ActivityCellView.identifier, bundle: nil)
         setupNavBar()
+        setupActionSheetCaller()
         activityCollectionView.register(nib, forCellWithReuseIdentifier: ActivityCellView.identifier)
         vacineCollectionView.delegate = self
         vacineCollectionView.dataSource = self
@@ -32,7 +34,7 @@ class NewPetViewController: UIViewController {
     }
     
     @IBAction func saveNewPet(_ sender: Any) {
-    
+        
     }
     
     @IBAction func addNewVacine(_ sender: Any) {
@@ -43,24 +45,52 @@ class NewPetViewController: UIViewController {
         
     }
     
-    @IBAction func back(_ sender: Any) {
-        
-    }
-    
     private func setupNavBar() {
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.backgroundColor = .clear
         navigationController?.navigationBar.topItem?.title = "Novo Pet"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain,
-                                                                   target: self, action: #selector(back))
-        navigationItem.leftBarButtonItem?.tintColor = .primary
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Salvar", style: .plain,
                                                             target: self, action: #selector(saveNewPet))
         navigationItem.rightBarButtonItem?.tintColor = .primary
     }
-
     
+    private func setupActionSheetCaller() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.displayActionSheet))
+        tap.numberOfTouchesRequired = 1
+        self.petImage.addGestureRecognizer(tap)
+        self.petImage.isUserInteractionEnabled = true
+    }
+    
+    @objc private func displayActionSheet() {
+            let optionalMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+
+            let choosePhoto = UIAlertAction(title: "Choose Photo", style: .default, handler: importPicture)
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+            optionalMenu.addAction(choosePhoto)
+            optionalMenu.addAction(cancel)
+
+            self.present(optionalMenu, animated: true, completion: nil)
+        }
+
+}
+
+extension NewPetViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        guard let image = info[.editedImage] as? UIImage else { return }
+        petImage.image = image
+        dismiss(animated: true, completion: nil)
+    }
+
+    func importPicture(alert: UIAlertAction) {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        present(picker, animated: true)
+    }
 }
 
 
@@ -70,8 +100,7 @@ extension NewPetViewController: UICollectionViewDelegate, UICollectionViewDataSo
         var number = 0
         if collectionView == self.vacineCollectionView {
             number = 10
-        }
-        else if collectionView == self.activityCollectionView{
+        } else if collectionView == self.activityCollectionView {
             number = 5
         }
         return number
@@ -81,10 +110,9 @@ extension NewPetViewController: UICollectionViewDelegate, UICollectionViewDataSo
         var cell: UICollectionViewCell? = nil
         if collectionView == self.vacineCollectionView {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "vacineCollectionViewCell", for: indexPath) as UICollectionViewCell?
-        }
-        else if collectionView == self.activityCollectionView {
+        } else if collectionView == self.activityCollectionView {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: ActivityCellView.identifier, for: indexPath) as? ActivityCellView as ActivityCellView?
-            }
+        }
         return cell!
     }
 }
