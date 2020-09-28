@@ -46,6 +46,7 @@ class ActivityRepositoryTests: XCTestCase {
 
     override func tearDown() {
         removeCreatedActivities()
+        activitiesCreated = []
         sut = nil
     }
 }

@@ -19,7 +19,7 @@ class ActivityModel: RepositoryItem {
         self.startDate = Date()
         self.repeating = 0
         self.category = 0
-        self.stopRepeating = nil
+        self.stopRepeating = Date.distantFuture
         identifier = UUID().uuidString
     }
 }
