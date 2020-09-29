@@ -11,22 +11,18 @@ import UIKit
 //
 
 enum CurrentlyTesting {
-    case activityController
     case initialController
     case detailsController
 }
 
 class Config {
     private let initialController = InitialViewController()
-    private let testingActivityModal = ViewController()
 
     public func mainController(_ controller: CurrentlyTesting) -> UIViewController {
 
         var viewController: UIViewController
 
         switch controller {
-        case .activityController:
-            viewController = testingActivityModal
         case .initialController:
             viewController = initialController
         case .detailsController:

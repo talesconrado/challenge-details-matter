@@ -19,7 +19,6 @@
 		E94BD0ED251CE745009DD22C /* ActivityControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94BD0EC251CE745009DD22C /* ActivityControllerTests.swift */; };
 		E973E9F6250F96540077E9C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973E9F5250F96540077E9C0 /* AppDelegate.swift */; };
 		E973E9F8250F96540077E9C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973E9F7250F96540077E9C0 /* SceneDelegate.swift */; };
-		E973E9FA250F96540077E9C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973E9F9250F96540077E9C0 /* ViewController.swift */; };
 		E973E9FF250F96550077E9C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E973E9FE250F96550077E9C0 /* Assets.xcassets */; };
 		E973EA02250F96550077E9C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E973EA00250F96550077E9C0 /* LaunchScreen.storyboard */; };
 		E973EA11250F9C0A0077E9C0 /* DetailsMatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973EA10250F9C0A0077E9C0 /* DetailsMatterTests.swift */; };
@@ -90,7 +89,6 @@
 		E973E9F2250F96540077E9C0 /* DetailsMatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DetailsMatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E973E9F5250F96540077E9C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E973E9F7250F96540077E9C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E973E9F9250F96540077E9C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E973E9FE250F96550077E9C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E973EA01250F96550077E9C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E973EA03250F96550077E9C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -266,7 +264,6 @@
 			isa = PBXGroup;
 			children = (
 				E9AC198E2510F96300920DFC /* Activity */,
-				E973E9F9250F96540077E9C0 /* ViewController.swift */,
 				FEE4BFBA25110286000CA883 /* InitialViewController.swift */,
 				FE6A960E2513A288006D94C1 /* NewVaccineViewController.swift */,
 				68F13FEC251B70020034CE32 /* PetDetailsContoller.swift */,
