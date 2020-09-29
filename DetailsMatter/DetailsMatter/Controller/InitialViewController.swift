@@ -67,10 +67,7 @@ class InitialViewController: UIViewController {
             self.initial.setupPetsCollection()
         }
 
-        let today = Date()
-        let allActivities = activityRepository.readAllItems()
-        let todaysActivities = allActivities.filter { ($0.startDate! ... $0.stopRepeating!).contains(today) }
-        self.activitiesDataSource = todaysActivities
+        self.activitiesDataSource = activityRepository.getTodaysActivities()
 
         if !self.activitiesDataSource.isEmpty {
             print(activitiesDataSource)
