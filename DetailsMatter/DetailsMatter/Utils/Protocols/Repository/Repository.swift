@@ -80,4 +80,8 @@ extension Repository {
         let path = category + "/" + identifier
         FileHelper().removeFile(at: path)
     }
+
+    func filterByIds(from list: [String]) -> [Item] {
+        return readAllItems().filter({ list.contains($0.identifier) })
+    }
 }
