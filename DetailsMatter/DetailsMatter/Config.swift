@@ -11,8 +11,8 @@ import UIKit
 //
 
 enum CurrentlyTesting {
-    case activityController
     case initialController
+    case detailsController
 }
 
 class Config {
@@ -20,7 +20,17 @@ class Config {
 
     public func mainController(_ controller: CurrentlyTesting) -> UIViewController {
 
-        let nav = UINavigationController(rootViewController: initialController)
+        var viewController: UIViewController
+
+        switch controller {
+        case .initialController:
+            viewController = initialController
+        case .detailsController:
+            let petDetails = UIStoryboard(name: "PetDetailsView", bundle: nil)
+            viewController = petDetails.instantiateViewController(withIdentifier: "PetDetailsStoryboard")
+        }
+
+        let nav = UINavigationController(rootViewController: viewController)
         nav.navigationBar.prefersLargeTitles = true
         nav.navigationBar.isTranslucent = true
         nav.navigationBar.shadowImage = UIImage()
