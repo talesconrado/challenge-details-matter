@@ -20,8 +20,17 @@ class NewPetViewController: UIViewController {
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var petImage: UIImageView!
 
+    private var petModel: PetModel?
+    private let petRepository = DataManager.pet
+    private let vaccineRepository = DataManager.vaccine
+    private let activityRepository = DataManager.activity
+
+    private var vaccineData: [VaccineModel] = []
+    private var activityData: [ActivityModel] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupModel()
         setupNavBar()
         setupActionSheetCaller()
         vacineCollectionView.delegate = self
@@ -30,17 +39,31 @@ class NewPetViewController: UIViewController {
         activityCollectionView.dataSource = self
     }
 
+    private func setupModel() {
+        petModel = petRepository.createNewItem()
+    }
+
     @IBAction func saveNewPet(_ sender: Any) {
-        if let newPet = DataManager.pet.createNewItem() {
+        if let newPet = petModel {
             newPet.name = nameTextField.text!
             newPet.weight = weightTextField.text!
             newPet.age = ageTextField.text!
             DataManager.pet.update(item: newPet)
         }
     }
-    @IBAction func addNewVacine(_ sender: Any) {}
+    @IBAction func addNewVacine(_ sender: Any) {
+        let newVaccine = UIStoryboard(name: "NewVaccine", bundle: nil)
+        let newVaccineController = newVaccine.instantiateViewController(withIdentifier: "NewVaccineStoryboard")
+        let nav = UINavigationController(rootViewController: newVaccineController)
+        self.present(nav, animated: true, completion: nil)
+    }
 
-    @IBAction func addNewActivity(_ sender: Any) {}
+    @IBAction func addNewActivity(_ sender: Any) {
+        let newActivityController = ActivityController()
+        let nav = UINavigationController(rootViewController: newActivityController)
+        newActivityController.owner = petModel
+        self.present(nav, animated: true)
+    }
 
     private func setupNavBar() {
         navigationController?.navigationBar.isHidden = false
@@ -100,9 +123,9 @@ extension NewPetViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var number = 0
         if collectionView == self.vacineCollectionView {
-            number = 10
+            number = vaccineData.count
         } else if collectionView == self.activityCollectionView {
-            number = 5
+            number = activityData.count
         }
         return number
     }
@@ -110,14 +133,38 @@ extension NewPetViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        var cell: UICollectionViewCell?
         if collectionView == self.vacineCollectionView {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: VaccineCellView.identifier,
-                                                      for: indexPath) as? VaccineCellView
-        } else if collectionView == self.activityCollectionView {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: ActivityCellView.identifier,
-                                                      for: indexPath) as? ActivityCellView
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: VaccineCellView.identifier,
+                for: indexPath) as? VaccineCellView
+            else {
+                fatalError("Unable to cast cell ActivityCell to UICollectionCell")
+            }
+            cell.configure(vaccine: vaccineData[indexPath.row])
+            return cell
+        } else {
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: ActivityCellView.identifier,
+                for: indexPath) as? ActivityCellView
+            else {
+                fatalError("Unable to cast cell ActivityCell to UICollectionCell")
+            }
+            cell.configure(activity: activityData[indexPath.row])
+            return cell
         }
-        return cell!
+    }
+}
+
+extension NewPetViewController: PetDelegate {
+    func reloadActivityData() {
+        if let petModel = self.petModel {
+            self.activityData = activityRepository.filterByIds(from: petModel.activitieIDs)
+        }
+    }
+
+    func reloadVaccineData() {
+        if let petModel = self.petModel {
+            self.vaccineData = vaccineRepository.filterByIds(from: petModel.vaccinesIDs)
+        }
     }
 }
