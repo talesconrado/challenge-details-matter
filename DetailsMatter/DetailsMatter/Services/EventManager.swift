@@ -12,6 +12,8 @@ import UserNotifications
 class EventManager {
 
     private let eventStore = EKEventStore()
+    private let userDefaults = UserDefaults.standard
+    private let calendar = Calendar.current
 
     private func checkAuthorizationStatusEK() -> Bool {
         switch EKEventStore.authorizationStatus(for: EKEntityType.reminder) {
@@ -31,6 +33,9 @@ class EventManager {
         self.eventStore.requestAccess(
             to: .reminder,
             completion: { (granted: Bool, error: Error?) in
+                if let error = error {
+                    print("EventManager Error - Request Access Error: \(error)")
+                }
                 status = granted
             }
         )
@@ -57,23 +62,26 @@ class EventManager {
                                                           endDate: activity.stopRepeating!)
             reminder.addRecurrenceRule(recurrenceRule)
         }
-
-        return self.saveReminder(reminder: reminder)
+        
+        if self.saveReminder(reminder: reminder) {
+            activity.reminderID = reminder.calendarItemIdentifier
+            return true
+        } else {
+            return false
+        }
     }
 
     private func saveReminder(reminder: EKReminder) -> Bool {
         do {
             try eventStore.save(reminder, commit: true)
-            
             return true
-            
         } catch {
             return false
         }
     }
 
-//    private func deleteReminder() -> Bool {}
-//    private func editReminder(with: EKReminder) -> Bool {}
+//    public func deleteReminder(reminderID: String) -> Bool {}
+//    public func editReminder(activity: ActivityModel) -> Bool {}
 
     private func createRecurenceRule(repeating: Int, endDate: Date) -> EKRecurrenceRule {
         var frequency: EKRecurrenceFrequency = .daily
