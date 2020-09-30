@@ -12,6 +12,7 @@ class ActivityModel: RepositoryItem {
     var identifier, name, description: String
     var startDate, stopRepeating: Date?
     var repeating, category: Int
+    var reminderID: String?
 
     required init() {
         self.name = ""

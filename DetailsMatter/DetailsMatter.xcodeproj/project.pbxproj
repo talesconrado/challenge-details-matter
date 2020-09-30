@@ -55,6 +55,7 @@
 		FE6A960A25139F29006D94C1 /* NewVaccine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6A960925139F29006D94C1 /* NewVaccine.storyboard */; };
 		FE6A960F2513A288006D94C1 /* NewVaccineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6A960E2513A288006D94C1 /* NewVaccineViewController.swift */; };
 		FE6A96142513A711006D94C1 /* VaccinceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6A96132513A711006D94C1 /* VaccinceDelegate.swift */; };
+		FE9011522524A24E003EF740 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9011512524A24E003EF740 /* EventManager.swift */; };
 		FEB5957A251B77A10011B23A /* PetDetailsActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB59578251B77A10011B23A /* PetDetailsActivityCell.swift */; };
 		FEB5957B251B77A10011B23A /* PetDetailsActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEB59579251B77A10011B23A /* PetDetailsActivityCell.xib */; };
 		FEB59586251B77D30011B23A /* PetDetailsVaccineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB59584251B77D30011B23A /* PetDetailsVaccineCell.swift */; };
@@ -142,6 +143,7 @@
 		FE6A960925139F29006D94C1 /* NewVaccine.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewVaccine.storyboard; sourceTree = "<group>"; };
 		FE6A960E2513A288006D94C1 /* NewVaccineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVaccineViewController.swift; sourceTree = "<group>"; };
 		FE6A96132513A711006D94C1 /* VaccinceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinceDelegate.swift; sourceTree = "<group>"; };
+		FE9011512524A24E003EF740 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		FEB59578251B77A10011B23A /* PetDetailsActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsActivityCell.swift; sourceTree = "<group>"; };
 		FEB59579251B77A10011B23A /* PetDetailsActivityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetDetailsActivityCell.xib; sourceTree = "<group>"; };
 		FEB59584251B77D30011B23A /* PetDetailsVaccineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsVaccineCell.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 		E973E9F4250F96540077E9C0 /* DetailsMatter */ = {
 			isa = PBXGroup;
 			children = (
+				FE9011502524A23C003EF740 /* Services */,
 				E9AC19892510E8DA00920DFC /* View */,
 				E9AC19882510E8D300920DFC /* Controller */,
 				E9AC19872510E8B100920DFC /* Model */,
@@ -347,11 +350,11 @@
 		E9AC19872510E8B100920DFC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E9C3C0A0251B979E0071AF92 /* DataManager.swift */,
 				FEF0B13E2518DE30002775CF /* PetModel.swift */,
 				FEF0B1432518DE55002775CF /* VaccineModel.swift */,
 				FEF0B1482518DE6B002775CF /* ActivityModel.swift */,
 				E93807122513B735007C25B3 /* ActivityValues.swift */,
-				E9C3C0A0251B979E0071AF92 /* DataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -464,6 +467,14 @@
 				FE6A960925139F29006D94C1 /* NewVaccine.storyboard */,
 			);
 			path = NewVaccine;
+			sourceTree = "<group>";
+		};
+		FE9011502524A23C003EF740 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FE9011512524A24E003EF740 /* EventManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		FEB5956B251B76B80011B23A /* Collection */ = {
@@ -739,6 +750,7 @@
 				68F13FED251B70020034CE32 /* PetDetailsContoller.swift in Sources */,
 				FE5DDBAC2512494C005A5040 /* ActivitiesCollectionCell.swift in Sources */,
 				E9484BC0251A389A0006256D /* FileHelper.swift in Sources */,
+				FE9011522524A24E003EF740 /* EventManager.swift in Sources */,
 				FE5DDBB125126B77005A5040 /* ActivitiesCollection.swift in Sources */,
 				E9A6D7BE25125DEB00FFE94F /* ActivityView+UITableViewDelegate+DataSource.swift in Sources */,
 				E974DA9D2514D8FD00B5A14E /* DetailsView.swift in Sources */,
