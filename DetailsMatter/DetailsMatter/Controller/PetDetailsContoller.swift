@@ -46,8 +46,8 @@ class PetDetailsController: UIViewController {
     }
 
     func loadDataSource() {
-        vaccineData = vaccineRepo.readAllItems()
-        activityData = activityRepo.readAllItems()
+        vaccineData = vaccineRepo.filterByIds(from: petModel!.vaccinesIDs)
+        activityData = activityRepo.filterByIds(from: petModel!.activitieIDs)
     }
 
     func setupPetModel() {

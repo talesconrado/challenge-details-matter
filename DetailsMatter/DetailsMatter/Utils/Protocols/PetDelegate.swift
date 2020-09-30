@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PetDelegate {
+protocol PetDelegate: AnyObject {
     func reloadActivityData()
     func reloadVaccineData()
 }

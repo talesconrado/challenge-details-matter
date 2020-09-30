@@ -12,6 +12,7 @@ import UIKit
 
 enum CurrentlyTesting {
     case initialController
+    case newPetController
     case detailsController
 }
 
@@ -19,12 +20,15 @@ class Config {
     private let initialController = InitialViewController()
 
     public func mainController(_ controller: CurrentlyTesting) -> UIViewController {
-
+        let storyboard = UIStoryboard(name: "NewPet", bundle: nil)
+        let newPetScreen = storyboard.instantiateViewController(withIdentifier: "NewPet")
         var viewController: UIViewController
 
         switch controller {
         case .initialController:
             viewController = initialController
+        case .newPetController:
+            viewController = newPetScreen
         case .detailsController:
             let petDetails = UIStoryboard(name: "PetDetailsView", bundle: nil)
             viewController = petDetails.instantiateViewController(withIdentifier: "PetDetailsStoryboard")
