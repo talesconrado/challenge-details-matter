@@ -6,8 +6,6 @@
 //  Copyright © 2020 Tales Conrado. All rights reserved.
 //
 
-//swiftlint:disable force_cast
-
 import UIKit
 
 class NewPetViewController: UIViewController {
