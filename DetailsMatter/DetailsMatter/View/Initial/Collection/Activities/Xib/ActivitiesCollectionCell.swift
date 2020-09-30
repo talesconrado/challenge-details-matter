@@ -11,6 +11,7 @@ import UIKit
 class ActivitiesCollectionCell: UICollectionViewCell {
 
     public static let identifier: String = "ActivitiesCollectionCell"
+    let assetsNames = ["food", "paw", "medicine"]
 
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var activityCard: UIView!
@@ -30,6 +31,7 @@ class ActivitiesCollectionCell: UICollectionViewCell {
     }
 
     public func configure(activity: ActivityModel) {
+        let icon = UIImage(named: assetsNames[activity.category])
         let calendar = Calendar.current
         //let formatter = DateFormatter()
 
@@ -43,5 +45,7 @@ class ActivitiesCollectionCell: UICollectionViewCell {
 
         self.activityTitle.text = activity.name
         self.activityDescription.text = activity.description
+        self.activityIcon.backgroundColor = .white
+        self.activityIcon.image = icon
     }
 }

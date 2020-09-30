@@ -11,14 +11,15 @@ import UIKit
 class PetsCollection: UICollectionView {
 
     private let layout: UICollectionViewFlowLayout = {
-            let flow = UICollectionViewFlowLayout()
-            flow.scrollDirection = .horizontal
-            flow.itemSize = CGSize(width: 155, height: 155)
-            flow.minimumInteritemSpacing = CGFloat(16)
-            flow.minimumLineSpacing = CGFloat(16)
+        let flow = UICollectionViewFlowLayout()
+        flow.scrollDirection = .horizontal
+        let itemSize = UIScreen.main.bounds.width * 0.35
+        flow.itemSize = CGSize(width: itemSize, height: itemSize)
+        flow.minimumInteritemSpacing = CGFloat(16)
+        flow.minimumLineSpacing = CGFloat(16)
         flow.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-            return flow
-        }()
+        return flow
+    }()
 
     init() {
         super.init(frame: .zero, collectionViewLayout: layout)
