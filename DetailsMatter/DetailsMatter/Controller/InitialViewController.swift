@@ -50,7 +50,13 @@ class InitialViewController: UIViewController {
     }
 
     private func setupActions() {
-        self.initial.newPetButton.addTarget(self, action: #selector(newVaccine), for: .touchUpInside)
+        self.initial.newPetButton.addTarget(self, action: #selector(newPet), for: .touchUpInside)
+    }
+
+    @objc private func newPet() {
+        let storyboard = UIStoryboard(name: "NewPet", bundle: nil)
+        let newPetScreen = storyboard.instantiateViewController(withIdentifier: "NewPet")
+        navigationController?.pushViewController(newPetScreen, animated: true)
     }
 
     @objc private func newVaccine() {
