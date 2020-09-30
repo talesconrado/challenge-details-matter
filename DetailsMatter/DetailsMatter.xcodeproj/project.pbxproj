@@ -55,6 +55,7 @@
 		FE6A960A25139F29006D94C1 /* NewVaccine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6A960925139F29006D94C1 /* NewVaccine.storyboard */; };
 		FE6A960F2513A288006D94C1 /* NewVaccineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6A960E2513A288006D94C1 /* NewVaccineViewController.swift */; };
 		FE6A96142513A711006D94C1 /* VaccinceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6A96132513A711006D94C1 /* VaccinceDelegate.swift */; };
+		FE706A5E2524F70300FFC0A7 /* InitialDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE706A5D2524F70300FFC0A7 /* InitialDelegate.swift */; };
 		FE9011522524A24E003EF740 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9011512524A24E003EF740 /* EventManager.swift */; };
 		FEB5957A251B77A10011B23A /* PetDetailsActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB59578251B77A10011B23A /* PetDetailsActivityCell.swift */; };
 		FEB5957B251B77A10011B23A /* PetDetailsActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEB59579251B77A10011B23A /* PetDetailsActivityCell.xib */; };
@@ -143,6 +144,7 @@
 		FE6A960925139F29006D94C1 /* NewVaccine.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewVaccine.storyboard; sourceTree = "<group>"; };
 		FE6A960E2513A288006D94C1 /* NewVaccineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVaccineViewController.swift; sourceTree = "<group>"; };
 		FE6A96132513A711006D94C1 /* VaccinceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinceDelegate.swift; sourceTree = "<group>"; };
+		FE706A5D2524F70300FFC0A7 /* InitialDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialDelegate.swift; sourceTree = "<group>"; };
 		FE9011512524A24E003EF740 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		FEB59578251B77A10011B23A /* PetDetailsActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsActivityCell.swift; sourceTree = "<group>"; };
 		FEB59579251B77A10011B23A /* PetDetailsActivityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetDetailsActivityCell.xib; sourceTree = "<group>"; };
@@ -559,6 +561,7 @@
 				E93A64BB2513A26F0024DCAA /* ActivityDetailsDelegate.swift */,
 				E9FE97EC2524D99500387141 /* PetDelegate.swift */,
 				FE6A96132513A711006D94C1 /* VaccinceDelegate.swift */,
+				FE706A5D2524F70300FFC0A7 /* InitialDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -776,6 +779,7 @@
 				FED22D0D251E401A004CDCF9 /* PetDetailsVaccineCollection.swift in Sources */,
 				E9F73D162518EF2800B00C39 /* PickerCell.swift in Sources */,
 				FE6A96142513A711006D94C1 /* VaccinceDelegate.swift in Sources */,
+				FE706A5E2524F70300FFC0A7 /* InitialDelegate.swift in Sources */,
 				FED22D08251E400B004CDCF9 /* PetDetailsActivitiesCollection.swift in Sources */,
 				FE5DDBA825124933005A5040 /* PetCollectionCell.swift in Sources */,
 				E9484BCA251A457B0006256D /* RepositoryItem.swift in Sources */,

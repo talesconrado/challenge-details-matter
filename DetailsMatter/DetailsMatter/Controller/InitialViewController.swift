@@ -116,4 +116,29 @@ extension InitialViewController: UICollectionViewDelegate, UICollectionViewDataS
             return cell
         }
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == self.initial.petsCollection {
+            let petDetails = UIStoryboard(name: "PetDetailsView", bundle: nil)
+            if let petDetailsController = petDetails.instantiateViewController(
+                withIdentifier: "PetDetailsStoryboard") as? PetDetailsController {
+                petDetailsController.petModel = petsDataSource[indexPath.row]
+                self.navigationController?.pushViewController(petDetailsController, animated: true)
+            } else {
+                print("InitialViewCotroller Error - Wrong Storyboard Identifier")
+            }
+        }
+    }
+}
+
+extension InitialViewController: InitialDelegate {
+    func reloadPets() {
+        self.petsDataSource = petRepository.readAllItems()
+        self.initial.petsCollection.reloadData()
+    }
+
+    func reloadTodaysActivities() {
+        self.activitiesDataSource = activityRepository.getTodaysActivities()
+        self.initial.activitiesCollection.reloadData()
+    }
 }
