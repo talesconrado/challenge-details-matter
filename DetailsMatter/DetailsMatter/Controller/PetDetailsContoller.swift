@@ -76,8 +76,9 @@ class PetDetailsController: UIViewController {
     }
 
     @IBAction func activityButton(_ sender: Any) {
-        // Code to call "Create Activity" screen
-        print("+ Atividade tapped")
+        let activityController = ActivityController()
+        let nav = UINavigationController(rootViewController: activityController)
+        self.present(nav, animated: true, completion: nil)
     }
 }
 
