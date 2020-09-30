@@ -1,0 +1,98 @@
+//
+//  EventManager.swift
+//  DetailsMatter
+//
+//  Created by Pedro Sousa on 30/09/20.
+//  Copyright © 2020 Tales Conrado. All rights reserved.
+//
+
+import EventKit
+import UserNotifications
+
+class EventManager {
+
+    private let eventStore = EKEventStore()
+
+    private func checkAuthorizationStatusEK() -> Bool {
+        switch EKEventStore.authorizationStatus(for: EKEntityType.reminder) {
+        case EKAuthorizationStatus.authorized:
+            return true
+        case EKAuthorizationStatus.denied:
+            return false
+        case EKAuthorizationStatus.notDetermined:
+            return self.requestAccess()
+        default:
+            return false
+        }
+    }
+
+    public func requestAccess() -> Bool {
+        var status: Bool = false
+        self.eventStore.requestAccess(
+            to: .reminder,
+            completion: { (granted: Bool, error: Error?) in
+                status = granted
+            }
+        )
+        return status
+    }
+
+    @discardableResult
+    public func createReminder(activity: ActivityModel) -> Bool {
+        let reminder: EKReminder = EKReminder(eventStore: self.eventStore)
+        reminder.title = activity.name
+
+        // Adding the alarm
+        guard let startDate = activity.startDate else {
+            print("EventManager Error - The reminder's start date is invalid.")
+            return false
+        }
+        let alarm: EKAlarm = EKAlarm(absoluteDate: startDate)
+        reminder.addAlarm(alarm)
+
+        // Adding the recurrence rule
+        // Excluding one-time activity
+        if activity.repeating > 0 {
+            let recurrenceRule = self.createRecurenceRule(repeating: activity.repeating,
+                                                          endDate: activity.stopRepeating!)
+            reminder.addRecurrenceRule(recurrenceRule)
+        }
+
+        return self.saveReminder(reminder: reminder)
+    }
+
+    private func saveReminder(reminder: EKReminder) -> Bool {
+        do {
+            try eventStore.save(reminder, commit: true)
+            
+            return true
+            
+        } catch {
+            return false
+        }
+    }
+
+//    private func deleteReminder() -> Bool {}
+//    private func editReminder(with: EKReminder) -> Bool {}
+
+    private func createRecurenceRule(repeating: Int, endDate: Date) -> EKRecurrenceRule {
+        var frequency: EKRecurrenceFrequency = .daily
+        var interval: Int = 1
+        let end = EKRecurrenceEnd(end: endDate)
+
+        switch repeating {
+        case 2:
+            frequency = .weekly
+        case 3:
+            frequency = .weekly
+            interval = 2
+        case 4:
+            frequency = .monthly
+        default:
+            frequency = .daily
+        }
+
+        let rule = EKRecurrenceRule(recurrenceWith: frequency, interval: interval, end: end)
+        return rule
+    }
+}
