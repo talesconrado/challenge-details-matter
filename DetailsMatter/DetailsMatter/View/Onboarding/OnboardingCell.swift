@@ -107,7 +107,7 @@ class OnboardingCell: UICollectionViewCell, UITextViewDelegate {
             text.leftAnchor.constraint(equalTo: leftAnchor, constant: 52),
             text.rightAnchor.constraint(equalTo: rightAnchor, constant: -52),
 
-            button.topAnchor.constraint(equalTo: text.bottomAnchor, constant: 35),
+            button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -47),
             button.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 72),
             button.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -72),
             button.heightAnchor.constraint(equalToConstant: 50)
@@ -134,7 +134,7 @@ class OnboardingCell: UICollectionViewCell, UITextViewDelegate {
             text.leftAnchor.constraint(equalTo: leftAnchor, constant: 52),
             text.rightAnchor.constraint(equalTo: rightAnchor, constant: -52),
 
-            button.topAnchor.constraint(equalTo: text.bottomAnchor, constant: 115),
+            button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -47),
             button.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 72),
             button.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -72),
             button.heightAnchor.constraint(equalToConstant: 50)
@@ -156,9 +156,9 @@ class OnboardingCell: UICollectionViewCell, UITextViewDelegate {
         catHeight.isActive = true
 
         NSLayoutConstraint.activate([
-            text.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 72),
+            text.topAnchor.constraint(lessThanOrEqualTo: safeAreaLayoutGuide.topAnchor, constant: 72),
             text.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            text.heightAnchor.constraint(equalToConstant: 100),
+            text.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.15),
             text.leftAnchor.constraint(equalTo: leftAnchor, constant: 52),
             text.rightAnchor.constraint(equalTo: rightAnchor, constant: -52),
 
@@ -168,7 +168,7 @@ class OnboardingCell: UICollectionViewCell, UITextViewDelegate {
             catImage.topAnchor.constraint(equalTo: text.bottomAnchor, constant: 70),
             catImage.rightAnchor.constraint(equalTo: rightAnchor, constant: -40),
 
-            button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -105),
+            button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -47),
             button.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 72),
             button.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -72),
             button.heightAnchor.constraint(equalToConstant: 50)

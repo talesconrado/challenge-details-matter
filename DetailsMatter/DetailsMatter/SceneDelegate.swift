@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             UserDefaults.standard.set(true, forKey: "FirstLaunch")
             navigation = config.mainController(.onboardingController)
         } else {
-            navigation = config.mainController(.initialController)
+            navigation = config.mainController(.onboardingController)
         }
 
         window?.rootViewController = navigation
