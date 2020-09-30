@@ -9,6 +9,7 @@
 import UIKit
 
 class DatePickerCell: UITableViewCell {
+
     weak var presenter: ActivityView?
 
     lazy var dateLabel: UILabel = {
