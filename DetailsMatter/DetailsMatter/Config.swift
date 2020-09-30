@@ -13,10 +13,12 @@ import UIKit
 enum CurrentlyTesting {
     case initialController
     case detailsController
+    case onboardingController
 }
 
 class Config {
     private let initialController = InitialViewController()
+    private let onboardingController = OnboardingController()
 
     public func mainController(_ controller: CurrentlyTesting) -> UIViewController {
 
@@ -28,6 +30,8 @@ class Config {
         case .detailsController:
             let petDetails = UIStoryboard(name: "PetDetailsView", bundle: nil)
             viewController = petDetails.instantiateViewController(withIdentifier: "PetDetailsStoryboard")
+        case .onboardingController:
+            viewController = onboardingController
         }
 
         let nav = UINavigationController(rootViewController: viewController)

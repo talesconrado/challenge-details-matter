@@ -10,6 +10,9 @@
 		68C77424252224A00054052B /* AcitivityDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C77423252224A00054052B /* AcitivityDelegate.swift */; };
 		68F13FEA251A33250034CE32 /* PetDetailsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F13FE9251A33250034CE32 /* PetDetailsView.storyboard */; };
 		68F13FED251B70020034CE32 /* PetDetailsContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F13FEC251B70020034CE32 /* PetDetailsContoller.swift */; };
+		E93385C225237C95008FEAF9 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93385C125237C95008FEAF9 /* OnboardingView.swift */; };
+		E93385CA25243BED008FEAF9 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93385C925243BED008FEAF9 /* OnboardingCell.swift */; };
+		E93385CF2524424F008FEAF9 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93385CE2524424F008FEAF9 /* OnboardingController.swift */; };
 		E93807132513B735007C25B3 /* ActivityValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93807122513B735007C25B3 /* ActivityValues.swift */; };
 		E93A64B42513A01E0024DCAA /* RepeatDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93A64B32513A01E0024DCAA /* RepeatDetailsController.swift */; };
 		E93A64BC2513A26F0024DCAA /* ActivityDetailsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93A64BB2513A26F0024DCAA /* ActivityDetailsDelegate.swift */; };
@@ -80,6 +83,9 @@
 		68C77423252224A00054052B /* AcitivityDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcitivityDelegate.swift; sourceTree = "<group>"; };
 		68F13FE9251A33250034CE32 /* PetDetailsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PetDetailsView.storyboard; sourceTree = "<group>"; };
 		68F13FEC251B70020034CE32 /* PetDetailsContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsContoller.swift; sourceTree = "<group>"; };
+		E93385C125237C95008FEAF9 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		E93385C925243BED008FEAF9 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
+		E93385CE2524424F008FEAF9 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		E93807122513B735007C25B3 /* ActivityValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityValues.swift; sourceTree = "<group>"; };
 		E93A64B32513A01E0024DCAA /* RepeatDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatDetailsController.swift; sourceTree = "<group>"; };
 		E93A64BB2513A26F0024DCAA /* ActivityDetailsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +173,15 @@
 				68F13FE9251A33250034CE32 /* PetDetailsView.storyboard */,
 			);
 			path = PetDetails;
+			sourceTree = "<group>";
+		};
+		E93385C025237C82008FEAF9 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E93385C125237C95008FEAF9 /* OnboardingView.swift */,
+				E93385C925243BED008FEAF9 /* OnboardingCell.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		E93A64B22513A00B0024DCAA /* Details */ = {
@@ -270,6 +285,7 @@
 				FEE4BFBA25110286000CA883 /* InitialViewController.swift */,
 				FE6A960E2513A288006D94C1 /* NewVaccineViewController.swift */,
 				68F13FEC251B70020034CE32 /* PetDetailsContoller.swift */,
+				E93385CE2524424F008FEAF9 /* OnboardingController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -277,6 +293,7 @@
 		E9AC19892510E8DA00920DFC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E93385C025237C82008FEAF9 /* Onboarding */,
 				68F13FE6251A20D30034CE32 /* PetDetails */,
 				E9AC19912510FC6900920DFC /* Activity */,
 				FE6A960825139EF5006D94C1 /* NewVaccine */,
@@ -637,7 +654,6 @@
 				E9F73CFC2518D47E00B00C39 /* StopRepeatDetailsController.swift in Sources */,
 				E93807132513B735007C25B3 /* ActivityValues.swift in Sources */,
 				FE5DDBAF25125E32005A5040 /* Colors.swift in Sources */,
-				E973E9FA250F96540077E9C0 /* ViewController.swift in Sources */,
 				68F13FED251B70020034CE32 /* PetDetailsContoller.swift in Sources */,
 				FE5DDBAC2512494C005A5040 /* ActivitiesCollectionCell.swift in Sources */,
 				E9484BC0251A389A0006256D /* FileHelper.swift in Sources */,
@@ -651,10 +667,12 @@
 				E9484BC5251A45710006256D /* Repository.swift in Sources */,
 				FEE4BFBD2511068C000CA883 /* Config.swift in Sources */,
 				FEE4BFBB25110286000CA883 /* InitialViewController.swift in Sources */,
+				E93385CF2524424F008FEAF9 /* OnboardingController.swift in Sources */,
 				FEE4BFB32510F5CD000CA883 /* Initial.swift in Sources */,
 				E973E9F8250F96540077E9C0 /* SceneDelegate.swift in Sources */,
 				FEB59586251B77D30011B23A /* PetDetailsVaccineCell.swift in Sources */,
 				E9AC19902510F9AF00920DFC /* ActivityController.swift in Sources */,
+				E93385CA25243BED008FEAF9 /* OnboardingCell.swift in Sources */,
 				FED22D0D251E401A004CDCF9 /* PetDetailsVaccineCollection.swift in Sources */,
 				E9F73D162518EF2800B00C39 /* PickerCell.swift in Sources */,
 				FE6A96142513A711006D94C1 /* VaccinceDelegate.swift in Sources */,
@@ -662,6 +680,7 @@
 				FE5DDBA825124933005A5040 /* PetCollectionCell.swift in Sources */,
 				E9484BCA251A457B0006256D /* RepositoryItem.swift in Sources */,
 				E93A64B42513A01E0024DCAA /* RepeatDetailsController.swift in Sources */,
+				E93385C225237C95008FEAF9 /* OnboardingView.swift in Sources */,
 				E9F73D042518D6ED00B00C39 /* StopRepeatDetails.swift in Sources */,
 				FED22D12251E4A3D004CDCF9 /* PetDeatilsProfileContainer.swift in Sources */,
 				E9A6D7BA2512356300FFE94F /* ActivityView.swift in Sources */,

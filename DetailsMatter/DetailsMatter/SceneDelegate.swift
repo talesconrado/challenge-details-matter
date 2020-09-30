@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         //Change this function to call the controller you are currently testing
 
-        let navigation = config.mainController(.initialController)
+        let navigation = config.mainController(.onboardingController)
         window?.rootViewController = navigation
 
         window?.makeKeyAndVisible()
