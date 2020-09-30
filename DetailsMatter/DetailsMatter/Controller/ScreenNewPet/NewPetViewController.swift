@@ -34,9 +34,13 @@ class NewPetViewController: UIViewController {
     }
     
     @IBAction func saveNewPet(_ sender: Any) {
-        
+        if let newPet = DataManager.pet.createNewItem() {
+            newPet.name = nameTextField.text!
+            newPet.weight = weightTextField.text!
+            newPet.age = ageTextField.text!
+            DataManager.pet.update(item: newPet)
+        }
     }
-    
     @IBAction func addNewVacine(_ sender: Any) {
         
     }
@@ -48,7 +52,8 @@ class NewPetViewController: UIViewController {
     private func setupNavBar() {
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.backgroundColor = .clear
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.navigationBar.backgroundColor = .primary
         navigationController?.navigationBar.topItem?.title = "Novo Pet"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Salvar", style: .plain,
                                                             target: self, action: #selector(saveNewPet))
@@ -93,7 +98,6 @@ extension NewPetViewController: UIImagePickerControllerDelegate, UINavigationCon
     }
 }
 
-
 extension NewPetViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -107,6 +111,7 @@ extension NewPetViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         var cell: UICollectionViewCell? = nil
         if collectionView == self.vacineCollectionView {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "vacineCollectionViewCell", for: indexPath) as UICollectionViewCell?

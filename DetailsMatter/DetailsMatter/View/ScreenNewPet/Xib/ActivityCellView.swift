@@ -11,12 +11,13 @@ import Foundation
 import UIKit
 class ActivityCellView: UICollectionViewCell {
     
-    static let identifier: String = "ActivityCell"
-    @IBOutlet var commentLabel: UILabel!    
+    static let identifier: String = "ActivityCell"    
     @IBOutlet var activityLabel: UILabel!
+    @IBOutlet var commentLabel: UILabel!
+    @IBOutlet var frequencyLabel: UILabel!
     @IBOutlet var icon: UIImageView!
     @IBOutlet var scheduleLabel: UILabel!
-    @IBOutlet var frequencyLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
