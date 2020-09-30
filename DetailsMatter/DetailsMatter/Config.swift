@@ -19,7 +19,6 @@ enum CurrentlyTesting {
 class Config {
     private let initialController = InitialViewController()
     private let testingActivityModal = ViewController()
-    
 
     public func mainController(_ controller: CurrentlyTesting) -> UIViewController {
         let storyboard = UIStoryboard(name: "NewPet", bundle: nil)

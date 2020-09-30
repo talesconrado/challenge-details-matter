@@ -9,7 +9,7 @@
 import UIKit
 
 class DatePickerCell: UITableViewCell {
-    
+
     weak var presenter: ActivityView?
 
     lazy var dateLabel: UILabel = {
@@ -69,7 +69,7 @@ extension DatePickerCell: UITextFieldDelegate {
             dateformatter.dateStyle = .medium
             dateformatter.timeStyle = .short
             self.date.text = dateformatter.string(from: datePicker.date)
-            
+
             presenter?.selectedDate = datePicker.date
         }
     }
