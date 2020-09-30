@@ -9,7 +9,7 @@
 import UIKit
 
 class PetDetailsActivityCell: UICollectionViewCell {
-
+    private let repo = DataManager.activity
     public static let identifier: String = "PetDetailsActivityCell"
 
     // Create Outlets from Xib
@@ -41,6 +41,7 @@ class PetDetailsActivityCell: UICollectionViewCell {
             let hour = calendar.component(.hour, from: date)
             let minutes = calendar.component(.minute, from: date)
             self.timeForActivity.text = "\(hour):\(minutes)"
+            self.daysOfActivity.text = repo.getWeekday(date: activity.startDate!)
         } else {
             self.timeForActivity.text = "00:00"
         }
