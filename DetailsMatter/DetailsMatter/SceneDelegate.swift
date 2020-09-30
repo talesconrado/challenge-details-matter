@@ -10,19 +10,18 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-    var window: UIWindow?
+    var window: UIWindow!
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-
         let config = Config()
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
         //Change this function to call the controller you are currently testing
 
-        let navigation = config.mainController(.initialController)
+        let navigation = config.mainController(.newPetController)
         window?.rootViewController = navigation
 
         window?.makeKeyAndVisible()
