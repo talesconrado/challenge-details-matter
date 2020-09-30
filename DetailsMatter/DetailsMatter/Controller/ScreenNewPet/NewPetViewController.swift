@@ -19,7 +19,7 @@ class NewPetViewController: UIViewController {
     @IBOutlet var saveButton: UIBarButtonItem!
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var petImage: UIImageView!
-    
+
     private var petModel: PetModel?
     private let petRepository = DataManager.pet
     private let vaccineRepository = DataManager.vaccine
@@ -27,7 +27,7 @@ class NewPetViewController: UIViewController {
 
     private var vaccineData: [VaccineModel] = []
     private var activityData: [ActivityModel] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupModel()
@@ -38,7 +38,7 @@ class NewPetViewController: UIViewController {
         activityCollectionView.delegate = self
         activityCollectionView.dataSource = self
     }
-    
+
     private func setupModel() {
         petModel = petRepository.createNewItem()
     }
@@ -60,8 +60,9 @@ class NewPetViewController: UIViewController {
 
     @IBAction func addNewActivity(_ sender: Any) {
         let newActivityController = ActivityController()
+        let nav = UINavigationController(rootViewController: newActivityController)
         newActivityController.owner = petModel
-        self.navigationController?.pushViewController(newActivityController, animated: true)
+        self.present(nav, animated: true)
     }
 
     private func setupNavBar() {
@@ -160,7 +161,7 @@ extension NewPetViewController: PetDelegate {
             self.activityData = activityRepository.filterByIds(from: petModel.activitieIDs)
         }
     }
-    
+
     func reloadVaccineData() {
         if let petModel = self.petModel {
             self.vaccineData = vaccineRepository.filterByIds(from: petModel.vaccinesIDs)
