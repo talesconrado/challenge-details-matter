@@ -14,10 +14,12 @@ enum CurrentlyTesting {
     case initialController
     case newPetController
     case detailsController
+    case onboardingController
 }
 
 class Config {
     private let initialController = InitialViewController()
+    private let onboardingController = OnboardingController()
 
     public func mainController(_ controller: CurrentlyTesting) -> UIViewController {
         let storyboard = UIStoryboard(name: "NewPet", bundle: nil)
@@ -32,6 +34,8 @@ class Config {
         case .detailsController:
             let petDetails = UIStoryboard(name: "PetDetailsView", bundle: nil)
             viewController = petDetails.instantiateViewController(withIdentifier: "PetDetailsStoryboard")
+        case .onboardingController:
+            viewController = onboardingController
         }
 
         let nav = UINavigationController(rootViewController: viewController)
