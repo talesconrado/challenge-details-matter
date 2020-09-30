@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C14D7172510F745003F9069 /* NewPet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C14D7162510F745003F9069 /* NewPet.storyboard */; };
+		7C14D7192510FDF0003F9069 /* NewPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C14D7182510FDF0003F9069 /* NewPetViewController.swift */; };
+		7C40FE982524B5D200162E37 /* VaccineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C40FE972524B5D100162E37 /* VaccineCell.xib */; };
+		7C40FE9A2524B6FE00162E37 /* VaccineCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C40FE992524B6FE00162E37 /* VaccineCellView.swift */; };
+		7C40FE9C2524BB0800162E37 /* NewPetActivityCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C40FE9B2524BB0800162E37 /* NewPetActivityCollection.swift */; };
+		7C40FE9E2524BBA800162E37 /* NewPetVaccineCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C40FE9D2524BBA800162E37 /* NewPetVaccineCollection.swift */; };
+		7C631B3B2518E7D2008EFB1E /* ActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C631B3A2518E7D2008EFB1E /* ActivityCell.xib */; };
+		7C631B3D2518EA9B008EFB1E /* ActivityCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C631B3C2518EA9B008EFB1E /* ActivityCellView.swift */; };
 		68C77424252224A00054052B /* AcitivityDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C77423252224A00054052B /* AcitivityDelegate.swift */; };
 		68F13FEA251A33250034CE32 /* PetDetailsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F13FE9251A33250034CE32 /* PetDetailsView.storyboard */; };
 		68F13FED251B70020034CE32 /* PetDetailsContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F13FEC251B70020034CE32 /* PetDetailsContoller.swift */; };
@@ -80,6 +88,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C14D7162510F745003F9069 /* NewPet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPet.storyboard; sourceTree = "<group>"; };
+		7C14D7182510FDF0003F9069 /* NewPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPetViewController.swift; sourceTree = "<group>"; };
+		7C40FE972524B5D100162E37 /* VaccineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VaccineCell.xib; sourceTree = "<group>"; };
+		7C40FE992524B6FE00162E37 /* VaccineCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineCellView.swift; sourceTree = "<group>"; };
+		7C40FE9B2524BB0800162E37 /* NewPetActivityCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPetActivityCollection.swift; sourceTree = "<group>"; };
+		7C40FE9D2524BBA800162E37 /* NewPetVaccineCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPetVaccineCollection.swift; sourceTree = "<group>"; };
+		7C631B3A2518E7D2008EFB1E /* ActivityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityCell.xib; sourceTree = "<group>"; };
+		7C631B3C2518EA9B008EFB1E /* ActivityCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCellView.swift; sourceTree = "<group>"; };
 		68C77423252224A00054052B /* AcitivityDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcitivityDelegate.swift; sourceTree = "<group>"; };
 		68F13FE9251A33250034CE32 /* PetDetailsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PetDetailsView.storyboard; sourceTree = "<group>"; };
 		68F13FEC251B70020034CE32 /* PetDetailsContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsContoller.swift; sourceTree = "<group>"; };
@@ -166,6 +182,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C14D7152510F6D0003F9069 /* ScreenNewPet */ = {
+			isa = PBXGroup;
+			children = (
+				7C40FE922524B54400162E37 /* Collections */,
+				7C14D7162510F745003F9069 /* NewPet.storyboard */,
+			);
+			path = ScreenNewPet;
+			sourceTree = "<group>";
+		};
+		7C14D71A2510FDF6003F9069 /* ScreenNewPet */ = {
+			isa = PBXGroup;
+			children = (
+				7C14D7182510FDF0003F9069 /* NewPetViewController.swift */,
+			);
+			path = ScreenNewPet;
+			sourceTree = "<group>";
+		};
+		7C40FE922524B54400162E37 /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				7C40FE952524B5A500162E37 /* Activities */,
+				7C40FE942524B59800162E37 /* Vaccines */,
+			);
+			path = Collections;
+			sourceTree = "<group>";
+		};
+		7C40FE942524B59800162E37 /* Vaccines */ = {
+			isa = PBXGroup;
+			children = (
+				7C40FE962524B5BA00162E37 /* Xib */,
+				7C40FE9D2524BBA800162E37 /* NewPetVaccineCollection.swift */,
+			);
+			path = Vaccines;
+			sourceTree = "<group>";
+		};
+		7C40FE952524B5A500162E37 /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				7C631B3E2518F624008EFB1E /* Xib */,
+				7C40FE9B2524BB0800162E37 /* NewPetActivityCollection.swift */,
+			);
+			path = Activities;
+			sourceTree = "<group>";
+		};
+		7C40FE962524B5BA00162E37 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				7C40FE972524B5D100162E37 /* VaccineCell.xib */,
+				7C40FE992524B6FE00162E37 /* VaccineCellView.swift */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		7C631B3E2518F624008EFB1E /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				7C631B3C2518EA9B008EFB1E /* ActivityCellView.swift */,
+				7C631B3A2518E7D2008EFB1E /* ActivityCell.xib */,
+			);
+			path = Xib;
+            sourceTree = "<group>";
+        };
 		68F13FE6251A20D30034CE32 /* PetDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +359,7 @@
 		E9AC19882510E8D300920DFC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7C14D71A2510FDF6003F9069 /* ScreenNewPet */,
 				E9AC198E2510F96300920DFC /* Activity */,
 				FEE4BFBA25110286000CA883 /* InitialViewController.swift */,
 				FE6A960E2513A288006D94C1 /* NewVaccineViewController.swift */,
@@ -294,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				E93385C025237C82008FEAF9 /* Onboarding */,
+				7C14D7152510F6D0003F9069 /* ScreenNewPet */,
 				68F13FE6251A20D30034CE32 /* PetDetails */,
 				E9AC19912510FC6900920DFC /* Activity */,
 				FE6A960825139EF5006D94C1 /* NewVaccine */,
@@ -594,11 +674,14 @@
 			files = (
 				68F13FEA251A33250034CE32 /* PetDetailsView.storyboard in Resources */,
 				FE5DDBA925124933005A5040 /* PetCollectionCell.xib in Resources */,
+				7C40FE982524B5D200162E37 /* VaccineCell.xib in Resources */,
 				FEB59587251B77D30011B23A /* PetDetailsVaccineCell.xib in Resources */,
 				FE5DDBAD2512494C005A5040 /* ActivitiesCollectionCell.xib in Resources */,
 				FEB5957B251B77A10011B23A /* PetDetailsActivityCell.xib in Resources */,
 				FE5DDBAD2512494C005A5040 /* ActivitiesCollectionCell.xib in Resources */,
 				E973EA02250F96550077E9C0 /* LaunchScreen.storyboard in Resources */,
+				7C14D7172510F745003F9069 /* NewPet.storyboard in Resources */,
+				7C631B3B2518E7D2008EFB1E /* ActivityCell.xib in Resources */,
 				E973E9FF250F96550077E9C0 /* Assets.xcassets in Resources */,
 				FE6A960A25139F29006D94C1 /* NewVaccine.storyboard in Resources */,
 			);
@@ -664,12 +747,17 @@
 				E974DA982514D8E900B5A14E /* CategoryDetailsController.swift in Sources */,
 				FEB5957A251B77A10011B23A /* PetDetailsActivityCell.swift in Sources */,
 				FE6A960F2513A288006D94C1 /* NewVaccineViewController.swift in Sources */,
+				7C40FE9C2524BB0800162E37 /* NewPetActivityCollection.swift in Sources */,
 				E9484BC5251A45710006256D /* Repository.swift in Sources */,
 				FEE4BFBD2511068C000CA883 /* Config.swift in Sources */,
 				FEE4BFBB25110286000CA883 /* InitialViewController.swift in Sources */,
 				E93385CF2524424F008FEAF9 /* OnboardingController.swift in Sources */,
 				FEE4BFB32510F5CD000CA883 /* Initial.swift in Sources */,
+				7C40FE9A2524B6FE00162E37 /* VaccineCellView.swift in Sources */,
+				7C40FE9E2524BBA800162E37 /* NewPetVaccineCollection.swift in Sources */,
 				E973E9F8250F96540077E9C0 /* SceneDelegate.swift in Sources */,
+				7C631B3D2518EA9B008EFB1E /* ActivityCellView.swift in Sources */,
+				7C14D7192510FDF0003F9069 /* NewPetViewController.swift in Sources */,
 				FEB59586251B77D30011B23A /* PetDetailsVaccineCell.swift in Sources */,
 				E9AC19902510F9AF00920DFC /* ActivityController.swift in Sources */,
 				E93385CA25243BED008FEAF9 /* OnboardingCell.swift in Sources */,
@@ -785,7 +873,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -840,7 +928,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -857,7 +945,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BABNQ3LD22;
 				INFOPLIST_FILE = DetailsMatter/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -876,7 +964,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BABNQ3LD22;
 				INFOPLIST_FILE = DetailsMatter/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
