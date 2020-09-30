@@ -17,22 +17,29 @@ class OnboardingCell: UICollectionViewCell, UITextViewDelegate {
 
         return img
     }()
-    
+
     let dogImage: UIImageView = {
         let dog = UIImageView()
         dog.translatesAutoresizingMaskIntoConstraints = false
         dog.image = UIImage(named: "dog")
         dog.contentMode = .scaleAspectFit
+        dog.isUserInteractionEnabled = true
+        dog.alpha = 0.6
         return dog
     }()
-    
+
     let catImage: UIImageView = {
         let cat = UIImageView()
         cat.translatesAutoresizingMaskIntoConstraints = false
         cat.image = UIImage(named: "cat")
         cat.contentMode = .scaleAspectFit
+        cat.isUserInteractionEnabled = true
+        cat.alpha = 0.6
         return cat
     }()
+
+    lazy var dogHeight = dogImage.heightAnchor.constraint(equalToConstant: 130)
+    lazy var catHeight = catImage.heightAnchor.constraint(equalToConstant: 130)
 
     lazy var text: UITextView = {
         let txt = UITextView()
@@ -87,6 +94,7 @@ class OnboardingCell: UICollectionViewCell, UITextViewDelegate {
         self.contentView.addSubview(imageView)
         self.contentView.addSubview(text)
         self.contentView.addSubview(button)
+        dogHeight.isActive = true
 
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 72),
@@ -142,6 +150,11 @@ class OnboardingCell: UICollectionViewCell, UITextViewDelegate {
         self.contentView.addSubview(catImage)
         self.contentView.addSubview(button)
 
+        dogImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapDogImage)))
+        catImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapCatImage)))
+        dogHeight.isActive = true
+        catHeight.isActive = true
+
         NSLayoutConstraint.activate([
             text.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 72),
             text.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
@@ -149,18 +162,47 @@ class OnboardingCell: UICollectionViewCell, UITextViewDelegate {
             text.leftAnchor.constraint(equalTo: leftAnchor, constant: 52),
             text.rightAnchor.constraint(equalTo: rightAnchor, constant: -52),
 
-            dogImage.topAnchor.constraint(equalTo: text.bottomAnchor, constant: 70),
+            dogImage.topAnchor.constraint(lessThanOrEqualTo: text.bottomAnchor, constant: 70),
             dogImage.leftAnchor.constraint(equalTo: leftAnchor, constant: 40),
-            dogImage.heightAnchor.constraint(equalToConstant: 150),
 
             catImage.topAnchor.constraint(equalTo: text.bottomAnchor, constant: 70),
             catImage.rightAnchor.constraint(equalTo: rightAnchor, constant: -40),
-            catImage.heightAnchor.constraint(equalToConstant: 150),
 
-            button.topAnchor.constraint(equalTo: dogImage.bottomAnchor, constant: 145),
+            button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -105),
             button.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 72),
             button.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -72),
             button.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+
+    @objc func tapDogImage() {
+        fadeInImage(image: dogImage, duration: 0.3, which: 1)
+        fadeOutImage(image: catImage, duration: 0.3)
+    }
+
+    @objc func tapCatImage() {
+        fadeInImage(image: catImage, duration: 0.3, which: 0)
+        fadeOutImage(image: dogImage, duration: 0.3)
+    }
+
+    func fadeInImage(image: UIImageView, duration: TimeInterval, which: Int) {
+        UIView.animate(withDuration: duration) {
+            image.alpha = 1.0
+            if which == 1 {
+                self.dogHeight.constant = 160
+                self.catHeight.constant = 130
+            } else {
+                self.dogHeight.constant = 130
+                self.catHeight.constant = 160
+            }
+
+            self.layoutIfNeeded()
+        }
+    }
+
+    func fadeOutImage(image: UIImageView, duration: TimeInterval) {
+        UIView.animate(withDuration: duration) {
+            image.alpha = 0.6
+        }
     }
 }

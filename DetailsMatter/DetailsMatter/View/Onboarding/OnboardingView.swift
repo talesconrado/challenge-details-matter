@@ -9,6 +9,9 @@
 import UIKit
 
 class OnboardingView: UIView {
+
+    var presenter: OnboardingController?
+
     lazy var collectionView: UICollectionView = {
         // Init flow layout horizontal
         let layout = UICollectionViewFlowLayout()
@@ -20,7 +23,8 @@ class OnboardingView: UIView {
         col.isPagingEnabled = true
         col.delegate = self
         col.dataSource = self
-        col.backgroundColor = .gray
+        col.backgroundColor = .white
+        col.bounces = false
         col.showsHorizontalScrollIndicator = false
 
         return col
@@ -37,6 +41,11 @@ class OnboardingView: UIView {
 
         return page
     }()
+
+    convenience init(presenter: OnboardingController) {
+        self.init()
+        self.presenter = presenter
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -64,8 +73,13 @@ class OnboardingView: UIView {
             pageControl.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40)
         ])
     }
+
+    @objc func callShowInitialScreen() {
+        presenter?.showInitialScreen()
+    }
 }
 
+// MARK: CollectionView Delegate, Data Source and Delegate Flow Layout
 extension OnboardingView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         3
@@ -75,6 +89,12 @@ extension OnboardingView: UICollectionViewDelegate, UICollectionViewDataSource, 
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! OnboardingCell
         cell.configure(position: indexPath.item)
+        if indexPath.item == 0 {
+            cell.button.addTarget(self, action: #selector(goToNextCell), for: .touchUpInside)
+        }
+        if indexPath.item == 2 {
+            cell.button.addTarget(self, action: #selector(callShowInitialScreen), for: .touchUpInside)
+        }
 
         return cell
     }
@@ -98,5 +118,14 @@ extension OnboardingView: UICollectionViewDelegate, UICollectionViewDataSource, 
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         pageControl.currentPage = Int(collectionView.contentOffset.x / collectionView.frame.size.width)
+
+    }
+
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(collectionView.contentOffset.x / collectionView.frame.size.width)
+    }
+
+    @objc func goToNextCell() {
+        collectionView.scrollToItem(at: IndexPath(row: 1, section: 0), at: .centeredHorizontally, animated: true)
     }
 }

@@ -9,8 +9,10 @@
 import UIKit
 
 class OnboardingController: UIViewController {
-
-    let contentView = OnboardingView()
+    lazy var contentView: OnboardingView = {
+        let view = OnboardingView(presenter: self)
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,4 +22,13 @@ class OnboardingController: UIViewController {
         view = contentView
     }
 
+    func askForPermission() {
+        print()
+    }
+
+    func showInitialScreen() {
+        let initialScreen = InitialViewController()
+        initialScreen.navigationItem.hidesBackButton = true
+        navigationController?.pushViewController(initialScreen, animated: true)
+    }
 }
