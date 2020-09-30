@@ -149,15 +149,15 @@ class OnboardingCell: UICollectionViewCell, UITextViewDelegate {
             text.leftAnchor.constraint(equalTo: leftAnchor, constant: 52),
             text.rightAnchor.constraint(equalTo: rightAnchor, constant: -52),
 
-            dogImage.topAnchor.constraint(equalTo: text.bottomAnchor, constant: 50),
+            dogImage.topAnchor.constraint(equalTo: text.bottomAnchor, constant: 70),
             dogImage.leftAnchor.constraint(equalTo: leftAnchor, constant: 40),
             dogImage.heightAnchor.constraint(equalToConstant: 150),
 
-            catImage.topAnchor.constraint(equalTo: text.bottomAnchor, constant: 50),
+            catImage.topAnchor.constraint(equalTo: text.bottomAnchor, constant: 70),
             catImage.rightAnchor.constraint(equalTo: rightAnchor, constant: -40),
             catImage.heightAnchor.constraint(equalToConstant: 150),
 
-            button.topAnchor.constraint(equalTo: dogImage.bottomAnchor, constant: 165),
+            button.topAnchor.constraint(equalTo: dogImage.bottomAnchor, constant: 145),
             button.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 72),
             button.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -72),
             button.heightAnchor.constraint(equalToConstant: 50)
