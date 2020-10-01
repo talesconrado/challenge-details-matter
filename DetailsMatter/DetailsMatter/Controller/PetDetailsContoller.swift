@@ -34,6 +34,9 @@ class PetDetailsController: UIViewController {
 
         self.activitiesCollection.dataSource = self
         self.activitiesCollection.delegate = self
+
+        setupPetModel()
+        loadDataSource()
     }
 
     private func setupNavBar() {
@@ -70,13 +73,23 @@ class PetDetailsController: UIViewController {
 
     @IBAction func vaccineButton(_ sender: Any) {
         let newVaccine = UIStoryboard(name: "NewVaccine", bundle: nil)
-        let newVaccineController = newVaccine.instantiateViewController(withIdentifier: "NewVaccineStoryboard")
-        let nav = UINavigationController(rootViewController: newVaccineController)
-        self.present(nav, animated: true, completion: nil)
+        if let newVaccineController = newVaccine.instantiateViewController(
+            withIdentifier: "NewVaccineStoryboard") as? NewVaccineViewController {
+            newVaccineController.delegate = self
+            guard let owner = self.petModel else {
+                print("Details Pet Error - Owner")
+                return
+            }
+            newVaccineController.owner = owner
+            let nav = UINavigationController(rootViewController: newVaccineController)
+            self.present(nav, animated: true, completion: nil)
+        }
     }
 
     @IBAction func activityButton(_ sender: Any) {
         let activityController = ActivityController()
+        activityController.owner = self.petModel
+        activityController.delegate = self
         let nav = UINavigationController(rootViewController: activityController)
         self.present(nav, animated: true, completion: nil)
     }
@@ -115,12 +128,12 @@ extension PetDetailsController: UICollectionViewDelegate, UICollectionViewDataSo
 
 extension PetDetailsController: PetDelegate {
     func reloadActivityData() {
-        activityData = activityRepo.readAllItems()
+        activityData = activityRepo.filterByIds(from: petModel!.activitieIDs)
         activitiesCollection.reloadData()
     }
 
     func reloadVaccineData() {
-        vaccineData = vaccineRepo.readAllItems()
+        vaccineData = vaccineRepo.filterByIds(from: petModel!.vaccinesIDs)
         vaccinesCollection.reloadData()
     }
 

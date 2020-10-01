@@ -12,7 +12,12 @@ class Initial: UIView {
 
     private let mascot: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 160, height: 130))
-        imageView.image = UIImage(named: "cat")
+        let preference = (UserDefaults.standard.value(forKey: "DogLover") as? Bool) ?? false
+        if preference {
+            imageView.image = UIImage(named: "dog")
+        } else {
+            imageView.image = UIImage(named: "cat")
+        }
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()

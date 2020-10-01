@@ -70,6 +70,7 @@ class NewVaccineViewController: UIViewController {
             item.name = vaccineNameString
             item.date = vaccineDateString
             repo.update(item: item)
+            DataManager.pet.update(item: owner)
         }
 
         if let delegate = self.delegate {
