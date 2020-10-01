@@ -34,6 +34,9 @@ class PetDetailsController: UIViewController {
 
         self.activitiesCollection.dataSource = self
         self.activitiesCollection.delegate = self
+
+        setupPetModel()
+        loadDataSource()
     }
 
     private func setupNavBar() {
@@ -78,6 +81,7 @@ class PetDetailsController: UIViewController {
     @IBAction func activityButton(_ sender: Any) {
         let activityController = ActivityController()
         activityController.owner = self.petModel
+        activityController.delegate = self
         let nav = UINavigationController(rootViewController: activityController)
         self.present(nav, animated: true, completion: nil)
     }
@@ -116,12 +120,12 @@ extension PetDetailsController: UICollectionViewDelegate, UICollectionViewDataSo
 
 extension PetDetailsController: PetDelegate {
     func reloadActivityData() {
-        activityData = activityRepo.readAllItems()
+        activityData = activityRepo.filterByIds(from: petModel!.activitieIDs)
         activitiesCollection.reloadData()
     }
 
     func reloadVaccineData() {
-        vaccineData = vaccineRepo.readAllItems()
+        vaccineData = vaccineRepo.filterByIds(from: petModel!.vaccinesIDs)
         vaccinesCollection.reloadData()
     }
 
