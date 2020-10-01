@@ -45,7 +45,12 @@ class InitialViewController: UIViewController {
     }
 
     private func setupNavBar() {
-        self.title = "Mioi Humano!"
+        let preference = (UserDefaults.standard.value(forKey: "DogLover") as? Bool) ?? false
+        if preference {
+            self.title = "Olá, Aumigo!"
+        } else {
+            self.title = "Mioi, Humano!"
+        }
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 

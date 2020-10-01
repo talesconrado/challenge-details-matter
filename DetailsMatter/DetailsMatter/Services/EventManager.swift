@@ -28,6 +28,7 @@ class EventManager {
         }
     }
 
+    @discardableResult
     public func requestAccess() -> Bool {
         var status: Bool = false
         self.eventStore.requestAccess(

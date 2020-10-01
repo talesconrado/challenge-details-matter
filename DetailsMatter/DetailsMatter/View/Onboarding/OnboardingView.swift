@@ -77,6 +77,10 @@ class OnboardingView: UIView {
     @objc func callShowInitialScreen() {
         presenter?.showInitialScreen()
     }
+
+    @objc func askPermission() {
+        presenter?.askForNotificationPermission()
+    }
 }
 
 // MARK: CollectionView Delegate, Data Source and Delegate Flow Layout
@@ -91,6 +95,9 @@ extension OnboardingView: UICollectionViewDelegate, UICollectionViewDataSource, 
         cell.configure(position: indexPath.item)
         if indexPath.item == 0 {
             cell.button.addTarget(self, action: #selector(goToNextCell), for: .touchUpInside)
+        }
+        if indexPath.item == 1 {
+            cell.button.addTarget(self, action: #selector(askPermission), for: .touchUpInside)
         }
         if indexPath.item == 2 {
             cell.button.addTarget(self, action: #selector(callShowInitialScreen), for: .touchUpInside)

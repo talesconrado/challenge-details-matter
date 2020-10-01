@@ -10,6 +10,9 @@ import UIKit
 
 class OnboardingCell: UICollectionViewCell, UITextViewDelegate {
 
+    var dogLover = false
+    var cellOwner: OnboardingView?
+
     let imageView: UIImageView = {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
@@ -154,6 +157,7 @@ class OnboardingCell: UICollectionViewCell, UITextViewDelegate {
         catImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapCatImage)))
         dogHeight.isActive = true
         catHeight.isActive = true
+        button.addTarget(self, action: #selector(setPreference), for: .touchUpInside)
 
         NSLayoutConstraint.activate([
             text.topAnchor.constraint(lessThanOrEqualTo: safeAreaLayoutGuide.topAnchor, constant: 72),
@@ -173,6 +177,24 @@ class OnboardingCell: UICollectionViewCell, UITextViewDelegate {
             button.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -72),
             button.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+
+    @objc func setPreference() {
+        userPreference()
+        _ = (UserDefaults.standard.value(forKey: "DogLover") as? Bool) ?? false
+        if dogLover {
+            UserDefaults.standard.set(true, forKey: "DogLover")
+        } else {
+            UserDefaults.standard.set(false, forKey: "DogLover")
+        }
+    }
+
+    func userPreference() {
+        if dogImage.alpha == 1 {
+            dogLover = true
+        } else {
+            dogLover = false
+        }
     }
 
     @objc func tapDogImage() {

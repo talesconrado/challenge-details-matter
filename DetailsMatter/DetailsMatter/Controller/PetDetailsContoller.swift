@@ -73,9 +73,17 @@ class PetDetailsController: UIViewController {
 
     @IBAction func vaccineButton(_ sender: Any) {
         let newVaccine = UIStoryboard(name: "NewVaccine", bundle: nil)
-        let newVaccineController = newVaccine.instantiateViewController(withIdentifier: "NewVaccineStoryboard")
-        let nav = UINavigationController(rootViewController: newVaccineController)
-        self.present(nav, animated: true, completion: nil)
+        if let newVaccineController = newVaccine.instantiateViewController(
+            withIdentifier: "NewVaccineStoryboard") as? NewVaccineViewController {
+            newVaccineController.delegate = self
+            guard let owner = self.petModel else {
+                print("Details Pet Error - Owner")
+                return
+            }
+            newVaccineController.owner = owner
+            let nav = UINavigationController(rootViewController: newVaccineController)
+            self.present(nav, animated: true, completion: nil)
+        }
     }
 
     @IBAction func activityButton(_ sender: Any) {
