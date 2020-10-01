@@ -9,8 +9,8 @@
 import UIKit
 
 class ActivityController: UIViewController {
-
     var owner: PetModel?
+    weak var delegate: PetDelegate?
     var selectedRepeat: Int?
     var selectedCategory: Int?
     var selectedStopRepeat: Int?
@@ -62,7 +62,8 @@ class ActivityController: UIViewController {
         guard let newActivity = DataManager.activity.createNewItem() else { return }
         setViewFieldsToActivityModel(activity: newActivity)
         owner?.activitieIDs.append(newActivity.identifier)
-
+        DataManager.pet.update(item: owner!)
+        delegate?.reloadActivityData()
         self.dismiss(animated: true, completion: nil)
     }
 
