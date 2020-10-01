@@ -10,7 +10,8 @@ import UIKit
 
 class NewVaccineViewController: UIViewController {
 
-    public weak var delegate: VaccineDelegate?
+    public weak var delegate: PetDelegate?
+    public var owner: PetModel?
 
     private let repo = DataManager.vaccine
 
@@ -63,12 +64,18 @@ class NewVaccineViewController: UIViewController {
     @objc private func save() {
         if let vaccineNameString = self.vaccineName.text,
            let vaccineDateString = self.vaccineDate.text,
+           let owner = self.owner,
            let item = repo.createNewItem() {
-
+            owner.vaccinesIDs.append(item.identifier)
             item.name = vaccineNameString
             item.date = vaccineDateString
             repo.update(item: item)
         }
+
+        if let delegate = self.delegate {
+            delegate.reloadVaccineData()
+        }
+
         self.dismiss(animated: true, completion: nil)
     }
 
