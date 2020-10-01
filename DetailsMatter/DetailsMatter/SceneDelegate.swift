@@ -15,12 +15,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        let config = Config()
+        var navigation: UIViewController
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
-        let navigation = UINavigationController(rootViewController: ViewController())
+        let isFirstLaunch = (UserDefaults.standard.value(forKey: "FirstLaunch") as? Bool) ?? false
+        if !isFirstLaunch {
+            UserDefaults.standard.set(true, forKey: "FirstLaunch")
+            navigation = config.mainController(.onboardingController)
+        } else {
+            navigation = config.mainController(.initialController)
+        }
 
         window?.rootViewController = navigation
+
         window?.makeKeyAndVisible()
     }
 }
