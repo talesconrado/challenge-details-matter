@@ -77,6 +77,7 @@ class PetDetailsController: UIViewController {
 
     @IBAction func activityButton(_ sender: Any) {
         let activityController = ActivityController()
+        activityController.owner = self.petModel
         let nav = UINavigationController(rootViewController: activityController)
         self.present(nav, animated: true, completion: nil)
     }
