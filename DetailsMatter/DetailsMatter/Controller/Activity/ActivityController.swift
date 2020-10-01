@@ -64,6 +64,8 @@ class ActivityController: UIViewController {
         owner?.activitieIDs.append(newActivity.identifier)
         DataManager.pet.update(item: owner!)
         delegate?.reloadActivityData()
+        let event = EventManager()
+        event.createReminder(activity: newActivity)
         self.dismiss(animated: true, completion: nil)
     }
 

@@ -38,7 +38,11 @@ class ActivitiesCollectionCell: UICollectionViewCell {
         if let date = activity.startDate {
             let hour = calendar.component(.hour, from: date)
             let minutes = calendar.component(.minute, from: date)
-            self.timeLabel.text = "\(hour):\(minutes)"
+            if minutes < 10 {
+                self.timeLabel.text = "\(hour):0\(minutes)"
+            } else {
+                self.timeLabel.text = "\(hour):\(minutes)"
+            }
         } else {
             self.timeLabel.text = "00:00"
         }

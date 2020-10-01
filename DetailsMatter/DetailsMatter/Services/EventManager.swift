@@ -28,6 +28,7 @@ class EventManager {
         }
     }
 
+    @discardableResult
     public func requestAccess() -> Bool {
         var status: Bool = false
         self.eventStore.requestAccess(
@@ -62,7 +63,7 @@ class EventManager {
                                                           endDate: activity.stopRepeating!)
             reminder.addRecurrenceRule(recurrenceRule)
         }
-        
+
         if self.saveReminder(reminder: reminder) {
             activity.reminderID = reminder.calendarItemIdentifier
             return true

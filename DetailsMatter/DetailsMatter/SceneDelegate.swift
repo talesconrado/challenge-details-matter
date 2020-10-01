@@ -20,7 +20,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
-        //Change this function to call the controller you are currently testing
         let isFirstLaunch = (UserDefaults.standard.value(forKey: "FirstLaunch") as? Bool) ?? false
         if !isFirstLaunch {
             UserDefaults.standard.set(true, forKey: "FirstLaunch")

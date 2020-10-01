@@ -22,13 +22,14 @@ class OnboardingController: UIViewController {
         view = contentView
     }
 
-    func askForPermission() {
-        print()
-    }
-
     func showInitialScreen() {
         let initialScreen = InitialViewController()
         initialScreen.navigationItem.hidesBackButton = true
         navigationController?.pushViewController(initialScreen, animated: true)
+    }
+
+    func askForNotificationPermission() {
+        let event = EventManager()
+        event.requestAccess()
     }
 }
