@@ -41,7 +41,6 @@ class NewPetViewController: UIViewController {
             if let name = nameTextField.text,
                name.isEmpty,
                let model = self.petModel {
-                print("Deletado")
                 petRepository.delete(identifier: model.identifier)
             }
         }
