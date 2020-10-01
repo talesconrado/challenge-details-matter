@@ -14,7 +14,6 @@ class NewPetViewController: UIViewController {
     @IBOutlet var activityCollectionView: UICollectionView!
     @IBOutlet var ageTextField: UITextField!
     @IBOutlet var weightTextField: UITextField!
-    @IBOutlet var saveButton: UIBarButtonItem!
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var petImage: UIImageView!
 
@@ -41,19 +40,19 @@ class NewPetViewController: UIViewController {
         petModel = petRepository.createNewItem()
     }
 
-    @IBAction func saveNewPet(_ sender: Any) {
-        if let newPet = petModel {
-            newPet.name = nameTextField.text!
-            newPet.weight = weightTextField.text!
-            newPet.age = ageTextField.text!
-            DataManager.pet.update(item: newPet)
-        }
-    }
     @IBAction func addNewVacine(_ sender: Any) {
         let newVaccine = UIStoryboard(name: "NewVaccine", bundle: nil)
-        let newVaccineController = newVaccine.instantiateViewController(withIdentifier: "NewVaccineStoryboard")
-        let nav = UINavigationController(rootViewController: newVaccineController)
-        self.present(nav, animated: true, completion: nil)
+        if let newVaccineController = newVaccine.instantiateViewController(
+            withIdentifier: "NewVaccineStoryboard") as? NewVaccineViewController {
+            newVaccineController.delegate = self
+            guard let owner = self.petModel else {
+                print("New Pet Error - Owner")
+                return
+            }
+            newVaccineController.owner = owner
+            let nav = UINavigationController(rootViewController: newVaccineController)
+            self.present(nav, animated: true, completion: nil)
+        }
     }
 
     @IBAction func addNewActivity(_ sender: Any) {
@@ -64,13 +63,29 @@ class NewPetViewController: UIViewController {
     }
 
     private func setupNavBar() {
+        self.title = "Novo Pet"
+        navigationController?.navigationBar.barTintColor = .primary
+        navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.prefersLargeTitles = false
-        navigationController?.navigationBar.topItem?.title = "Novo Pet"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Salvar", style: .plain,
                                                             target: self, action: #selector(saveNewPet))
-        navigationItem.rightBarButtonItem?.tintColor = .secondary
+    }
+
+    @objc public func saveNewPet() {
+        if let newPet = petModel,
+           let petName = nameTextField.text {
+            newPet.name = petName
+            if let weight = ageTextField.text { newPet.weight = weight }
+            if let age = ageTextField.text { newPet.age = age }
+            if let image = petImage.image, let pngData = image.pngData() {
+                newPet.photo = pngData.base64EncodedString()
+            }
+            petRepository.update(item: newPet)
+        }
+
+        self.navigationController?.popViewController(animated: true)
     }
 
     private func petImageConfig() {
@@ -88,8 +103,8 @@ class NewPetViewController: UIViewController {
     @objc private func displayActionSheet() {
             let optionalMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
-            let choosePhoto = UIAlertAction(title: "Choose Photo", style: .default, handler: importPicture)
-            let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let choosePhoto = UIAlertAction(title: "Escolher Foto", style: .default, handler: importPicture)
+            let cancel = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
 
             optionalMenu.addAction(choosePhoto)
             optionalMenu.addAction(cancel)
@@ -157,12 +172,14 @@ extension NewPetViewController: PetDelegate {
     func reloadActivityData() {
         if let petModel = self.petModel {
             self.activityData = activityRepository.filterByIds(from: petModel.activitieIDs)
+            self.activityCollectionView.reloadData()
         }
     }
 
     func reloadVaccineData() {
         if let petModel = self.petModel {
             self.vaccineData = vaccineRepository.filterByIds(from: petModel.vaccinesIDs)
+            self.vacineCollectionView.reloadData()
         }
     }
 }
