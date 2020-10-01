@@ -62,7 +62,7 @@ class EventManager {
                                                           endDate: activity.stopRepeating!)
             reminder.addRecurrenceRule(recurrenceRule)
         }
-        
+
         if self.saveReminder(reminder: reminder) {
             activity.reminderID = reminder.calendarItemIdentifier
             return true
