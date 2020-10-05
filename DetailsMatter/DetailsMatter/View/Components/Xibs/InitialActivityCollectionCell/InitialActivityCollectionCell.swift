@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ActivitiesCollectionCell: UICollectionViewCell {
+class InitialActivityCollectionCell: UICollectionViewCell {
 
-    public static let identifier: String = "ActivitiesCollectionCell"
+    public static let identifier: String = "InitialActivityCollectionCell"
     let assetsNames = ["food", "paw", "medicine"]
 
     @IBOutlet weak var timeLabel: UILabel!

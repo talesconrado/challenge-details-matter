@@ -1,5 +1,5 @@
 //
-//  PetDetailsActivitiesCell.swift
+//  ActivityCollectionCell.swift
 //  DetailsMatter
 //
 //  Created by Pedro Sousa on 23/09/20.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class PetDetailsActivityCell: UICollectionViewCell {
+class ActivityCollectionCell: UICollectionViewCell {
     private let repo = DataManager.activity
-    public static let identifier: String = "PetDetailsActivityCell"
+    public static let identifier: String = "ActivityCollectionCell"
 
     // Create Outlets from Xib
     @IBOutlet weak var iconActivity: UIImageView!
