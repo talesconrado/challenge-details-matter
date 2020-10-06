@@ -33,6 +33,7 @@ class NewPetViewController: UIViewController {
         setupNavBar()
         setupActionSheetCaller()
         setDismissKeyboard()
+        editingTextField()
         vacineCollectionView.delegate = self
         vacineCollectionView.dataSource = self
         activityCollectionView.delegate = self
@@ -47,6 +48,21 @@ class NewPetViewController: UIViewController {
                 petRepository.delete(identifier: model.identifier)
             }
         }
+    }
+
+    func editingTextField() {
+        editingTextField(textField: nameTextField)
+        editingTextField(textField: ageTextField)
+        editingTextField(textField: weightTextField)
+    }
+
+    func editingTextField(textField: UITextField) {
+        let bottomLine = CALayer()
+        bottomLine.frame = CGRect(x: 0.0, y: textField.frame.height - 1,
+                                  width: textField.frame.width, height: 1.0)
+        bottomLine.backgroundColor = UIColor.primary.cgColor
+        textField.borderStyle = UITextField.BorderStyle.none
+        textField.layer.addSublayer(bottomLine)
     }
 
     func setDismissKeyboard() {
