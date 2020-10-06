@@ -55,6 +55,7 @@
 		FEB5957B251B77A10011B23A /* ActivityCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEB59579251B77A10011B23A /* ActivityCollectionCell.xib */; };
 		FEB59586251B77D30011B23A /* VaccineCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB59584251B77D30011B23A /* VaccineCollectionCell.swift */; };
 		FEB59587251B77D30011B23A /* VaccineCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEB59585251B77D30011B23A /* VaccineCollectionCell.xib */; };
+		FEB69974252CAE2D00BB94DC /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB69973252CAE2D00BB94DC /* UIView.swift */; };
 		FED22D08251E400B004CDCF9 /* ActivitiesCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED22D07251E400B004CDCF9 /* ActivitiesCollection.swift */; };
 		FED22D0D251E401A004CDCF9 /* VaccineCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED22D0C251E401A004CDCF9 /* VaccineCollection.swift */; };
 		FED22D12251E4A3D004CDCF9 /* PetDeatilsProfileContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED22D11251E4A3D004CDCF9 /* PetDeatilsProfileContainer.swift */; };
@@ -138,6 +139,7 @@
 		FEB59579251B77A10011B23A /* ActivityCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityCollectionCell.xib; sourceTree = "<group>"; };
 		FEB59584251B77D30011B23A /* VaccineCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineCollectionCell.swift; sourceTree = "<group>"; };
 		FEB59585251B77D30011B23A /* VaccineCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VaccineCollectionCell.xib; sourceTree = "<group>"; };
+		FEB69973252CAE2D00BB94DC /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		FED22D07251E400B004CDCF9 /* ActivitiesCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesCollection.swift; sourceTree = "<group>"; };
 		FED22D0C251E401A004CDCF9 /* VaccineCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineCollection.swift; sourceTree = "<group>"; };
 		FED22D11251E4A3D004CDCF9 /* PetDeatilsProfileContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDeatilsProfileContainer.swift; sourceTree = "<group>"; };
@@ -439,6 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				FE5DDBAE25125E32005A5040 /* Colors.swift */,
+				FEB69973252CAE2D00BB94DC /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				FEE4BFBB25110286000CA883 /* InitialViewController.swift in Sources */,
 				E93385CF2524424F008FEAF9 /* OnboardingController.swift in Sources */,
 				FEE4BFB32510F5CD000CA883 /* Initial.swift in Sources */,
+				FEB69974252CAE2D00BB94DC /* UIView.swift in Sources */,
 				E973E9F8250F96540077E9C0 /* SceneDelegate.swift in Sources */,
 				7C14D7192510FDF0003F9069 /* NewPetViewController.swift in Sources */,
 				FEB59586251B77D30011B23A /* VaccineCollectionCell.swift in Sources */,

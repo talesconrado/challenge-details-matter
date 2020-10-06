@@ -24,11 +24,11 @@ class PetCollectionCell: UICollectionViewCell {
         self.imageView.clipsToBounds = true
         self.imageView.contentMode = .scaleAspectFill
         self.imageView.layer.cornerRadius = 10
-        self.imageView.image = UIImage(named: "petDefault")
     }
 
-    public func configure(imageString: String) {
-        if let data = Data(base64Encoded: imageString) {
+    public func configure(pet: PetModel) {
+        let imageStr = pet.photo
+        if let data = Data(base64Encoded: imageStr) {
             self.imageView.image = UIImage(data: data)
         } else {
             self.imageView.image = UIImage(named: "petDefault")
