@@ -12,12 +12,14 @@ class NewPetViewController: UIViewController {
 
     @IBOutlet var vacineCollectionView: UICollectionView!
     @IBOutlet var activityCollectionView: UICollectionView!
+
     @IBOutlet var ageTextField: UITextField!
     @IBOutlet var weightTextField: UITextField!
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var petImage: UIImageView!
 
     private var petModel: PetModel?
+
     private let petRepository = DataManager.pet
     private let vaccineRepository = DataManager.vaccine
     private let activityRepository = DataManager.activity
@@ -162,19 +164,19 @@ extension NewPetViewController: UICollectionViewDelegate, UICollectionViewDataSo
 
         if collectionView == self.vacineCollectionView {
             guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: VaccineCellView.identifier,
-                for: indexPath) as? VaccineCellView
+                    withReuseIdentifier: VaccineCollectionCell.identifier,
+                for: indexPath) as? VaccineCollectionCell
             else {
-                fatalError("Unable to cast cell ActivityCell to UICollectionCell")
+                fatalError("Unable to cast cell VaccineCollectionCell to UICollectionCell")
             }
             cell.configure(vaccine: vaccineData[indexPath.row])
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: ActivityCellView.identifier,
-                for: indexPath) as? ActivityCellView
+                    withReuseIdentifier: ActivityCollectionCell.identifier,
+                for: indexPath) as? ActivityCollectionCell
             else {
-                fatalError("Unable to cast cell ActivityCell to UICollectionCell")
+                fatalError("Unable to cast cell ActivityCollectionCell to UICollectionCell")
             }
             cell.configure(activity: activityData[indexPath.row])
             return cell

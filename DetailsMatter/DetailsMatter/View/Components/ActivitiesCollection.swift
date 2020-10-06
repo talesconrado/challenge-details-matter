@@ -1,14 +1,14 @@
 //
-//  NewPetActivityCollection.swift
+//  ActivitiesCollection.swift
 //  DetailsMatter
 //
-//  Created by José Mateus Azevedo on 30/09/20.
+//  Created by Pedro Sousa on 25/09/20.
 //  Copyright © 2020 Tales Conrado. All rights reserved.
 //
 
 import UIKit
 
-class NewPetActivityCollection: UICollectionView {
+class ActivitiesCollection: UICollectionView {
 
     private let layout: UICollectionViewFlowLayout = {
         let flow = UICollectionViewFlowLayout()
@@ -42,7 +42,7 @@ class NewPetActivityCollection: UICollectionView {
     }
 
     private func registerCell() {
-        let nibActivity = UINib(nibName: ActivityCellView.identifier, bundle: nil)
-        self.register(nibActivity, forCellWithReuseIdentifier: ActivityCellView.identifier)
+        let activityNib = UINib(nibName: ActivityCollectionCell.identifier, bundle: nil)
+        self.register(activityNib, forCellWithReuseIdentifier: ActivityCollectionCell.identifier)
     }
 }

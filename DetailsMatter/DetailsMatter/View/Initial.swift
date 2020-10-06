@@ -76,8 +76,8 @@ class Initial: UIView {
         return label
     }()
 
-    public let activitiesCollection: ActivitiesCollection = {
-        let collection = ActivitiesCollection()
+    public let activitiesCollection: InitialActivitiesCollection = {
+        let collection = InitialActivitiesCollection()
         return collection
     }()
 

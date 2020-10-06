@@ -12,16 +12,21 @@ import UIKit
 
 class PetDetailsController: UIViewController {
     public var petModel: PetModel?
+
     public var vaccineData: [VaccineModel] = []
     public var activityData: [ActivityModel] = []
+
     private let activityRepo = DataManager.activity
     private let vaccineRepo = DataManager.vaccine
+
     @IBOutlet weak var vaccinesCollection: UICollectionView!
     @IBOutlet weak var activitiesCollection: UICollectionView!
+
     @IBOutlet weak var petNameLabel: UILabel!
     @IBOutlet weak var ageIndicator: UILabel!
     @IBOutlet weak var weightIndicator: UILabel!
     @IBOutlet weak var petImage: UIImageView!
+
     override func viewWillAppear(_ animated: Bool) {
         setupNavBar()
     }
@@ -107,16 +112,18 @@ extension PetDetailsController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.vaccinesCollection {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PetDetailsVaccineCell.identifier,
-            for: indexPath) as? PetDetailsVaccineCell
+            guard let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: VaccineCollectionCell.identifier,
+                    for: indexPath) as? VaccineCollectionCell
             else {
                 fatalError("Unable to cast cell PetDetailsVaccineCell to UICollectionCell")
             }
             cell.configure(vaccine: vaccineData[indexPath.row])
             return cell
         } else {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PetDetailsActivityCell.identifier,
-                                                                for: indexPath) as? PetDetailsActivityCell
+            guard let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: ActivityCollectionCell.identifier,
+                    for: indexPath) as? ActivityCollectionCell
             else {
                 fatalError("Unable to cast cell PetDetailsActivityCell to UICollectionCell")
             }

@@ -8,9 +8,9 @@
 
 import UIKit
 
-class PetDetailsVaccineCell: UICollectionViewCell {
+class VaccineCollectionCell: UICollectionViewCell {
 
-    public static let identifier: String = "PetDetailsVaccineCell"
+    public static let identifier: String = "VaccineCollectionCell"
 
     // Create Outlets from Xib
     @IBOutlet weak var vaccineTitle: UILabel!

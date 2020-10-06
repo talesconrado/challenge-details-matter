@@ -60,7 +60,7 @@ class InitialViewController: UIViewController {
 
     @objc private func newPet() {
         let storyboard = UIStoryboard(name: "NewPet", bundle: nil)
-        let newPetScreen = storyboard.instantiateViewController(withIdentifier: "NewPet")
+        let newPetScreen = storyboard.instantiateViewController(withIdentifier: "NewPetStoryboard")
         navigationController?.pushViewController(newPetScreen, animated: true)
     }
 
@@ -102,8 +102,9 @@ extension InitialViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.initial.petsCollection {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PetCollectionCell.identifier,
-            for: indexPath) as? PetCollectionCell
+            guard let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: PetCollectionCell.identifier,
+                    for: indexPath) as? PetCollectionCell
             else {
                 fatalError("Unable to cast cell ActivityCell to UICollectionCell")
             }
@@ -112,8 +113,8 @@ extension InitialViewController: UICollectionViewDelegate, UICollectionViewDataS
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(
-                    withReuseIdentifier: ActivitiesCollectionCell.identifier,
-                    for: indexPath) as? ActivitiesCollectionCell
+                    withReuseIdentifier: InitialActivityCollectionCell.identifier,
+                    for: indexPath) as? InitialActivityCollectionCell
             else {
                 fatalError("Unable to cast cell ActivityCell to UICollectionCell")
             }
@@ -124,7 +125,7 @@ extension InitialViewController: UICollectionViewDelegate, UICollectionViewDataS
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.initial.petsCollection {
-            let petDetails = UIStoryboard(name: "PetDetailsView", bundle: nil)
+            let petDetails = UIStoryboard(name: "PetDetails", bundle: nil)
             if let petDetailsController = petDetails.instantiateViewController(
                 withIdentifier: "PetDetailsStoryboard") as? PetDetailsController {
                 petDetailsController.petModel = petsDataSource[indexPath.row]

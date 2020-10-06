@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GsB-88-QvO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GsB-88-QvO">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--New Pet View Controller-->
         <scene sceneID="Myt-12-2LP">
             <objects>
-                <viewController storyboardIdentifier="NewPet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GsB-88-QvO" customClass="NewPetViewController" customModule="DetailsMatter" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewPetStoryboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GsB-88-QvO" customClass="NewPetViewController" customModule="DetailsMatter" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OTC-v0-9kx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,20 +66,20 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Vacinas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Gz-BB-utV">
-                                <rect key="frame" x="20" y="351" width="82" height="26.333333333333314"/>
+                                <rect key="frame" x="20" y="351" width="80.666666666666671" height="26.333333333333314"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atividades" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PT-4J-ErX">
-                                <rect key="frame" x="20" y="533.33333333333337" width="110" height="27"/>
+                                <rect key="frame" x="20" y="533.33333333333337" width="109" height="27"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TAY-Py-F3l" customClass="NewPetVaccineCollection" customModule="DetailsMatter" customModuleProvider="target">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TAY-Py-F3l" customClass="VaccineCollection" customModule="DetailsMatter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="393.33333333333331" width="414" height="100"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="w9l-cN-kkt"/>
                                 </constraints>
@@ -131,9 +133,9 @@
                                     <action selector="addNewVacine:" destination="GsB-88-QvO" eventType="touchUpInside" id="xJe-H5-Cnl"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="juo-Mc-WON" customClass="NewPetActivityCollection" customModule="DetailsMatter" customModuleProvider="target">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="juo-Mc-WON" customClass="ActivitiesCollection" customModule="DetailsMatter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="576.33333333333337" width="414" height="159.66666666666663"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="aNj-pS-WxI">
                                     <size key="itemSize" width="383" height="90"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -143,7 +145,8 @@
                                 <cells/>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="kgJ-d5-1LI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6tx-M9-Szw" firstAttribute="top" secondItem="6f6-KG-05F" secondAttribute="bottom" constant="20" id="0Tf-0a-AHg"/>
                             <constraint firstItem="6tx-M9-Szw" firstAttribute="leading" secondItem="ECb-gr-kDj" secondAttribute="trailing" constant="38" id="1DY-QD-TCH"/>
@@ -182,14 +185,13 @@
                             <constraint firstItem="2PT-4J-ErX" firstAttribute="leading" secondItem="kgJ-d5-1LI" secondAttribute="leading" constant="20" id="uUG-BR-yyb"/>
                             <constraint firstItem="3Gz-BB-utV" firstAttribute="top" secondItem="6tx-M9-Szw" secondAttribute="bottom" constant="28" id="ywI-pY-3jE"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="kgJ-d5-1LI"/>
                     </view>
                     <connections>
-                        <outlet property="activityCollectionView" destination="juo-Mc-WON" id="lYH-Ql-RsY"/>
+                        <outlet property="activityCollectionView" destination="juo-Mc-WON" id="HVv-eh-n4o"/>
                         <outlet property="ageTextField" destination="6f6-KG-05F" id="X1T-nk-W2O"/>
                         <outlet property="nameTextField" destination="Lg1-0w-ejd" id="4Vg-98-VH1"/>
                         <outlet property="petImage" destination="rwt-um-Q4x" id="2lb-Lq-pxm"/>
-                        <outlet property="vacineCollectionView" destination="TAY-Py-F3l" id="H5I-vj-Mch"/>
+                        <outlet property="vacineCollectionView" destination="TAY-Py-F3l" id="2Zk-Ta-402"/>
                         <outlet property="weightTextField" destination="6tx-M9-Szw" id="fXH-FQ-z0k"/>
                     </connections>
                 </viewController>
@@ -201,5 +203,8 @@
     <resources>
         <image name="petDefault2" width="300" height="300"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
