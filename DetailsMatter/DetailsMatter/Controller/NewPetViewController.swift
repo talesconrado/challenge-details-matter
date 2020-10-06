@@ -90,7 +90,7 @@ class NewPetViewController: UIViewController {
             if let petName = nameTextField.text, !petName.isEmpty {
                 print("Vazio")
                 newPet.name = petName
-                if let weight = ageTextField.text { newPet.weight = weight }
+                if let weight = weightTextField.text { newPet.weight = weight }
                 if let age = ageTextField.text { newPet.age = age }
                 if let image = petImage.image, let pngData = image.pngData() {
                     newPet.photo = pngData.base64EncodedString()
