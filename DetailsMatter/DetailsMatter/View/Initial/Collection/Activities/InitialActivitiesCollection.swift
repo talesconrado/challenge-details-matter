@@ -1,5 +1,5 @@
 //
-//  RemindersCollection.swift
+//  InitialActivitiesCollection.swift
 //  DetailsMatter
 //
 //  Created by Pedro Sousa on 16/09/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActivitiesCollection: UICollectionView {
+class InitialActivitiesCollection: UICollectionView {
 
     private let layout: UICollectionViewFlowLayout = {
         let flow = UICollectionViewFlowLayout()
@@ -35,7 +35,7 @@ class ActivitiesCollection: UICollectionView {
         }
 
         private func registerCell() {
-            let remindersNib = UINib(nibName: ActivitiesCollectionCell.identifier, bundle: nil)
-            self.register(remindersNib, forCellWithReuseIdentifier: ActivitiesCollectionCell.identifier)
+            let remindersNib = UINib(nibName: InitialActivityCollectionCell.identifier, bundle: nil)
+            self.register(remindersNib, forCellWithReuseIdentifier: InitialActivityCollectionCell.identifier)
         }
 }

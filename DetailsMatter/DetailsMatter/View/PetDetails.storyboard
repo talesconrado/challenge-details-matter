@@ -107,7 +107,7 @@
                                     <action selector="vaccineButton:" destination="aUm-mn-vCU" eventType="touchUpInside" id="uGA-FW-nAf"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PTJ-81-CLt" customClass="PetDetailsVaccineCollection" customModule="DetailsMatter" customModuleProvider="target">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PTJ-81-CLt" customClass="VaccineCollection" customModule="DetailsMatter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="282" width="414" height="100"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -147,7 +147,7 @@
                                     <action selector="activityButton:" destination="aUm-mn-vCU" eventType="touchUpInside" id="30d-eR-xtu"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3cr-jy-FlM" customClass="PetDetailsActivitiesCollection" customModule="DetailsMatter" customModuleProvider="target">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3cr-jy-FlM" customClass="ActivitiesCollection" customModule="DetailsMatter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="465" width="414" height="431"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewLayout key="collectionViewLayout" id="5UJ-oY-gzN"/>
@@ -178,11 +178,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="activitiesCollection" destination="3cr-jy-FlM" id="BiO-xT-Eju"/>
+                        <outlet property="activitiesCollection" destination="3cr-jy-FlM" id="sqF-HP-EbN"/>
                         <outlet property="ageIndicator" destination="xoy-W5-GrC" id="51V-mK-mK0"/>
                         <outlet property="petImage" destination="Zgu-la-bOx" id="QhP-Kg-ZwV"/>
                         <outlet property="petNameLabel" destination="dVT-37-wOd" id="Yz7-NE-G5G"/>
-                        <outlet property="vaccinesCollection" destination="PTJ-81-CLt" id="9dh-LE-2zi"/>
+                        <outlet property="vaccinesCollection" destination="PTJ-81-CLt" id="inS-4a-I2S"/>
                         <outlet property="weightIndicator" destination="em0-2S-oDw" id="T7X-3i-3Rs"/>
                     </connections>
                 </viewController>

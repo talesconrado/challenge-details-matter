@@ -1,14 +1,14 @@
 //
-//  NewPetVaccineCollection.swift
+//  VaccineCollection.swift
 //  DetailsMatter
 //
-//  Created by José Mateus Azevedo on 30/09/20.
+//  Created by Pedro Sousa on 25/09/20.
 //  Copyright © 2020 Tales Conrado. All rights reserved.
 //
 
 import UIKit
 
-class NewPetVaccineCollection: UICollectionView {
+class VaccineCollection: UICollectionView {
 
     private let layout: UICollectionViewFlowLayout = {
         let flow = UICollectionViewFlowLayout()
@@ -46,8 +46,7 @@ class NewPetVaccineCollection: UICollectionView {
     }
 
     private func registerCell() {
-        let nibVaccine = UINib(nibName: VaccineCellView.identifier, bundle: nil)
-        self.register(nibVaccine, forCellWithReuseIdentifier: VaccineCellView.identifier)
+        let vaccineNib = UINib(nibName: VaccineCollectionCell.identifier, bundle: nil)
+        self.register(vaccineNib, forCellWithReuseIdentifier: VaccineCollectionCell.identifier)
     }
-
 }
