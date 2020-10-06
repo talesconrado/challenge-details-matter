@@ -11,6 +11,7 @@ import UIKit
 class DatePickerCell: UITableViewCell {
 
     weak var presenter: ActivityView?
+    var selectedDate: Date?
 
     lazy var dateLabel: UILabel = {
         let label = UILabel()
@@ -29,6 +30,7 @@ class DatePickerCell: UITableViewCell {
         let picker = UIDatePicker()
         picker.preferredDatePickerStyle = .wheels
         picker.datePickerMode = .dateAndTime
+        picker.date = selectedDate ?? Date()
 
         date.inputView = picker
         let dateFormatter = DateFormatter()
@@ -42,6 +44,13 @@ class DatePickerCell: UITableViewCell {
         return date
     }()
 
+    convenience init(date: Date?) {
+        self.init()
+        if let date = date {
+            updateDate(date: date)
+        }
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setConstraints()
@@ -64,12 +73,23 @@ class DatePickerCell: UITableViewCell {
 
 extension DatePickerCell: UITextFieldDelegate {
     @objc func pickerDone() {
+        updateDate()
+    }
+    
+    func updateDate(date: Date? = nil) {
         if let datePicker = self.date.inputView as? UIDatePicker {
             let dateformatter = DateFormatter()
             dateformatter.dateStyle = .medium
             dateformatter.timeStyle = .short
-            self.date.text = dateformatter.string(from: datePicker.date)
-            presenter?.selectedDate = datePicker.date
+            if let date = date {
+                self.date.text = dateformatter.string(from: date)
+                presenter?.selectedDate = date
+                datePicker.date = date
+            } else {
+                self.date.text = dateformatter.string(from: datePicker.date)
+                presenter?.selectedDate = datePicker.date
+                selectedDate = datePicker.date
+            }
         }
     }
 }
