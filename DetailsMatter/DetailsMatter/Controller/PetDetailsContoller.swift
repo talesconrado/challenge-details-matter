@@ -31,13 +31,6 @@ class PetDetailsController: UIViewController {
         setupNavBar()
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.shadowImage = nil
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,7 +45,7 @@ class PetDetailsController: UIViewController {
     }
 
     private func setupNavBar() {
-        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.largeTitleDisplayMode = .never
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit,
                                                             target: self, action: #selector(editPet))
     }

@@ -30,7 +30,8 @@ class Config {
         }
 
         let nav = UINavigationController(rootViewController: viewController)
-        nav.navigationBar.isTranslucent = true
+        nav.view.backgroundColor = .primaryLight
+        nav.navigationBar.isTranslucent = false
         nav.navigationBar.prefersLargeTitles = true
         nav.navigationBar.barTintColor = .primaryLight
         nav.navigationBar.tintColor = .secondary

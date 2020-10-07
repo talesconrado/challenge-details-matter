@@ -28,12 +28,6 @@ class InitialViewController: UIViewController {
         reloadDS()
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = false
-        navigationController?.navigationBar.isTranslucent = false
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupActions()
@@ -57,7 +51,6 @@ class InitialViewController: UIViewController {
         } else {
             self.title = "Mioi, Humano!"
         }
-        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     private func setupActions() {
