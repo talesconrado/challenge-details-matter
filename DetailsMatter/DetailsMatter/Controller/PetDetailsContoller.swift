@@ -61,8 +61,8 @@ class PetDetailsController: UIViewController {
     func setupPetModel() {
         if let petModel = petModel {
             petNameLabel.text = petModel.name
-            ageIndicator.text = petModel.age
-            weightIndicator.text = petModel.weight
+            ageIndicator.text = petModel.age + " anos"
+            weightIndicator.text = petModel.weight + " Kg"
             if let imageData = Data(base64Encoded: petModel.photo) {
                 petImage.image = UIImage(data: imageData)
             } else {
