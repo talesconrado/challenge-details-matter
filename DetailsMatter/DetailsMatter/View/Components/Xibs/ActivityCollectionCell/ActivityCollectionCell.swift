@@ -11,6 +11,7 @@ import UIKit
 class ActivityCollectionCell: UICollectionViewCell {
     private let repo = DataManager.activity
     public static let identifier: String = "ActivityCollectionCell"
+    let assetsNames = ["food", "paw", "medicine"]
 
     // Create Outlets from Xib
     @IBOutlet weak var iconActivity: UIImageView!
@@ -34,6 +35,7 @@ class ActivityCollectionCell: UICollectionViewCell {
     // Create configure function
 
      public func configure(activity: ActivityModel) {
+        iconActivity.image = UIImage(named: assetsNames[activity.category])
         activityDescription.text = activity.description
         activityTitle.text = activity.name
         let calendar = Calendar.current

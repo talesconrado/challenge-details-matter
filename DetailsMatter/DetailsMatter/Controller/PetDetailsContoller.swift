@@ -31,6 +31,13 @@ class PetDetailsController: UIViewController {
         setupNavBar()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.shadowImage = nil
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,11 +53,8 @@ class PetDetailsController: UIViewController {
 
     private func setupNavBar() {
         navigationController?.navigationBar.prefersLargeTitles = false
-        navigationController?.navigationBar.tintColor = .black
-
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit,
                                                             target: self, action: #selector(editPet))
-        navigationItem.rightBarButtonItem?.tintColor = .black
     }
 
     func loadDataSource() {
@@ -66,8 +70,7 @@ class PetDetailsController: UIViewController {
             if let imageData = Data(base64Encoded: petModel.photo) {
                 petImage.image = UIImage(data: imageData)
             } else {
-                print("aqui nao tem nada")
-                //default image
+                petImage.image = UIImage(named: "petDefault")
             }
         }
     }

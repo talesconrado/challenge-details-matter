@@ -28,6 +28,12 @@ class InitialViewController: UIViewController {
         reloadDS()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.navigationBar.isTranslucent = false
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupActions()

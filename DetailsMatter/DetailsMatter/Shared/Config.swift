@@ -30,8 +30,10 @@ class Config {
         }
 
         let nav = UINavigationController(rootViewController: viewController)
-        nav.navigationBar.prefersLargeTitles = true
         nav.navigationBar.isTranslucent = true
+        nav.navigationBar.prefersLargeTitles = true
+        nav.navigationBar.barTintColor = .primaryLight
+        nav.navigationBar.tintColor = .secondary
         nav.navigationBar.shadowImage = UIImage()
         nav.navigationBar.largeTitleTextAttributes = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 34, weight: .bold),
