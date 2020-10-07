@@ -32,6 +32,7 @@ class NewPetViewController: UIViewController {
         setupModel()
         setupNavBar()
         setupActionSheetCaller()
+        setDismissKeyboard()
         vacineCollectionView.delegate = self
         vacineCollectionView.dataSource = self
         activityCollectionView.delegate = self
@@ -46,6 +47,16 @@ class NewPetViewController: UIViewController {
                 petRepository.delete(identifier: model.identifier)
             }
         }
+    }
+
+    func setDismissKeyboard() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapView))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+    }
+
+    @objc func didTapView() {
+        view.endEditing(true)
     }
 
     private func setupModel() {
