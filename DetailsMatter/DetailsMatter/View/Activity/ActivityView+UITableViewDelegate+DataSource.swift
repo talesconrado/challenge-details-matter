@@ -44,7 +44,7 @@ extension ActivityView: UITableViewDataSource {
                 cell.detailTextLabel?.text = ActivityValues.categories[selectedOptionCategory ?? 0]
                 cell.accessoryType = .disclosureIndicator
             case 1:
-                let dateCell = DatePickerCell()
+                let dateCell = DatePickerCell(date: selectedDate)
                 dateCell.presenter = self
                 return dateCell
             case 2:
