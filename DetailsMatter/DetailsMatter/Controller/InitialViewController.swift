@@ -57,7 +57,6 @@ class InitialViewController: UIViewController {
         } else {
             self.title = "Mioi, Humano!"
         }
-        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     private func setupActions() {
