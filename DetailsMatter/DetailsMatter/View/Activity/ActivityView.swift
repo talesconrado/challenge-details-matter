@@ -29,13 +29,14 @@ class ActivityView: UIView {
         return title
     }()
 
-    lazy var descriptionTextField: UITextField = {
-        let description = UITextField()
+    lazy var descriptionTextField: UITextView = {
+        let description = UITextView()
         description.translatesAutoresizingMaskIntoConstraints = false
-        description.placeholder = "Descrição"
         description.font = UIFont.systemFont(ofSize: 18)
+        description.text = "Description"
+        description.textColor = .lightGray
         self.addSubview(description)
-
+        description.delegate = self
         return description
     }()
 
@@ -80,7 +81,8 @@ class ActivityView: UIView {
         NSLayoutConstraint.activate([
             descriptionTextField.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 20),
             descriptionTextField.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 10),
-            descriptionTextField.widthAnchor.constraint(equalTo: readableContentGuide.widthAnchor)
+            descriptionTextField.widthAnchor.constraint(equalTo: readableContentGuide.widthAnchor),
+            descriptionTextField.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
 
@@ -92,4 +94,20 @@ class ActivityView: UIView {
         ])
     }
 
+}
+
+extension ActivityView: UITextViewDelegate {
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Description"
+            textView.textColor = .lightGray
+        }
+    }
+
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.textColor = .darkText
+        if textView.text == "Description" {
+            textView.text.removeAll()
+        }
+    }
 }

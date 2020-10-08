@@ -30,6 +30,13 @@ class OnboardingController: UIViewController {
 
     func askForNotificationPermission() {
         let event = EventManager()
-        event.requestAccess()
+        event.requestAccess {
+            self.dismiss(animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.contentView.collectionView.scrollToItem(at: IndexPath(row: 2, section: 0),
+                                                        at: .centeredHorizontally,
+                                                        animated: true)
+            }
+        }
     }
 }
