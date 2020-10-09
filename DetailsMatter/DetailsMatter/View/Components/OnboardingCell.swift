@@ -145,7 +145,8 @@ class OnboardingCell: UICollectionViewCell, UITextViewDelegate {
     }
 
     func setupPetSelectionCell() {
-        let questionText = "Por último, mas não menos importante:\n\n Você gosta mais de cachorros ou gatos?"
+        let questionText = "Por último, mas não menos importante:\n\n Você gosta mais de cachorros ou gatos?\n"
+                            + "Escolha um dos dois para te acompanhar!"
         text.text = questionText
         button.setTitle("Começar", for: .normal)
         self.contentView.addSubview(text)
@@ -162,14 +163,14 @@ class OnboardingCell: UICollectionViewCell, UITextViewDelegate {
         NSLayoutConstraint.activate([
             text.topAnchor.constraint(lessThanOrEqualTo: safeAreaLayoutGuide.topAnchor, constant: 72),
             text.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            text.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.15),
+            text.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3),
             text.leftAnchor.constraint(equalTo: leftAnchor, constant: 52),
             text.rightAnchor.constraint(equalTo: rightAnchor, constant: -52),
 
-            dogImage.topAnchor.constraint(lessThanOrEqualTo: text.bottomAnchor, constant: 70),
+            dogImage.topAnchor.constraint(lessThanOrEqualTo: text.bottomAnchor, constant: 30),
             dogImage.leftAnchor.constraint(equalTo: leftAnchor, constant: 40),
 
-            catImage.topAnchor.constraint(equalTo: text.bottomAnchor, constant: 70),
+            catImage.topAnchor.constraint(equalTo: text.bottomAnchor, constant: 30),
             catImage.rightAnchor.constraint(equalTo: rightAnchor, constant: -40),
 
             button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -47),
@@ -177,6 +178,7 @@ class OnboardingCell: UICollectionViewCell, UITextViewDelegate {
             button.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -72),
             button.heightAnchor.constraint(equalToConstant: 50)
         ])
+        tapCatImage()
     }
 
     @objc func setPreference() {
