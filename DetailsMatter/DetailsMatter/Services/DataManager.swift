@@ -100,24 +100,9 @@ class ActivityRepository: Repository {
     }
 
     public func getWeekday(date: Date) -> String {
-        switch calendar.component(.weekday, from: today) {
-        case 1:
-            return "Domingo"
-        case 2:
-            return "Segunda"
-        case 3:
-            return "Terça"
-        case 4:
-            return "Quarta"
-        case 5:
-            return "Quinta"
-        case 6:
-            return "Sexta"
-        case 7:
-            return "Sábado"
-        default:
-            fatalError("DataManager Error - Get Weekday: Nonexistent day.")
-        }
+        let weekdays = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"]
+        let index = calendar.component(.weekday, from: today)
+        return weekdays[index - 1]
     }
 }
 
