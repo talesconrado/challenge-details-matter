@@ -251,6 +251,7 @@
 		E9AC19872510E8B100920DFC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FE6A960E2513A288006D94C1 /* NewVaccineViewController.swift */,
 				FEF0B13E2518DE30002775CF /* PetModel.swift */,
 				FEF0B1432518DE55002775CF /* VaccineModel.swift */,
 				FEF0B1482518DE6B002775CF /* ActivityModel.swift */,
@@ -264,7 +265,6 @@
 			children = (
 				E9AC198E2510F96300920DFC /* Activity */,
 				FEE4BFBA25110286000CA883 /* InitialViewController.swift */,
-				FE6A960E2513A288006D94C1 /* NewVaccineViewController.swift */,
 				7C14D7182510FDF0003F9069 /* NewPetViewController.swift */,
 				68F13FEC251B70020034CE32 /* PetDetailsContoller.swift */,
 				E93385CE2524424F008FEAF9 /* OnboardingController.swift */,
