@@ -13,7 +13,8 @@ class NewVaccineViewController: UIViewController {
     public weak var delegate: PetDelegate?
     public var owner: PetModel?
 
-    private let repo = DataManager.vaccine
+    private let vaccineRepo = DataManager.vaccine
+    private let petRepo = DataManager.pet
 
     @IBOutlet weak var vaccineName: UITextField!
     @IBOutlet weak var vaccineDate: UITextField!
@@ -62,15 +63,23 @@ class NewVaccineViewController: UIViewController {
     }
 
     @objc private func save() {
-        if let vaccineNameString = self.vaccineName.text,
+        if let vaccineNameString = self.vaccineName.text, !vaccineNameString.isEmpty,
            let vaccineDateString = self.vaccineDate.text,
            let owner = self.owner,
-           let item = repo.createNewItem() {
+           let item = vaccineRepo.createNewItem() {
             owner.vaccinesIDs.append(item.identifier)
             item.name = vaccineNameString
-            item.date = vaccineDateString
-            repo.update(item: item)
-            DataManager.pet.update(item: owner)
+
+            if vaccineDateString.isEmpty {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "dd/MM/yyyy"
+                item.date = formatter.string(from: Date())
+            } else {
+                item.date = vaccineDateString
+            }
+
+            vaccineRepo.update(item: item)
+            petRepo.update(item: owner)
         }
 
         if let delegate = self.delegate {

@@ -8,30 +8,16 @@
 
 import UIKit
 
-//
-
-enum CurrentlyTesting {
-    case initialController
-    case onboardingController
-}
-
 class Config {
     private let initialController = InitialViewController()
-    private let onboardingController = OnboardingController()
 
-    public func mainController(_ controller: CurrentlyTesting) -> UIViewController {
-        var viewController: UIViewController
-
-        switch controller {
-        case .initialController:
-            viewController = initialController
-        case .onboardingController:
-            viewController = onboardingController
-        }
-
-        let nav = UINavigationController(rootViewController: viewController)
+    public func mainController() -> UIViewController {
+        let nav = UINavigationController(rootViewController: initialController)
+        nav.view.backgroundColor = .primaryLight
+        nav.navigationBar.isTranslucent = false
         nav.navigationBar.prefersLargeTitles = true
-        nav.navigationBar.isTranslucent = true
+        nav.navigationBar.barTintColor = .primaryLight
+        nav.navigationBar.tintColor = .secondary
         nav.navigationBar.shadowImage = UIImage()
         nav.navigationBar.largeTitleTextAttributes = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 34, weight: .bold),

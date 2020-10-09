@@ -43,7 +43,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVM-eT-0Il">
-                        <rect key="frame" x="16" y="44" width="41.5" height="20.5"/>
+                        <rect key="frame" x="16" y="44" width="251" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -54,6 +54,7 @@
             <color key="tintColor" red="0.078431372550000003" green="0.12941176469999999" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="LtG-x8-Xxb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="Lnr-ac-t4p"/>
+                <constraint firstItem="oAH-5c-hJZ" firstAttribute="leading" secondItem="TVM-eT-0Il" secondAttribute="trailing" constant="8" id="Nnu-c8-3vp"/>
                 <constraint firstItem="TVM-eT-0Il" firstAttribute="leading" secondItem="LtG-x8-Xxb" secondAttribute="leading" id="ROX-K0-xQV"/>
                 <constraint firstAttribute="trailing" secondItem="oAH-5c-hJZ" secondAttribute="trailing" constant="30" id="Vpj-24-KRH"/>
                 <constraint firstAttribute="bottom" secondItem="CAQ-jr-m4m" secondAttribute="bottom" constant="16" id="ZRS-Oh-g8i"/>
