@@ -23,9 +23,9 @@ class OnboardingController: UIViewController {
     }
 
     func showInitialScreen() {
-        let initialScreen = InitialViewController()
-        initialScreen.navigationItem.hidesBackButton = true
-        navigationController?.pushViewController(initialScreen, animated: true)
+        self.dismiss(animated: true, completion: {
+            UserDefaults.standard.set(false, forKey: "FirstLaunch")
+        })
     }
 
     func askForNotificationPermission() {
