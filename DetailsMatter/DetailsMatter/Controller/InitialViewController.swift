@@ -34,10 +34,10 @@ class InitialViewController: UIViewController {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = false
-        self.title = "Início"
+            super.viewWillDisappear(animated)
+            self.title = ""
     }
+
 
     override func loadView() {
         super.loadView()
@@ -57,6 +57,7 @@ class InitialViewController: UIViewController {
         } else {
             self.title = "Mioi, Humano!"
         }
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     private func setupActions() {

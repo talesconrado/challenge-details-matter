@@ -86,14 +86,10 @@ class NewPetViewController: UIViewController {
     }
 
     private func setupNavBar() {
-        self.title = "Novo Pet"
-        navigationController?.navigationBar.barTintColor = .primary
-        navigationController?.navigationBar.tintColor = .black
-        navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.prefersLargeTitles = false
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Salvar", style: .plain,
-                                                            target: self, action: #selector(saveNewPet))
+            self.title = "Novo Pet"
+            navigationItem.largeTitleDisplayMode = .never
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Salvar", style: .plain,
+                                                                target: self, action: #selector(saveNewPet))
     }
 
     @objc public func saveNewPet() {
