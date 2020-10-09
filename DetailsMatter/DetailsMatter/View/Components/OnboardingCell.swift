@@ -90,7 +90,7 @@ class OnboardingCell: UICollectionViewCell, UITextViewDelegate {
     func setupWelcomeCell() {
         imageView.image = UIImage(named: "welcomecats")
         let firstCellText = "Manter um calendário de rotina do seu pet é muito importante,"
-                    + " por isso gostaríamos de te ajudar!\n\nCom <app> você poderá salvar "
+                    + " por isso gostaríamos de te ajudar!\n\nCom PetManager você poderá salvar "
                     + "datas de vacinas, banhos, remédios e o que mais precisar."
         button.setTitle("Continuar", for: .normal)
         text.text = firstCellText
