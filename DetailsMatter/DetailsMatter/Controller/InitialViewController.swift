@@ -4,7 +4,6 @@
 //
 //  Created by Pedro Sousa on 15/09/20.
 //  Copyright © 2020 Tales Conrado. All rights reserved.
-//
 
 import UIKit
 
@@ -99,16 +98,40 @@ extension InitialViewController: UICollectionViewDelegate, UICollectionViewDataS
         }
     }
 
+    @objc func deletePetAlert(sender: UILongPressGestureRecognizer) {
+        // swiftlint:disable force_cast
+        let seletedCell = sender.view! as! UICollectionViewCell
+        // swiftlint:enable force_cast
+        let indexPath = initial.petsCollection.indexPath(for: seletedCell)
+        let alert = UIAlertController(title: "Aviso",
+                                      message: "Você irá deletar esse pet!",
+                                      preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Deletar", style: UIAlertAction.Style.destructive, handler: { _ in
+            self.deletePet(indexPath!)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+    }
+
+    func deletePet(_ indexPath: IndexPath) {
+        let deletedPetID = petsDataSource[indexPath.row].identifier
+        self.petRepository.delete(identifier: deletedPetID)
+        self.petsDataSource.remove(at: indexPath.row)
+        self.initial.petsCollection.reloadData()
+    }
+
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        let tapGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.deletePetAlert))
         if collectionView == self.initial.petsCollection {
-            guard let cell = collectionView.dequeueReusableCell(
-                    withReuseIdentifier: PetCollectionCell.identifier,
-                    for: indexPath) as? PetCollectionCell
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PetCollectionCell.identifier,
+                                                                for: indexPath) as? PetCollectionCell
             else {
                 fatalError("Unable to cast cell ActivityCell to UICollectionCell")
             }
             cell.configure(pet: petsDataSource[indexPath.row])
+            cell.addGestureRecognizer(tapGestureRecognizer)
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(
