@@ -99,10 +99,15 @@ class NewPetViewController: UIViewController {
     @objc public func saveNewPet() {
         if let newPet = petModel {
             if let petName = nameTextField.text, !petName.isEmpty {
-                print("Vazio")
                 newPet.name = petName
-                if let weight = weightTextField.text { newPet.weight = weight }
-                if let age = ageTextField.text { newPet.age = age }
+                if var weight = ageTextField.text {
+                    weight = weight.filter { "0123456789".contains($0) }
+                    newPet.weight = weight
+                }
+                if var age = ageTextField.text {
+                    age = age.filter { "0123456789".contains($0) }
+                    newPet.age = age
+                }
                 if let image = petImage.image, let pngData = image.pngData() {
                     newPet.photo = pngData.base64EncodedString()
                 }
