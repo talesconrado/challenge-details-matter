@@ -105,7 +105,7 @@ class OnboardingCell: UICollectionViewCell, UITextViewDelegate {
             imageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.25),
 
             text.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 40),
-            text.heightAnchor.constraint(equalToConstant: 180),
+            text.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3),
             text.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             text.leftAnchor.constraint(equalTo: leftAnchor, constant: 52),
             text.rightAnchor.constraint(equalTo: rightAnchor, constant: -52),
@@ -132,7 +132,7 @@ class OnboardingCell: UICollectionViewCell, UITextViewDelegate {
             imageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.25),
 
             text.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 40),
-            text.heightAnchor.constraint(equalToConstant: 100),
+            text.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3),
             text.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             text.leftAnchor.constraint(equalTo: leftAnchor, constant: 52),
             text.rightAnchor.constraint(equalTo: rightAnchor, constant: -52),

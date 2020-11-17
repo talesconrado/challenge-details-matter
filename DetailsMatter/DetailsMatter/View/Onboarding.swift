@@ -133,6 +133,8 @@ extension OnboardingView: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
 
     @objc func goToNextCell() {
-        collectionView.scrollToItem(at: IndexPath(row: 1, section: 0), at: .centeredHorizontally, animated: true)
+        collectionView.scrollToItem(at: IndexPath(row: 1, section: 0),
+                                    at: .centeredHorizontally,
+                                    animated: true)
     }
 }

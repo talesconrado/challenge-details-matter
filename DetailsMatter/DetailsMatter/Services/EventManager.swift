@@ -22,20 +22,23 @@ class EventManager {
         case EKAuthorizationStatus.denied:
             return false
         case EKAuthorizationStatus.notDetermined:
-            return self.requestAccess()
+            return self.requestAccess(completion: nil)
         default:
             return false
         }
     }
 
     @discardableResult
-    public func requestAccess() -> Bool {
+    public func requestAccess(completion: (() -> Void)?) -> Bool {
         var status: Bool = false
         self.eventStore.requestAccess(
             to: .reminder,
             completion: { (granted: Bool, error: Error?) in
                 if let error = error {
                     print("EventManager Error - Request Access Error: \(error)")
+                }
+                if let completion = completion {
+                    completion()
                 }
                 status = granted
             }

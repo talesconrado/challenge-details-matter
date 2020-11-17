@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if isFirstLaunch {
             let onboardingController = OnboardingController()
             onboardingController.modalPresentationStyle = .overFullScreen
-            rootController.present(onboardingController, animated: true, completion: nil)
+            rootController.present(onboardingController, animated: false, completion: nil)
         }
     }
 }

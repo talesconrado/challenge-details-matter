@@ -48,6 +48,7 @@ class PetDetailsController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit,
                                                             target: self, action: #selector(editPet))
+        self.title = "Pet"
     }
 
     func loadDataSource() {
